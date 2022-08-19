@@ -34,10 +34,10 @@ public class Health : MonoBehaviour
         {
             lstFrameYVel = rb.velocity.y;
         }
-
         if (rb.velocity.y == 0 && (-lstFrameYVel) > maxFallVel)
         {
-            hp -= (((-lstFrameYVel) - (maxFallVel)) * hpFallDamage);
+            float fallDamage = (((-lstFrameYVel) - (maxFallVel)) * hpFallDamage);
+            TakeDamage(fallDamage);
             lstFrameYVel = 0;
         }
 
@@ -52,6 +52,13 @@ public class Health : MonoBehaviour
                 Eliminate();
             }
         }
+
+    }
+
+    void TakeDamage(float damage)
+    {
+        hp -= damage;
+        timer = 0f;
     }
 
     void Recover()
@@ -59,20 +66,17 @@ public class Health : MonoBehaviour
         timer += Time.deltaTime;
         if (timer > timeToRecover) 
         {
-            timer = 0f;
             HealthRecover();
         }
     }
 
     void HealthRecover()
     {
-        while (hp < maxHp)
+        hp += Time.deltaTime * hpIncrease;
+        if (hp >= maxHp)
         {
-            hp += hpIncrease;
-            if (hp > maxHp)
-            {
-                hp = maxHp;
-            }
+            hp = maxHp;
+            timer = 0;
         }
         
     }

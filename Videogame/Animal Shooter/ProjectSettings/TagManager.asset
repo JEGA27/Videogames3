@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Trash
+  - BlueTrashBase
+  - BluePlayer
+  - RedTrashBase
+  - RedPlayer
   layers:
   - Default
   - TransparentFX
