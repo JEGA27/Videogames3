@@ -20,16 +20,20 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField]
     private Transform bulletProjectilePrefab;
     [SerializeField]
+    private GameObject bulletObject;
+    [SerializeField]
     private Transform spawnBulletPosition;
+
 
     private ThirdPersonController thirdPersonController;
     private StarterAssetsInputs starterAssetsInputs;
+    private BulletProjectile bulletProjectile;
     private Animator animator;
     Vector3 mouseWorldPosition;
 
 
     //Other code
-    public int damage;
+    public float damage;
     public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
@@ -47,6 +51,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     public CamShake camShake;
     public float camShakeMagnitude, camShakeDuration;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +65,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         animator = GetComponent<Animator>();
         bulletsLeft = magazineSize;
         readyToShoot = true;
+        bulletProjectile = bulletObject.GetComponent<BulletProjectile>();
     }
 
     // Update is called once per frame
@@ -134,6 +140,8 @@ public class ThirdPersonShooterController : MonoBehaviour
 
       if(bulletsShot > 0 && bulletsLeft > 0)
       Invoke("Shoot", timeBetweenShots);
+
+      bulletProjectile.SetBulletDamage(damage);
     }
 
     private void ResetShot()

@@ -3263,8 +3263,9 @@ MonoBehaviour:
     m_Bits: 1
   debugTransform: {fileID: 1487938276}
   bulletProjectilePrefab: {fileID: 1286720335}
+  bulletObject: {fileID: 1286720332}
   spawnBulletPosition: {fileID: 39179829}
-  damage: 5
+  damage: 10
   timeBetweenShooting: 0.5
   spread: 0.02
   range: 100
@@ -12167,6 +12168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vfxHitGreen: {fileID: 2358307939031172208, guid: 3e27f69be09ef4e4593bff40049e4c9f, type: 3}
   vfxHitRed: {fileID: 7995166004362012494, guid: 36b9fe44e17160e4f842af43e5b12d95, type: 3}
+  speed: 30
 --- !u!1001 &1288903906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13111,6 +13113,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4544cf0d8c0974393c105785d01b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1385068497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385068491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7e9cc0accd544ee863369b6640ce24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  hpIncrease: 5
+  maxFallVel: 0
+  hpFallDamage: 0
+  timeToRecover: 5
 --- !u!1001 &1397435792
 PrefabInstance:
   m_ObjectHideFlags: 0

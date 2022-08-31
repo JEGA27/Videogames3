@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
 
     public float timeToRecover;
     private float timer;
-    
+
 
     private Rigidbody rb;
 
@@ -55,7 +55,7 @@ public class Health : MonoBehaviour
 
     }
 
-    void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         hp -= damage;
         timer = 0f;
@@ -64,7 +64,7 @@ public class Health : MonoBehaviour
     void Recover()
     {
         timer += Time.deltaTime;
-        if (timer > timeToRecover) 
+        if (timer > timeToRecover)
         {
             HealthRecover();
         }
@@ -78,7 +78,7 @@ public class Health : MonoBehaviour
             hp = maxHp;
             timer = 0;
         }
-        
+
     }
 
     void Eliminate()

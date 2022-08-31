@@ -9,8 +9,12 @@ public class BulletProjectile : MonoBehaviour
     private Transform vfxHitGreen;
     [SerializeField]
     private Transform vfxHitRed;
+    [SerializeField]
+    private float speed;
 
     private Rigidbody bulletRigidbody;
+    private Health healthSystem;
+    private float bulletDamage;
 
     void Awake()
     {
@@ -20,7 +24,6 @@ public class BulletProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float speed = 40f;
         bulletRigidbody.velocity = transform.forward * speed;
     }
 
@@ -35,11 +38,18 @@ public class BulletProjectile : MonoBehaviour
         if(other.GetComponent<BulletTarget>() != null)
         {
             Instantiate(vfxHitGreen, transform.position , Quaternion.identity);
+            healthSystem = other.GetComponent<Health>();
+            healthSystem.TakeDamage(bulletDamage);
         }
         else
         {
             Instantiate(vfxHitRed, transform.position , Quaternion.identity);
         }
         Destroy(gameObject);
+    }
+
+    public void SetBulletDamage(float damage)
+    {
+        bulletDamage = damage;
     }
 }
