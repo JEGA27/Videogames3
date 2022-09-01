@@ -197,7 +197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 195.5075, y: -49.42205}
+  m_AnchoredPosition: {x: 222.5075, y: -89.42205}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &22139110
@@ -243,7 +243,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 22139111}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1508191664}
+        m_TargetAssemblyTypeName: MainPanel, Assembly-CSharp
+        m_MethodName: PlayLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SampleScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &22139111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,7 +382,7 @@ GameObject:
   - component: {fileID: 64660359}
   - component: {fileID: 64660358}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text (play)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -551,7 +563,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 195.5075, y: -129.42206}
+  m_AnchoredPosition: {x: 532.5075, y: -89.42205}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &135412526
@@ -856,7 +868,7 @@ GameObject:
   - component: {fileID: 214438626}
   - component: {fileID: 214438625}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text (options)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1083,7 +1095,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 429156047}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1508191664}
+        m_TargetAssemblyTypeName: MainPanel, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &429156047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1438,7 +1462,7 @@ GameObject:
   - component: {fileID: 585996140}
   - component: {fileID: 585996139}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text (city)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1477,7 +1501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1497,7 +1521,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: CITY
 --- !u!222 &585996140
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1518,7 +1542,7 @@ GameObject:
   - component: {fileID: 621605618}
   - component: {fileID: 621605617}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text (return)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1557,7 +1581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1565,7 +1589,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
     m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
@@ -1750,7 +1774,7 @@ GameObject:
   - component: {fileID: 817769978}
   - component: {fileID: 817769977}
   m_Layer: 5
-  m_Name: Text (Legacy) (1)
+  m_Name: Text (FX volume)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2713,7 +2737,7 @@ GameObject:
   - component: {fileID: 1632942205}
   - component: {fileID: 1632942204}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text (exit)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3027,7 +3051,7 @@ GameObject:
   - component: {fileID: 1715828619}
   - component: {fileID: 1715828618}
   m_Layer: 5
-  m_Name: Text (Legacy) (2)
+  m_Name: Text (volume)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3198,7 +3222,7 @@ GameObject:
   - component: {fileID: 1843993480}
   - component: {fileID: 1843993479}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text (title)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3351,7 +3375,7 @@ GameObject:
   - component: {fileID: 1939484624}
   - component: {fileID: 1939484623}
   m_Layer: 5
-  m_Name: Text (Legacy) (3)
+  m_Name: Text (select level)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3431,7 +3455,7 @@ GameObject:
   - component: {fileID: 1953464296}
   - component: {fileID: 1953464295}
   m_Layer: 5
-  m_Name: Text (Legacy) (3)
+  m_Name: Text (options)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3511,7 +3535,7 @@ GameObject:
   - component: {fileID: 2105797283}
   - component: {fileID: 2105797282}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text (space)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3550,7 +3574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3559,10 +3583,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-    m_FontSize: 30
+    m_FontSize: 28
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3570,7 +3594,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: SPACE (coming soon)
 --- !u!222 &2105797283
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3835,7 +3859,7 @@ GameObject:
   - component: {fileID: 2144179887}
   - component: {fileID: 2144179886}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text (mute)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
