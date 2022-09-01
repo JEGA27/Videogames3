@@ -11,10 +11,12 @@ public class BulletProjectile : MonoBehaviour
     private Transform vfxHitRed;
     [SerializeField]
     private float speed;
+    [SerializeField]
+    private float bulletDamage;
 
     private Rigidbody bulletRigidbody;
     private Health healthSystem;
-    private float bulletDamage;
+
 
     void Awake()
     {
@@ -37,19 +39,17 @@ public class BulletProjectile : MonoBehaviour
     {
         if(other.GetComponent<BulletTarget>() != null)
         {
-            Instantiate(vfxHitGreen, transform.position , Quaternion.identity);
+            //Instantiate(vfxHitGreen, transform.position , Quaternion.identity);
             healthSystem = other.GetComponent<Health>();
             healthSystem.TakeDamage(bulletDamage);
+    
         }
         else
         {
-            Instantiate(vfxHitRed, transform.position , Quaternion.identity);
+            //Instantiate(vfxHitRed, transform.position , Quaternion.identity);
+            Debug.Log("No target");
         }
         Destroy(gameObject);
     }
 
-    public void SetBulletDamage(float damage)
-    {
-        bulletDamage = damage;
-    }
 }

@@ -29,7 +29,6 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if ((-rb.velocity.y) > maxFallVel)
         {
             lstFrameYVel = rb.velocity.y;

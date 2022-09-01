@@ -20,20 +20,16 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField]
     private Transform bulletProjectilePrefab;
     [SerializeField]
-    private GameObject bulletObject;
-    [SerializeField]
     private Transform spawnBulletPosition;
 
 
     private ThirdPersonController thirdPersonController;
     private StarterAssetsInputs starterAssetsInputs;
-    private BulletProjectile bulletProjectile;
     private Animator animator;
     Vector3 mouseWorldPosition;
 
 
     //Other code
-    public float damage;
     public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
@@ -43,13 +39,13 @@ public class ThirdPersonShooterController : MonoBehaviour
     bool shooting, readyToShoot, reloading;
 
     //Reference
-    public CinemachineVirtualCamera fpsCam;
+    //public Camera fpsCam;
     public RaycastHit rayHit;
     public LayerMask whatIsEnemy;
 
     //Graphics
-    public CamShake camShake;
-    public float camShakeMagnitude, camShakeDuration;
+    //public CamShake camShake;
+    //public float camShakeMagnitude, camShakeDuration;
 
 
     // Start is called before the first frame update
@@ -65,7 +61,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         animator = GetComponent<Animator>();
         bulletsLeft = magazineSize;
         readyToShoot = true;
-        bulletProjectile = bulletObject.GetComponent<BulletProjectile>();
+
     }
 
     // Update is called once per frame
@@ -100,6 +96,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             thirdPersonController.SetSensitivity(normalSensitivity);
             thirdPersonController.SetRotateOnMove(true);
             animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
+
         }
 
         MyInput();
@@ -130,9 +127,9 @@ public class ThirdPersonShooterController : MonoBehaviour
       float y = Random.Range(-spread, spread);
 
       //Calculate Direction with Spread
-      Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
+      //Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
 
-      camShake.Shake(camShakeDuration, camShakeMagnitude);
+      //camShake.Shake(camShakeDuration, camShakeMagnitude);
       bulletsLeft--;
       bulletsShot--;
 
@@ -141,7 +138,10 @@ public class ThirdPersonShooterController : MonoBehaviour
       if(bulletsShot > 0 && bulletsLeft > 0)
       Invoke("Shoot", timeBetweenShots);
 
-      bulletProjectile.SetBulletDamage(damage);
+      CineMachineShake.Instance.ShakeCamera(5f, 0.1f);
+      AimCinemachineShake.Instance.ShakeCamera(2f, 0.1f);
+
+
     }
 
     private void ResetShot()
