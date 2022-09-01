@@ -9,6 +9,8 @@ TagManager:
   - BluePlayer
   - RedTrashBase
   - RedPlayer
+  - CinemachineTarget
+  - Dumpster
   layers:
   - Default
   - TransparentFX
