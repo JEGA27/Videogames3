@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1607843205710865117}
   - component: {fileID: 1607843205711831069}
   - component: {fileID: 1607843205700209949}
+  - component: {fileID: 5198066966439314863}
   m_Layer: 0
   m_Name: ToiletPaper2
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +93,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607843205709577949}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 10aa997cce14d3d41be3c9405d8ccb94, type: 3}
   m_Controller: {fileID: 9100000, guid: 69318d97d7aa547c0b6db94f8776ad16, type: 2}
   m_CullingMode: 0
@@ -104,3 +105,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &5198066966439314863
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607843205709577949}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.56
+  m_Center: {x: -0.16756634, y: -0.000000050172435, z: 0.21043846}
