@@ -862,6 +862,7 @@ GameObject:
   - component: {fileID: 3934065011635246901}
   - component: {fileID: 3934065011635246900}
   - component: {fileID: 3934065011635247051}
+  - component: {fileID: 1987019622229508134}
   m_Layer: 3
   m_Name: Racoon
   m_TagString: Player
@@ -885,6 +886,7 @@ Transform:
   - {fileID: 9025900818519450420}
   - {fileID: 3934065011122263283}
   - {fileID: 3934065011522594431}
+  - {fileID: 3253337558143400921}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1071,6 +1073,19 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1987019622229508134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4204658466083330330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c576ebf2a95bb4b3e8410bb667619225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dumpsterPos: {fileID: 7325165564567035377}
 --- !u!1 &4830852850192575704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,6 +1403,37 @@ Transform:
   - {fileID: 8834444552117381777}
   m_Father: {fileID: 9025900818519450420}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7325165564567035377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3253337558143400921}
+  m_Layer: 0
+  m_Name: Hands
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3253337558143400921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7325165564567035377}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.01, z: 0.05}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3535926271052350368}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8450926949731207427
 GameObject:
