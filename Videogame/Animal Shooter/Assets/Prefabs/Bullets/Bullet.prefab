@@ -63,7 +63,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.2}
-  m_Center: {x: -0.38008034, y: 0.34947336, z: -0.33488047}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6253658195423583722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vfxHitGreen: {fileID: 2358307939031172208, guid: 3e27f69be09ef4e4593bff40049e4c9f, type: 3}
   vfxHitRed: {fileID: 7995166004362012494, guid: 36b9fe44e17160e4f842af43e5b12d95, type: 3}
-  speed: 20
+  speed: 35
   bulletDamage: 5
 --- !u!1 &6253658195799399270
 GameObject:

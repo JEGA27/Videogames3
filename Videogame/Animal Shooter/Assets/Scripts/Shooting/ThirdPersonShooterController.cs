@@ -16,8 +16,6 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField]
     private LayerMask aimColliderLayerMask = new LayerMask();
     [SerializeField]
-    private Transform debugTransform;
-    [SerializeField]
     private Transform bulletProjectilePrefab;
     [SerializeField]
     private Transform spawnBulletPosition;
@@ -72,7 +70,6 @@ public class ThirdPersonShooterController : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
         if(Physics.Raycast(ray, out RaycastHit raycastHit, 40f, aimColliderLayerMask))
         {
-            debugTransform.position = raycastHit.point;
             mouseWorldPosition = raycastHit.point;
         }
 
