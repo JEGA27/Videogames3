@@ -6,8 +6,14 @@ using UnityEngine;
 
 public class HUD : MonoBehaviour
 {
+    public GameManager GameManager;
+
     public Text timerTxt;
     public float timeInSec;
+
+    public Text blueScoreTxt;
+    public Text redScoreTxt;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +33,7 @@ public class HUD : MonoBehaviour
         {
             Debug.Log("Game Over!");
         }
+        blueScoreTxt.text = GameManager.blueTeamTrash.ToString();
+        redScoreTxt.text = GameManager.redTeamTrash.ToString();
     }
 }
