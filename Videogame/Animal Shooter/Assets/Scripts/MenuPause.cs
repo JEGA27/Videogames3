@@ -1,40 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuPause : MonoBehaviour
 {
-    [SerializeField] private GameObject buttonPause;
-    [SerializeField] private GameObject pauseMenu;
-    private bool pausedGame = false;
-    private void Update() {
+    public Text textoPausa;
+    public GameObject botonResume;
+    
+    void Update () 
+    {
         if(Input.GetKeyDown(KeyCode.Escape)) {
-            if(pausedGame) {
-                Resume();
-            }
-            else {
-                Pause();
-            }
+            textoPausa.enabled = true;
+            botonResume.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 
-    public void Pause() {
-        pausedGame = true;
-        Time.timeScale = 0f;
-        buttonPause.SetActive(false);
-        pauseMenu.SetActive(true);
-    }
-
-    public void Resume() {
-        pausedGame = false;
+    public void ResumeGame() {
         Time.timeScale = 1f;
-        buttonPause.SetActive(true);
-        pauseMenu.SetActive(false);
+        textoPausa.enabled = false;
+        botonResume.SetActive(false);
     }
-
-    public void Close() {
-        Debug.Log("Cerrando juego");
-        Application.Quit();
-    } 
 }
