@@ -8,6 +8,10 @@ public class HUD : MonoBehaviour
 {
     public GameManager GameManager;
 
+    public GameObject player;
+    private Health health;
+    public Text hpTxt;
+
     public Text timerTxt;
     public float timeInSec;
 
@@ -17,12 +21,13 @@ public class HUD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = player.GetComponent<Health>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        hpTxt.text = "HP: " + health.hp.ToString();
         timeInSec -= Time.deltaTime;
         if (timeInSec >= 0)
         {
