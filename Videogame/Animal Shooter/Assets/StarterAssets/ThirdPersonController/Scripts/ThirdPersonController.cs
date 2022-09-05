@@ -405,5 +405,10 @@ namespace StarterAssets
         {
             _rotateOnMove = newRotateMove;
         }
+
+        public float GetVerticalVelocity()
+        {
+            return(_verticalVelocity);
+        }
     }
 }

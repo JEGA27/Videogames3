@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StarterAssets;
 
 public class Health : MonoBehaviour
 {
@@ -16,12 +17,14 @@ public class Health : MonoBehaviour
     private float timer;
 
 
-    private Rigidbody rb;
+    //private Rigidbody rb;
+    private ThirdPersonController thirdPersonController;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
+        thirdPersonController = gameObject.GetComponent<ThirdPersonController>();
         maxHp = hp;
         timer = 0.0f;
     }
@@ -29,11 +32,13 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((-rb.velocity.y) > maxFallVel)
+        Debug.Log(hp);
+        Debug.Log(thirdPersonController.GetVerticalVelocity());
+        if ((-thirdPersonController.GetVerticalVelocity()) > maxFallVel)
         {
-            lstFrameYVel = rb.velocity.y;
+            lstFrameYVel = thirdPersonController.GetVerticalVelocity();
         }
-        if (rb.velocity.y == 0 && (-lstFrameYVel) > maxFallVel)
+        if (thirdPersonController.Grounded  && (-lstFrameYVel) > maxFallVel)
         {
             float fallDamage = (((-lstFrameYVel) - (maxFallVel)) * hpFallDamage);
             TakeDamage(fallDamage);
