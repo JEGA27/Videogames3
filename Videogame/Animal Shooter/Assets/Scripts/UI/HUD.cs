@@ -12,6 +12,9 @@ public class HUD : MonoBehaviour
     private Health health;
     public Text hpTxt;
 
+    public Text trashTxt;
+    private PickUpTrash pickUpTrash;
+
     public Text timerTxt;
     public float timeInSec;
 
@@ -22,12 +25,23 @@ public class HUD : MonoBehaviour
     void Start()
     {
         health = player.GetComponent<Health>();
+        pickUpTrash = player.GetComponent<PickUpTrash>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        hpTxt.text = "HP: " + health.hp.ToString();
+        if (health.hp >= 0)
+        {
+            hpTxt.text = "HP: " + health.hp.ToString();
+        }
+        else
+        {
+            hpTxt.text = "HP: 0";
+        }
+        
+        trashTxt.text = pickUpTrash.currentTrash.ToString();
+
         timeInSec -= Time.deltaTime;
         if (timeInSec >= 0)
         {

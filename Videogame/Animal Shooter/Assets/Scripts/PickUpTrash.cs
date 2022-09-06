@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickUpTrash : MonoBehaviour
 {
-    public static int currentTrash = 0;
+    public int currentTrash = 0;
     // Start is called before the first frame update
     void Start()
     {
