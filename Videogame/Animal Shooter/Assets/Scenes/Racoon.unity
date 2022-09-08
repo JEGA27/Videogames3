@@ -1115,7 +1115,6 @@ MonoBehaviour:
   aimColliderLayerMask:
     serializedVersion: 2
     m_Bits: 1
-  debugTransform: {fileID: 1862925939}
   bulletProjectilePrefab: {fileID: 6253658195423583733, guid: 1fba4297e48365a469de032f0439f011, type: 3}
   spawnBulletPosition: {fileID: 1521499485}
   timeBetweenShooting: 0.5
@@ -1188,6 +1187,10 @@ PrefabInstance:
     - target: {fileID: 5343472051738892306, guid: 99e93a41e8ed383409808f2f0addc025, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597247527035079813, guid: 99e93a41e8ed383409808f2f0addc025, type: 3}
+      propertyPath: allowButtonHold
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5597247527035079813, guid: 99e93a41e8ed383409808f2f0addc025, type: 3}
       propertyPath: animVirtualCamera
