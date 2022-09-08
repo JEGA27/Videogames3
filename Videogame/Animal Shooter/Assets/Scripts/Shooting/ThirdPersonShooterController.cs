@@ -16,34 +16,27 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField]
     private LayerMask aimColliderLayerMask = new LayerMask();
     [SerializeField]
-    private Transform bulletProjectilePrefab;
-    [SerializeField]
     private Transform spawnBulletPosition;
+    [SerializeField]
+    private GameObject weapon1;
+    [SerializeField]
+    private GameObject weapon2;
+    [SerializeField]
+    private float swapWeaponTime;
 
 
     private ThirdPersonController thirdPersonController;
     private StarterAssetsInputs starterAssetsInputs;
     private Animator animator;
     Vector3 mouseWorldPosition;
+    private WeaponStats weaponStats;
 
 
-    //Other code
-    public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
-    public int magazineSize, bulletsPerTap;
-    public bool allowButtonHold;
     int bulletsLeft, bulletsShot;
 
     //bools
     bool shooting, readyToShoot, reloading;
 
-    //Reference
-    //public Camera fpsCam;
-    public RaycastHit rayHit;
-    public LayerMask whatIsEnemy;
-
-    //Graphics
-    //public CamShake camShake;
-    //public float camShakeMagnitude, camShakeDuration;
 
 
     // Start is called before the first frame update
@@ -57,14 +50,19 @@ public class ThirdPersonShooterController : MonoBehaviour
         thirdPersonController = GetComponent<ThirdPersonController>();
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         animator = GetComponent<Animator>();
-        bulletsLeft = magazineSize;
+        weaponStats = weapon1.GetComponent<WeaponStats>();
+        bulletsLeft = weaponStats.magazineSize;
         readyToShoot = true;
-
+        weapon1.SetActive(true);
+        weapon2.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        StartCoroutine(SwapWeapon());
+
         mouseWorldPosition = Vector3.zero;
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen .height /2f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
@@ -102,14 +100,14 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     private void MyInput()
     {
-        if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
+        if (weaponStats.allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = starterAssetsInputs.shoot;
 
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) Reload();
+        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < weaponStats.magazineSize && !reloading) Reload();
 
         //Shoot
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0){
-            bulletsShot = bulletsPerTap;
+            bulletsShot = weaponStats.bulletsPerTap;
             Shoot();
         }
     }
@@ -117,11 +115,11 @@ public class ThirdPersonShooterController : MonoBehaviour
     private void Shoot()
     {
       Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
-      Instantiate(bulletProjectilePrefab, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+      Instantiate(weaponStats.bulletProjectilePrefab, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
       starterAssetsInputs.shoot = false;
       readyToShoot = false;
-      float x = Random.Range(-spread, spread);
-      float y = Random.Range(-spread, spread);
+      float x = Random.Range(-weaponStats.spread, weaponStats.spread);
+      float y = Random.Range(-weaponStats.spread, weaponStats.spread);
 
       //Calculate Direction with Spread
       //Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
@@ -130,10 +128,10 @@ public class ThirdPersonShooterController : MonoBehaviour
       bulletsLeft--;
       bulletsShot--;
 
-      Invoke("ResetShot", timeBetweenShooting);
+      Invoke("ResetShot", weaponStats.timeBetweenShooting);
 
       if(bulletsShot > 0 && bulletsLeft > 0)
-      Invoke("Shoot", timeBetweenShots);
+      Invoke("Shoot", weaponStats.timeBetweenShots);
 
       CineMachineShake.Instance.ShakeCamera(5f, 0.1f);
       AimCinemachineShake.Instance.ShakeCamera(2f, 0.1f);
@@ -148,11 +146,34 @@ public class ThirdPersonShooterController : MonoBehaviour
     private void Reload()
     {
         reloading = true;
-        Invoke("ReloadFinished", reloadTime);
+        Invoke("ReloadFinished", weaponStats.reloadTime);
     }
     private void ReloadFinished()
     {
-        bulletsLeft = magazineSize;
+        bulletsLeft = weaponStats.magazineSize;
         reloading = false;
+    }
+
+    private IEnumerator SwapWeapon()
+    {
+      //Swap weapon
+      if(Input.GetKeyDown(KeyCode.Alpha1))
+      {
+          readyToShoot = false;
+          weapon2.SetActive(false);
+          yield return new WaitForSeconds(swapWeaponTime);
+          readyToShoot = true;
+          weapon1.SetActive(true);
+          weaponStats = weapon1.GetComponent<WeaponStats>();
+      }
+      else if(Input.GetKeyDown(KeyCode.Alpha2))
+      {
+          readyToShoot = false;
+          weapon1.SetActive(false);
+          yield return new WaitForSeconds(swapWeaponTime);
+          readyToShoot = true;
+          weapon2.SetActive(true);
+          weaponStats = weapon2.GetComponent<WeaponStats>();
+      }
     }
 }
