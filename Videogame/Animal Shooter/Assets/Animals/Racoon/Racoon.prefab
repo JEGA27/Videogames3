@@ -670,6 +670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e411798b6ba6b4c7587f37fc4b763a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTrash: 0
 --- !u!114 &8878267982263836034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,7 +699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 150
   hpIncrease: 7
-  maxFallVel: 5
+  maxFallVel: 10
   hpFallDamage: 15
   timeToRecover: 7
 --- !u!82 &6204397790336798782
