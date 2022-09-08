@@ -8,6 +8,13 @@ public class HUD : MonoBehaviour
 {
     public GameManager GameManager;
 
+    public GameObject player;
+    private Health health;
+    public Text hpTxt;
+
+    public Text trashTxt;
+    private PickUpTrash pickUpTrash;
+
     public Text timerTxt;
     public float timeInSec;
 
@@ -17,12 +24,24 @@ public class HUD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = player.GetComponent<Health>();
+        pickUpTrash = player.GetComponent<PickUpTrash>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (health.hp >= 0)
+        {
+            hpTxt.text = "HP: " + health.hp.ToString();
+        }
+        else
+        {
+            hpTxt.text = "HP: 0";
+        }
+        
+        trashTxt.text = pickUpTrash.currentTrash.ToString();
+
         timeInSec -= Time.deltaTime;
         if (timeInSec >= 0)
         {
