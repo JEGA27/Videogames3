@@ -32,8 +32,6 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(hp);
-        Debug.Log(thirdPersonController.GetVerticalVelocity());
         if ((-thirdPersonController.GetVerticalVelocity()) > maxFallVel)
         {
             lstFrameYVel = thirdPersonController.GetVerticalVelocity();
