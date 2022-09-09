@@ -26,6 +26,7 @@ public class Health : MonoBehaviour
         //rb = GetComponent<Rigidbody>();
         thirdPersonController = gameObject.GetComponent<ThirdPersonController>();
         maxHp = hp;
+        GameManager.maxRaccoonHealth = hp;
         timer = 0.0f;
     }
 

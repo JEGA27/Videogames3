@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public static int blueTeamTrash;
     public static int redTeamTrash;
+    public static float maxRaccoonHealth;
 
     void Awake()
     {

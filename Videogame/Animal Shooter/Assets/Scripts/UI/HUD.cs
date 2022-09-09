@@ -10,7 +10,7 @@ public class HUD : MonoBehaviour
 
     public GameObject player;
     private Health health;
-    public Text hpTxt;
+    public Slider hpBar;
 
     public Text trashTxt;
     private PickUpTrash pickUpTrash;
@@ -31,14 +31,7 @@ public class HUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health.hp >= 0)
-        {
-            hpTxt.text = "HP: " + health.hp.ToString();
-        }
-        else
-        {
-            hpTxt.text = "HP: 0";
-        }
+        hpBar.value = health.hp / GameManager.maxRaccoonHealth;
         
         trashTxt.text = pickUpTrash.currentTrash.ToString();
 
@@ -54,5 +47,10 @@ public class HUD : MonoBehaviour
         }
         blueScoreTxt.text = GameManager.blueTeamTrash.ToString();
         redScoreTxt.text = GameManager.redTeamTrash.ToString();
+    }
+
+    public void OnHealthChange()
+    {
+        Debug.Log("hi");
     }
 }
