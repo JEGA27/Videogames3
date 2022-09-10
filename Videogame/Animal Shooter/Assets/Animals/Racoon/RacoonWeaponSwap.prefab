@@ -834,6 +834,7 @@ GameObject:
   - component: {fileID: 7637174003793107127}
   - component: {fileID: 1287982214040754396}
   - component: {fileID: 4959362663971722507}
+  - component: {fileID: 563024217860381181}
   m_Layer: 3
   m_Name: RacoonWeaponSwap
   m_TagString: BluePlayer
@@ -1189,6 +1190,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &563024217860381181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6027298252335826845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfa51503f16e49b3b0f667d4e7c2bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PickUpTrash: {fileID: 7637174003793107126}
+  GameManager: {fileID: 0}
+  rateOfRobbing: 0
 --- !u!1 &6735986986959190154
 GameObject:
   m_ObjectHideFlags: 0
