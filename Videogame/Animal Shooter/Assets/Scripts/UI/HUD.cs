@@ -32,7 +32,7 @@ public class HUD : MonoBehaviour
     void Update()
     {
         hpBar.value = health.hp / GameManager.maxRaccoonHealth;
-        
+
         trashTxt.text = pickUpTrash.currentTrash.ToString();
 
         timeInSec -= Time.deltaTime;
@@ -49,8 +49,5 @@ public class HUD : MonoBehaviour
         redScoreTxt.text = GameManager.redTeamTrash.ToString();
     }
 
-    public void OnHealthChange()
-    {
-        Debug.Log("hi");
-    }
+  
 }

@@ -21,8 +21,6 @@ public class FollowPath : MonoBehaviour
     void Update()
     {
         agent.destination = destinationPoints[currentObjective].position;
-
-          Debug.Log(currentObjective);
     }
 
     private void OnTriggerEnter(Collider other)
