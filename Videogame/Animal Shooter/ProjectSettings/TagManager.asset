@@ -12,6 +12,7 @@ TagManager:
   - CinemachineTarget
   - Dumpster
   - Car
+  - NavPoint
   layers:
   - Default
   - TransparentFX

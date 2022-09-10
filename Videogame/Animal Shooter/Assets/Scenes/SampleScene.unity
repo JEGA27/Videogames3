@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -122,14 +122,14 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: f838844c8dc838d4fb5445079f5a839d, type: 2}
 --- !u!43 &8869233
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89600
+  m_Name: pb_Mesh35904
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -292,6 +292,103 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
   m_PrefabInstance: {fileID: 1541505281}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &19363968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 19363969}
+  - component: {fileID: 19363972}
+  - component: {fileID: 19363971}
+  - component: {fileID: 19363970}
+  m_Layer: 0
+  m_Name: NP4
+  m_TagString: NavPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &19363969
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19363968}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.02, y: -3.7810693, z: 47.216866}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 699672110}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &19363970
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19363968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &19363971
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19363968}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &19363972
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19363968}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &26262307
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +407,7 @@ GameObject:
   m_Name: seat tube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &26262308
@@ -1720,8 +1817,8 @@ GameObject:
   m_Name: Firtree_2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &41404235
 Transform:
@@ -1809,6 +1906,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1875,8 +1980,8 @@ GameObject:
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &89319777
 Transform:
@@ -1956,6 +2061,86 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89319776}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &93834039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 93834040}
+  - component: {fileID: 93834042}
+  - component: {fileID: 93834041}
+  m_Layer: 5
+  m_Name: HealthText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &93834040
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93834039}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 803298111}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 144, y: -56}
+  m_SizeDelta: {x: 200, y: 56}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &93834041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93834039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9843138, g: 0.9843138, b: 0.9843138, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_FontSize: 40
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 50
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'HP: 0'
+--- !u!222 &93834042
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93834039}
+  m_CullTransparentMesh: 1
 --- !u!1001 &98544749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1966,6 +2151,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -2028,7 +2221,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh88394
+  m_Name: pb_Mesh34698
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2192,7 +2385,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89720
+  m_Name: pb_Mesh36024
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2365,8 +2558,8 @@ GameObject:
   m_Name: Firtree_3 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &113257767
 Transform:
@@ -2448,8 +2641,8 @@ GameObject:
   m_Name: Firtree (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &114044284
 Transform:
@@ -2624,7 +2817,7 @@ GameObject:
   m_Name: Bushes_15_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &135419299
@@ -2708,8 +2901,8 @@ GameObject:
   m_Name: Floor_4_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &140460927
 Transform:
@@ -2790,6 +2983,103 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2811745217542455416, guid: eaa0f482490af45f0a5f862092f5f981, type: 3}
+--- !u!1 &141121733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 141121734}
+  - component: {fileID: 141121737}
+  - component: {fileID: 141121736}
+  - component: {fileID: 141121735}
+  m_Layer: 0
+  m_Name: NP8
+  m_TagString: NavPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &141121734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141121733}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -21.20375, y: -3.7810693, z: 47.219868}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 699672110}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &141121735
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141121733}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &141121736
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141121733}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &141121737
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141121733}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &147601416
 GameObject:
   m_ObjectHideFlags: 0
@@ -2806,8 +3096,8 @@ GameObject:
   m_Name: Bench (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &147601417
 Transform:
@@ -2903,8 +3193,8 @@ GameObject:
   m_Name: Firtree (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &147777803
 Transform:
@@ -2986,6 +3276,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -3131,6 +3429,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -3197,6 +3503,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -3262,7 +3576,7 @@ GameObject:
   m_Name: Bushes_2_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &188449425
@@ -3353,8 +3667,8 @@ GameObject:
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &202426889
 MeshCollider:
@@ -4803,7 +5117,7 @@ GameObject:
   m_Name: seat (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &209398390
@@ -5145,8 +5459,8 @@ GameObject:
   m_Name: Bench (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &210082704
 Transform:
@@ -5238,6 +5552,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -5311,7 +5633,7 @@ GameObject:
   m_Name: Tables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &242920080
@@ -5351,7 +5673,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh88894
+  m_Name: pb_Mesh35198
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5581,6 +5903,78 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dumpster (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671043, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671043, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671057, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671057, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671059, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671059, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671061, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671061, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671063, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671063, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671065, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671065, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671067, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671067, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671069, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671069, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671071, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671071, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
 --- !u!43 &336877499
@@ -5589,7 +5983,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89052
+  m_Name: pb_Mesh35356
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5770,8 +6164,8 @@ GameObject:
   m_Name: Pipe (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &348811233
 MeshCollider:
@@ -7125,7 +7519,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh88864
+  m_Name: pb_Mesh35168
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7384,7 +7778,7 @@ GameObject:
   m_Name: seat tube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &363964613
@@ -8873,6 +9267,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -8943,7 +9345,7 @@ GameObject:
   m_Name: Tree_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &383571966
@@ -9027,8 +9429,8 @@ GameObject:
   m_Name: House_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &411836215
 Transform:
@@ -9129,7 +9531,7 @@ GameObject:
   m_Name: Tree_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &444175248
@@ -9208,6 +9610,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -9272,6 +9682,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -9339,6 +9757,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -9399,6 +9825,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -9539,7 +9973,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89124
+  m_Name: pb_Mesh35428
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9786,7 +10220,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89750
+  m_Name: pb_Mesh36054
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9959,8 +10393,8 @@ GameObject:
   m_Name: Firtree_2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &490990099
 Transform:
@@ -10045,7 +10479,7 @@ GameObject:
   m_Name: seat tube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &492334880
@@ -11468,8 +11902,8 @@ GameObject:
   m_Name: foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &507930233
 Transform:
@@ -11921,6 +12355,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -12070,6 +12512,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -12126,7 +12576,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh88604
+  m_Name: pb_Mesh34908
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12379,7 +12829,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89546
+  m_Name: pb_Mesh35850
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12537,6 +12987,89 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &567910644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 567910648}
+  - component: {fileID: 567910647}
+  - component: {fileID: 567910646}
+  m_Layer: 0
+  m_Name: Car_04_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &567910646
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567910644}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 7952871873376908242, guid: eaa0f482490af45f0a5f862092f5f981, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &567910647
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567910644}
+  m_Mesh: {fileID: 1039412772086139203, guid: eaa0f482490af45f0a5f862092f5f981, type: 3}
+--- !u!4 &567910648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567910644}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.3, y: 0.668, z: -0.27399993}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2011573951}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!1 &573104192
 GameObject:
   m_ObjectHideFlags: 0
@@ -12553,8 +13086,8 @@ GameObject:
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &573104193
 Transform:
@@ -12644,6 +13177,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -12791,7 +13332,7 @@ GameObject:
   m_Name: Bushes_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &598578753
@@ -12887,8 +13428,8 @@ GameObject:
   m_Name: wheel (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &611164486
 Transform:
@@ -13716,8 +14257,8 @@ GameObject:
   m_Name: Trash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &611735902
 Transform:
@@ -13807,7 +14348,7 @@ GameObject:
   m_Name: seat (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &637396977
@@ -14144,6 +14685,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -14209,8 +14758,8 @@ GameObject:
   m_Name: Firtree (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &693850878
 Transform:
@@ -14360,6 +14909,45 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697370581}
   m_Mesh: {fileID: 3172481644155131186, guid: eaa0f482490af45f0a5f862092f5f981, type: 3}
+--- !u!1 &699672109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 699672110}
+  m_Layer: 0
+  m_Name: NavPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &699672110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699672109}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.09375, y: 3.9320693, z: -3.1998684}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1304411380}
+  - {fileID: 1528383492}
+  - {fileID: 725923322}
+  - {fileID: 19363969}
+  - {fileID: 1137360717}
+  - {fileID: 1271364952}
+  - {fileID: 1420811466}
+  - {fileID: 141121734}
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &703390311
 GameObject:
   m_ObjectHideFlags: 0
@@ -14543,7 +15131,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89330
+  m_Name: pb_Mesh35634
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14712,6 +15300,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -14762,6 +15358,103 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+--- !u!1 &725923321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 725923322}
+  - component: {fileID: 725923325}
+  - component: {fileID: 725923324}
+  - component: {fileID: 725923323}
+  m_Layer: 0
+  m_Name: NP3
+  m_TagString: NavPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &725923322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725923321}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.28625, y: -3.7810693, z: 48.22}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 699672110}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &725923323
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725923321}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &725923324
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725923321}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &725923325
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725923321}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &726286076
 GameObject:
   m_ObjectHideFlags: 0
@@ -14777,8 +15470,8 @@ GameObject:
   m_Name: Firtree_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &726286077
 Transform:
@@ -15003,7 +15696,7 @@ GameObject:
   m_Name: Bushes_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &745710588
@@ -15049,7 +15742,7 @@ GameObject:
   m_Name: Bed_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &756796965
@@ -15220,7 +15913,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh88416
+  m_Name: pb_Mesh34720
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15393,8 +16086,8 @@ GameObject:
   m_Name: Firtree_4 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &768370290
 Transform:
@@ -15472,6 +16165,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -15539,7 +16240,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &777541820
 Transform:
@@ -15632,7 +16333,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89300
+  m_Name: pb_Mesh35604
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15805,8 +16506,8 @@ GameObject:
   m_Name: Firtree (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &788875506
 Transform:
@@ -15974,7 +16675,7 @@ GameObject:
   m_Name: base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &799554069
@@ -17380,6 +18081,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -17448,7 +18157,7 @@ GameObject:
   m_Name: tube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &823478605
@@ -18854,6 +19563,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -18920,6 +19637,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -18985,8 +19710,8 @@ GameObject:
   m_Name: Firtree_3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &856854076
 Transform:
@@ -19059,7 +19784,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89574
+  m_Name: pb_Mesh35878
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19228,6 +19953,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -19298,8 +20031,8 @@ GameObject:
   m_Name: Firtree (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &884751459
 Transform:
@@ -19391,8 +20124,8 @@ GameObject:
   m_Name: Floor_4_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &900948875
 Transform:
@@ -19474,8 +20207,8 @@ GameObject:
   m_Name: Firtree_2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &903232830
 Transform:
@@ -19641,7 +20374,7 @@ GameObject:
   m_Name: Bed_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &920084423
@@ -19734,7 +20467,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh88240
+  m_Name: pb_Mesh34544
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19987,6 +20720,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -20052,7 +20793,7 @@ GameObject:
   m_Name: Tree_3_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &970851968
@@ -20126,7 +20867,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89438
+  m_Name: pb_Mesh35742
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20388,7 +21129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh88586
+  m_Name: pb_Mesh34890
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20624,8 +21365,8 @@ GameObject:
   m_Name: BlockHouses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1026537899
 Transform:
@@ -20738,7 +21479,7 @@ GameObject:
   m_Name: back (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1061317219
@@ -21084,7 +21825,7 @@ GameObject:
   m_Name: Bushes_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1102468898
@@ -21246,6 +21987,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -21328,8 +22077,8 @@ GameObject:
   m_Name: Fountain (plugin)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &1109263308
 MeshCollider:
@@ -22492,8 +23241,8 @@ GameObject:
   m_Name: Firtree (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1109935242
 Transform:
@@ -22580,7 +23329,7 @@ GameObject:
   m_Name: Tree_2_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1112525412
@@ -22671,7 +23420,7 @@ GameObject:
   m_Name: seat (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1122464789
@@ -23013,8 +23762,8 @@ GameObject:
   m_Name: House_3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1125177302
 Transform:
@@ -23149,8 +23898,8 @@ GameObject:
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1129454656
 Transform:
@@ -23350,7 +24099,7 @@ GameObject:
   m_Name: seat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1137195317
@@ -23676,13 +24425,110 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1137360716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1137360717}
+  - component: {fileID: 1137360720}
+  - component: {fileID: 1137360719}
+  - component: {fileID: 1137360718}
+  m_Layer: 0
+  m_Name: NP5
+  m_TagString: NavPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1137360717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137360716}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.79, y: -3.7810693, z: 2.79}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 699672110}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1137360718
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137360716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1137360719
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137360716}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1137360720
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137360716}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!43 &1143837566
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh88470
+  m_Name: pb_Mesh34774
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23939,8 +24785,8 @@ GameObject:
   m_Name: Bench (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1154307555
 Transform:
@@ -24027,7 +24873,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89218
+  m_Name: pb_Mesh35522
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24279,6 +25125,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -24339,6 +25193,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -24408,8 +25270,8 @@ GameObject:
   m_Name: foot (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1190495338
 Transform:
@@ -24856,7 +25718,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh88494
+  m_Name: pb_Mesh34798
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25070,8 +25932,8 @@ GameObject:
   m_Name: Firtree (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1221165126
 Transform:
@@ -25231,6 +26093,103 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264976278}
   m_Mesh: {fileID: 436280897264707691, guid: eaa0f482490af45f0a5f862092f5f981, type: 3}
+--- !u!1 &1271364951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1271364952}
+  - component: {fileID: 1271364955}
+  - component: {fileID: 1271364954}
+  - component: {fileID: 1271364953}
+  m_Layer: 0
+  m_Name: NP6
+  m_TagString: NavPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1271364952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271364951}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.63, y: -3.7810693, z: 3.5898685}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 699672110}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1271364953
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271364951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1271364954
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271364951}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1271364955
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271364951}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1281343362
 GameObject:
   m_ObjectHideFlags: 0
@@ -25249,7 +26208,7 @@ GameObject:
   m_Name: tube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1281343363
@@ -26655,6 +27614,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -26718,8 +27685,8 @@ GameObject:
   m_Name: Fences (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1302840883
 Transform:
@@ -26761,6 +27728,103 @@ Transform:
   m_Father: {fileID: 1459592862}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &1304411379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1304411380}
+  - component: {fileID: 1304411383}
+  - component: {fileID: 1304411382}
+  - component: {fileID: 1304411381}
+  m_Layer: 0
+  m_Name: NP1
+  m_TagString: NavPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1304411380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304411379}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -21.201, y: -3.7810693, z: 0.039}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 699672110}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1304411381
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304411379}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1304411382
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304411379}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1304411383
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304411379}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1308537453
 GameObject:
   m_ObjectHideFlags: 0
@@ -26935,8 +27999,8 @@ GameObject:
   m_Name: wheel (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1326016477
 Transform:
@@ -27760,6 +28824,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -27820,6 +28892,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -27982,8 +29062,8 @@ GameObject:
   m_Name: Pipe (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1356270354
 Transform:
@@ -29325,6 +30405,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -29561,8 +30649,8 @@ GameObject:
   m_Name: Firtree_2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1400662140
 Transform:
@@ -29640,6 +30728,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -29696,7 +30792,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89802
+  m_Name: pb_Mesh36106
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -29872,8 +30968,8 @@ GameObject:
   m_Name: top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1418425755
 Transform:
@@ -30224,7 +31320,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89500
+  m_Name: pb_Mesh35804
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -30382,6 +31478,103 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1528383491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1528383492}
+  - component: {fileID: 1528383495}
+  - component: {fileID: 1528383494}
+  - component: {fileID: 1528383493}
+  m_Layer: 0
+  m_Name: NP2
+  m_TagString: NavPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1528383492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528383491}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20.156, y: -3.7810693, z: -0.045}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 699672110}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1528383493
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528383491}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1528383494
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528383491}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1528383495
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528383491}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1536510127
 GameObject:
   m_ObjectHideFlags: 0
@@ -30476,6 +31669,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -30549,8 +31750,8 @@ GameObject:
   m_Name: foot (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1549323033
 Transform:
@@ -31141,6 +32342,78 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dumpster
       objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671043, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671043, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671057, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671057, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671059, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671059, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671061, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671061, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671063, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671063, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671065, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671065, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671067, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671067, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671069, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671069, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671071, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206336319120671071, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0d1d7290dbae43649da5d02d682f7ff, type: 3}
 --- !u!1001 &1576448565
@@ -31153,6 +32426,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -31222,8 +32503,8 @@ GameObject:
   m_Name: boat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1578940446
 Transform:
@@ -31563,7 +32844,7 @@ GameObject:
   m_Name: Tree_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1594816012
@@ -31693,8 +32974,8 @@ GameObject:
   m_Name: foot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1602577994
 Transform:
@@ -32150,8 +33431,8 @@ GameObject:
   m_Name: Trash_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1608695937
 Transform:
@@ -32235,8 +33516,8 @@ GameObject:
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!95 &1622887585
 Animator:
@@ -32417,8 +33698,8 @@ GameObject:
   m_Name: wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1647852789
 Transform:
@@ -33247,8 +34528,8 @@ GameObject:
   m_Name: Bench_1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1648308263
 Transform:
@@ -33342,7 +34623,7 @@ GameObject:
   m_Name: Bushes_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1649103442
@@ -33470,8 +34751,8 @@ GameObject:
   m_Name: Firtree_4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1655560342
 Transform:
@@ -33556,7 +34837,7 @@ GameObject:
   m_Name: back (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1660035364
@@ -33893,6 +35174,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -33953,6 +35242,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -34020,8 +35317,8 @@ GameObject:
   m_Name: Bench_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1681191689
 Transform:
@@ -34120,7 +35417,7 @@ GameObject:
   m_Name: seat tube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1701745926
@@ -35521,7 +36818,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89412
+  m_Name: pb_Mesh35716
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -35685,7 +36982,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89260
+  m_Name: pb_Mesh35564
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -35854,6 +37151,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -35915,7 +37220,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89170
+  m_Name: pb_Mesh35474
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -36096,7 +37401,7 @@ GameObject:
   m_Name: base (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1730883927
@@ -37506,8 +38811,8 @@ GameObject:
   m_Name: Firtree_4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1735018058
 Transform:
@@ -37584,6 +38889,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -37694,6 +39007,14 @@ PrefabInstance:
     - target: {fileID: 2209111814263882252, guid: c337d35c6e85a4a9c99fdd86bfd7638e, type: 3}
       propertyPath: m_Name
       value: Particle System (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209111814263882252, guid: c337d35c6e85a4a9c99fdd86bfd7638e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209111814263882252, guid: c337d35c6e85a4a9c99fdd86bfd7638e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2209111814263882254, guid: c337d35c6e85a4a9c99fdd86bfd7638e, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
@@ -37924,6 +39245,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -37985,7 +39314,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89090
+  m_Name: pb_Mesh35394
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -38154,7 +39483,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh88696
+  m_Name: pb_Mesh35000
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -38323,6 +39652,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -38469,8 +39806,8 @@ GameObject:
   m_Name: Fences
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1831826106
 Transform:
@@ -38522,6 +39859,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -38579,7 +39924,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh88720
+  m_Name: pb_Mesh35024
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -38753,8 +40098,8 @@ GameObject:
   m_Name: Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1857566580
 Transform:
@@ -38850,8 +40195,8 @@ GameObject:
   m_Name: Firtree_3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1863170250
 Transform:
@@ -38934,8 +40279,8 @@ GameObject:
   m_Name: Dumpster (plugin)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1866682049
 BoxCollider:
@@ -39022,6 +40367,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -39082,6 +40435,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -39153,8 +40514,8 @@ GameObject:
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1908976035
 Transform:
@@ -39245,6 +40606,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -39305,6 +40674,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -39407,8 +40784,8 @@ GameObject:
   m_Name: wheel (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1936194615
 Transform:
@@ -40227,7 +41604,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89376
+  m_Name: pb_Mesh35680
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -40440,7 +41817,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh89464
+  m_Name: pb_Mesh35768
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -40609,6 +41986,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -40682,7 +42067,7 @@ GameObject:
   m_Name: back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1988861389
@@ -41096,6 +42481,114 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
   m_PrefabInstance: {fileID: 1711203158}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2011573948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011573951}
+  - component: {fileID: 2011573950}
+  - component: {fileID: 2011573949}
+  - component: {fileID: 2011573952}
+  - component: {fileID: 2011573953}
+  m_Layer: 0
+  m_Name: Agent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2011573949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011573948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a338065b10270b540a1fef9521a795c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destinationPoints:
+  - {fileID: 1528383492}
+  - {fileID: 725923322}
+  - {fileID: 19363969}
+  - {fileID: 1137360717}
+  - {fileID: 1271364952}
+  - {fileID: 1420811466}
+  - {fileID: 141121734}
+  - {fileID: 1304411380}
+--- !u!195 &2011573950
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011573948}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1.64
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.2
+  m_BaseOffset: 0.3355
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!4 &2011573951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011573948}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.61, y: 0.224, z: -2.706}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 567910648}
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2011573952
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011573948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4896564, y: 1.2717038, z: 2.9943845}
+  m_Center: {x: 0.006474495, y: 0.20908791, z: 0.36089957}
+--- !u!54 &2011573953
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011573948}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &2023130735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41106,6 +42599,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -41171,6 +42672,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -41324,8 +42833,8 @@ GameObject:
   m_Name: Firtree_4 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2033786291
 Transform:
@@ -41531,7 +43040,7 @@ GameObject:
   m_Name: back (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2054054409
@@ -41878,8 +43387,8 @@ GameObject:
   m_Name: Bench_1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2065884872
 Transform:
@@ -41970,6 +43479,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -42138,6 +43655,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -42203,7 +43728,7 @@ GameObject:
   m_Name: Bushes_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2074664758
@@ -42287,8 +43812,8 @@ GameObject:
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2088969723
 Transform:
@@ -42466,7 +43991,7 @@ GameObject:
   m_Name: Bushes_2_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2107015591
@@ -42638,7 +44163,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2121702991
 Transform:
@@ -42715,6 +44240,14 @@ PrefabInstance:
     - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_Name
       value: Fence (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
@@ -42864,7 +44397,7 @@ GameObject:
   m_Name: Tree_1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2140570522
@@ -42943,6 +44476,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence
       objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757472125126829756, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5282228809250225158, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -43004,9 +44545,25 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1953462372}
+    - target: {fileID: 232200181399339951, guid: f17a1ea05422f4a3fb38f4ac71f279f3, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 232200181399339951, guid: f17a1ea05422f4a3fb38f4ac71f279f3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 232200182250820218, guid: f17a1ea05422f4a3fb38f4ac71f279f3, type: 3}
       propertyPath: m_Name
       value: BlueTrashBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 232200182250820218, guid: f17a1ea05422f4a3fb38f4ac71f279f3, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 232200182250820218, guid: f17a1ea05422f4a3fb38f4ac71f279f3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 232200182250820222, guid: f17a1ea05422f4a3fb38f4ac71f279f3, type: 3}
       propertyPath: m_RootOrder
@@ -43230,6 +44787,14 @@ PrefabInstance:
     - target: {fileID: 2118126201474648167, guid: 89a66ab3bfe7f4b50b74909468347c65, type: 3}
       propertyPath: m_Name
       value: Statue
+      objectReference: {fileID: 0}
+    - target: {fileID: 2118126201474648167, guid: 89a66ab3bfe7f4b50b74909468347c65, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915164562064455087, guid: 89a66ab3bfe7f4b50b74909468347c65, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89a66ab3bfe7f4b50b74909468347c65, type: 3}
@@ -43545,8 +45110,8 @@ GameObject:
   m_Name: Firtree_47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &4049885076797303497
 GameObject:
@@ -43563,8 +45128,8 @@ GameObject:
   m_Name: Firtree_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4107643913175788940
 Transform:
@@ -43687,8 +45252,8 @@ GameObject:
   m_Name: Cube_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &4630119451584630922
 GameObject:
@@ -43705,8 +45270,8 @@ GameObject:
   m_Name: Floor_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &4771864029807039522
 MeshRenderer:
@@ -43809,8 +45374,8 @@ GameObject:
   m_Name: Firtree_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!33 &5160409282989932271
 MeshFilter:
@@ -43856,8 +45421,8 @@ GameObject:
   m_Name: Bench_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &5345347436332205314
 Transform:
@@ -43906,8 +45471,8 @@ GameObject:
   m_Name: Firtree_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &5470818643593395678
 GameObject:
@@ -43979,8 +45544,8 @@ GameObject:
   m_Name: Firtree_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1001 &6006908560854802129
 PrefabInstance:
@@ -43992,6 +45557,14 @@ PrefabInstance:
     - target: {fileID: 6006908562569830662, guid: d77bcba837bb549e7897a46bf337e01f, type: 3}
       propertyPath: m_Name
       value: RedTruck
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006908562569830662, guid: d77bcba837bb549e7897a46bf337e01f, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6006908562569830662, guid: d77bcba837bb549e7897a46bf337e01f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6006908562569830665, guid: d77bcba837bb549e7897a46bf337e01f, type: 3}
       propertyPath: m_RootOrder
@@ -44088,8 +45661,8 @@ GameObject:
   m_Name: Floor_4_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &6477122724892472190
 MeshCollider:
@@ -44332,6 +45905,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueCar
       objectReference: {fileID: 0}
+    - target: {fileID: 7552461118954808050, guid: 73c5e71445c9540968b39579cfc42c9a, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7552461118954808050, guid: 73c5e71445c9540968b39579cfc42c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73c5e71445c9540968b39579cfc42c9a, type: 3}
 --- !u!33 &7658211292835811253
@@ -44466,6 +46047,14 @@ PrefabInstance:
     - target: {fileID: 7925208981246257684, guid: 61486c78245164d05bdc8f5d3dec7544, type: 3}
       propertyPath: m_Name
       value: OrangeTruck
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925208981246257684, guid: 61486c78245164d05bdc8f5d3dec7544, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925208981246257684, guid: 61486c78245164d05bdc8f5d3dec7544, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7925208981246257771, guid: 61486c78245164d05bdc8f5d3dec7544, type: 3}
       propertyPath: m_RootOrder
@@ -44826,8 +46415,8 @@ GameObject:
   m_Name: Bench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &8514923125998063092
 MeshCollider:
@@ -44971,8 +46560,8 @@ GameObject:
   m_Name: Firtree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1001 &9108455069180029730
 PrefabInstance:
@@ -44985,6 +46574,14 @@ PrefabInstance:
       propertyPath: GameManager
       value: 
       objectReference: {fileID: 1953462372}
+    - target: {fileID: 5510912631701072338, guid: a9805a56bcbc546e8a353a4faf6cd023, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510912631701072338, guid: a9805a56bcbc546e8a353a4faf6cd023, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 9108455067885467068, guid: a9805a56bcbc546e8a353a4faf6cd023, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -45032,6 +46629,14 @@ PrefabInstance:
     - target: {fileID: 9108455067885467071, guid: a9805a56bcbc546e8a353a4faf6cd023, type: 3}
       propertyPath: m_Name
       value: RedTrashBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108455067885467071, guid: a9805a56bcbc546e8a353a4faf6cd023, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108455067885467071, guid: a9805a56bcbc546e8a353a4faf6cd023, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9805a56bcbc546e8a353a4faf6cd023, type: 3}
