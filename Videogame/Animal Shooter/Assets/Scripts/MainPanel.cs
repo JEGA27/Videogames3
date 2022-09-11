@@ -29,5 +29,6 @@ public class MainPanel : MonoBehaviour
 
     public void ExitGame() {
         Application.Quit();
+        Debug.Log("Saliendo del juego");
     }
 }

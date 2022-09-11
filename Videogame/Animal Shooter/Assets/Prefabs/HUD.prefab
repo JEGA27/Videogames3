@@ -890,6 +890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoPausa: {fileID: 0}
   botonResume: {fileID: 0}
+  botonReturn: {fileID: 0}
 --- !u!114 &8162783328255631653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,6 +1300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoPausa: {fileID: 8162783328676888996}
   botonResume: {fileID: 8162783328470784748}
+  botonReturn: {fileID: 0}
 --- !u!1 &8162783328759573307
 GameObject:
   m_ObjectHideFlags: 0
