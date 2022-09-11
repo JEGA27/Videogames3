@@ -26,7 +26,12 @@ public class PickUpDumpster : MonoBehaviour
             {
                 Dumpster.GetComponent<Rigidbody>().isKinematic = true; 
                 Dumpster.transform.parent = gameObject.transform;
-                Dumpster.transform.position = dumpsterPos.transform.position;
+                
+                //Dumpster.transform.localRotation = gameObject.transform.rotation;
+                Dumpster.transform.localPosition = dumpsterPos.transform.localPosition;
+                Dumpster.transform.localRotation = Quaternion.Euler(0f, -90f, 0f);
+                //Debug.Log(gameObject.transform.forward);
+                
                 hasDumpster = true;
             }
         }
