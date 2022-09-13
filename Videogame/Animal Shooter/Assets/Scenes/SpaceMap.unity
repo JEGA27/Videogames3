@@ -3261,20 +3261,10 @@ MonoBehaviour:
   aimColliderLayerMask:
     serializedVersion: 2
     m_Bits: 1
-  debugTransform: {fileID: 1487938276}
-  bulletProjectilePrefab: {fileID: 6253658195423583733, guid: 1fba4297e48365a469de032f0439f011, type: 3}
   spawnBulletPosition: {fileID: 39179829}
-  timeBetweenShooting: 0.5
-  spread: 0.02
-  range: 100
-  reloadTime: 1
-  timeBetweenShots: 0.08
-  magazineSize: 30
-  bulletsPerTap: 3
-  allowButtonHold: 0
-  whatIsEnemy:
-    serializedVersion: 2
-    m_Bits: 0
+  weapon1: {fileID: 0}
+  weapon2: {fileID: 0}
+  swapWeaponTime: 0
 --- !u!1001 &367210950
 PrefabInstance:
   m_ObjectHideFlags: 0
