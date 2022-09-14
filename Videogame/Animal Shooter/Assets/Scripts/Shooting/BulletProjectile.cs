@@ -11,7 +11,11 @@ public class BulletProjectile : MonoBehaviour
     private float speed;
     [SerializeField]
     private float bulletDamage;
+    //[SerializeField]
+    //private AudioClip audioClip;
 
+
+    //private AudioSource audioSource;
     private Rigidbody bulletRigidbody;
     private Health healthSystem;
     private DummyHealth dummyHealth;
@@ -20,6 +24,7 @@ public class BulletProjectile : MonoBehaviour
     void Awake()
     {
         bulletRigidbody = GetComponent<Rigidbody>();
+        //audioSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -56,16 +61,11 @@ public class BulletProjectile : MonoBehaviour
             }
 
         }
-        else
-        {
-            //Instantiate(vfxHitRed, transform.position , Quaternion.identity);
-            //vfxHitGreen.transform.position = transform.position;
-            //vfxHitRed.Emit(1);
-          //  Destroy(vfxHitGreen);
-            Debug.Log("No target");
-        }
+
         Instantiate(hitEffect, transform.position , Quaternion.identity);
+        //audioSource.Play();
         Destroy(gameObject);
+
     }
 
 }

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DestroyParticle : MonoBehaviour
 {
+
+    [SerializeField]
+    private float secondsToDestroy;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,6 @@ public class DestroyParticle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Destroy(gameObject, 1);
+        Destroy(gameObject, secondsToDestroy);
     }
 }

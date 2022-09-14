@@ -9,13 +9,15 @@ public class MenuPause : MonoBehaviour
     public Text textoPausa;
     public GameObject botonResume;
     public GameObject botonReturn;
-    
-    void Update () 
+    public GameObject crosshair;
+
+    void Update ()
     {
         if(Input.GetKeyDown(KeyCode.Escape)) {
             textoPausa.enabled = true;
             botonResume.SetActive(true);
             botonReturn.SetActive(true);
+            crosshair.SetActive(false);
             Time.timeScale = 0f;
         }
     }
@@ -25,6 +27,7 @@ public class MenuPause : MonoBehaviour
         textoPausa.enabled = false;
         botonResume.SetActive(false);
         botonReturn.SetActive(false);
+        crosshair.SetActive(true);
     }
 
     public void ExitGame() {
