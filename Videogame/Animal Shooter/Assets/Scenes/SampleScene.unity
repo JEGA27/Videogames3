@@ -1982,6 +1982,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94fe6fe2206a84df3b7091f22eb6355e, type: 3}
+--- !u!114 &86457192 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8162783328676888996, guid: a8789fcc6bff740f6acd3475c9f9cfe3, type: 3}
+  m_PrefabInstance: {fileID: 8162783328954038885}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &89319776
 GameObject:
   m_ObjectHideFlags: 0
@@ -42216,6 +42227,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1713611423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8162783328470784748, guid: a8789fcc6bff740f6acd3475c9f9cfe3, type: 3}
+  m_PrefabInstance: {fileID: 8162783328954038885}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1715142616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6006908562569830665, guid: d77bcba837bb549e7897a46bf337e01f,
@@ -51946,6 +51962,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 8162783328255631710, guid: a8789fcc6bff740f6acd3475c9f9cfe3,
         type: 3}
       propertyPath: textoPausa
@@ -51963,6 +51980,17 @@ PrefabInstance:
       objectReference: {fileID: 1088998507}
     - target: {fileID: 8162783328255631711, guid: a8789fcc6bff740f6acd3475c9f9cfe3,
         type: 3}
+=======
+    - target: {fileID: 8162783328255631710, guid: a8789fcc6bff740f6acd3475c9f9cfe3, type: 3}
+      propertyPath: textoPausa
+      value: 
+      objectReference: {fileID: 86457192}
+    - target: {fileID: 8162783328255631710, guid: a8789fcc6bff740f6acd3475c9f9cfe3, type: 3}
+      propertyPath: botonResume
+      value: 
+      objectReference: {fileID: 1713611423}
+    - target: {fileID: 8162783328255631711, guid: a8789fcc6bff740f6acd3475c9f9cfe3, type: 3}
+>>>>>>> Stashed changes
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
