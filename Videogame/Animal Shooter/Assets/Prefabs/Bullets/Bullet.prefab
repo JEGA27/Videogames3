@@ -79,8 +79,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 7720230645998100160, guid: f2cfea87ecae0c7448b34c3613756474,
     type: 3}
-  speed: 35
-  bulletDamage: 5
+  speed: 50
+  bulletDamage: 7
 --- !u!96 &90845880892405641
 TrailRenderer:
   serializedVersion: 2

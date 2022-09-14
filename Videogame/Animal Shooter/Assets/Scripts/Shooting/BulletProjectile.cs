@@ -14,6 +14,7 @@ public class BulletProjectile : MonoBehaviour
 
     private Rigidbody bulletRigidbody;
     private Health healthSystem;
+    private DummyHealth dummyHealth;
 
 
     void Awake()
@@ -41,8 +42,18 @@ public class BulletProjectile : MonoBehaviour
             //vfxHitGreen.transform.position = transform.position;
             //vfxHitGreen.Emit(1);
             //Destroy(hitEffect);
-            healthSystem = other.GetComponent<Health>();
-            healthSystem.TakeDamage(bulletDamage);
+
+
+            if(other.GetComponent<DummyHealth>() != null)
+            {
+                dummyHealth = other.GetComponent<DummyHealth>();
+                dummyHealth.TakeDamage(bulletDamage);
+            }
+            else
+            {
+                healthSystem = other.GetComponent<Health>();
+                healthSystem.TakeDamage(bulletDamage);
+            }
 
         }
         else
