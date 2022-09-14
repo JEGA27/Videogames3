@@ -383,8 +383,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  hpIncrease: 5
-  timeToRecover: 15
+  hpIncrease: 100
+  timeToRecover: 3
   healthUI: {fileID: 3003263049993453593}
   slider: {fileID: 3003263048734555493}
 --- !u!1 &1580087779347600959
