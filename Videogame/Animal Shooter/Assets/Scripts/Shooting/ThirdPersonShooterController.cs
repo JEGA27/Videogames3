@@ -16,8 +16,6 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField]
     private LayerMask aimColliderLayerMask = new LayerMask();
     [SerializeField]
-    private Transform spawnBulletPosition;
-    [SerializeField]
     private GameObject weapon1;
     [SerializeField]
     private GameObject weapon2;
@@ -30,6 +28,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     private Animator animator;
     Vector3 mouseWorldPosition;
     private WeaponStats weaponStats;
+    private ParticleSystem muzzleFlash;
 
 
     int bulletsLeft, bulletsShot;
@@ -114,8 +113,8 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     private void Shoot()
     {
-      Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
-      Instantiate(weaponStats.bulletProjectilePrefab, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+      Vector3 aimDir = (mouseWorldPosition - weaponStats.spawnBulletPosition.position).normalized;
+      Instantiate(weaponStats.bulletProjectilePrefab, weaponStats.spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
       starterAssetsInputs.shoot = false;
       readyToShoot = false;
       float x = Random.Range(-weaponStats.spread, weaponStats.spread);
@@ -135,6 +134,8 @@ public class ThirdPersonShooterController : MonoBehaviour
 
       CineMachineShake.Instance.ShakeCamera(5f, 0.1f);
       AimCinemachineShake.Instance.ShakeCamera(2f, 0.1f);
+
+      weaponStats.muzzleFlash.Emit(1);
 
 
     }

@@ -61,7 +61,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6408221493724912935}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1274816179254625297
 GameObject:
@@ -130,7 +130,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6408221493724912935}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1353684605544894765
 MeshFilter:
@@ -207,7 +207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454972eaa769b094f8cf1a33e0793981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletProjectilePrefab: {fileID: 6253658195423583733, guid: 1fba4297e48365a469de032f0439f011, type: 3}
+  bulletProjectilePrefab: {fileID: 6253658195423583733, guid: 1fba4297e48365a469de032f0439f011,
+    type: 3}
+  spawnBulletPosition: {fileID: 0}
   timeBetweenShooting: 0.5
   spread: 0.02
   reloadTime: 1
@@ -246,9 +248,10 @@ Transform:
   m_LocalPosition: {x: 0.0032, y: 0.0329, z: 0.0165}
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6873665119928142452}
   m_Father: {fileID: 6408221493724912935}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1353684606245988362
 MeshFilter:
@@ -325,7 +328,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454972eaa769b094f8cf1a33e0793981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletProjectilePrefab: {fileID: 6253658195423583733, guid: 624e5c9901fc1d34c9d7cd0bd96d4076, type: 3}
+  bulletProjectilePrefab: {fileID: 6253658195423583733, guid: 624e5c9901fc1d34c9d7cd0bd96d4076,
+    type: 3}
+  spawnBulletPosition: {fileID: 0}
   timeBetweenShooting: 0.5
   spread: 0.02
   reloadTime: 1
@@ -856,7 +861,6 @@ Transform:
   m_Children:
   - {fileID: 2500604841854306658}
   - {fileID: 1494845103908421043}
-  - {fileID: 6873665119928142452}
   - {fileID: 6873665120869546232}
   - {fileID: 4961449528728347998}
   - {fileID: 1353684605544894766}
@@ -920,10 +924,10 @@ MonoBehaviour:
   aimColliderLayerMask:
     serializedVersion: 2
     m_Bits: 1
-  spawnBulletPosition: {fileID: 6873665119928142452}
   weapon1: {fileID: 1353684605544894761}
   weapon2: {fileID: 1353684606245988374}
   swapWeaponTime: 3
+  muzzleFlash: {fileID: 0}
 --- !u!114 &6873665120438634929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1019,7 +1023,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 4419d82f33d36e848b3ed5af4c8da37e, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 4419d82f33d36e848b3ed5af4c8da37e,
+    type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -1293,12 +1298,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6873665119928142459}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0355, z: 0.024500007}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalPosition: {x: -0.64, y: 0.51999915, z: 1.6000013}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6408221493724912935}
-  m_RootOrder: 2
+  m_Father: {fileID: 1353684606245988363}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6873665120869546239
 GameObject:
@@ -1329,7 +1334,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6408221493724912935}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6937121387881538833
 GameObject:

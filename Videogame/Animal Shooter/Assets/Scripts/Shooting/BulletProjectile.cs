@@ -6,9 +6,7 @@ public class BulletProjectile : MonoBehaviour
 {
 
     [SerializeField]
-    private Transform vfxHitGreen;
-    [SerializeField]
-    private Transform vfxHitRed;
+    private ParticleSystem hitEffect;
     [SerializeField]
     private float speed;
     [SerializeField]
@@ -40,15 +38,22 @@ public class BulletProjectile : MonoBehaviour
         if(other.GetComponent<BulletTarget>() != null)
         {
             //Instantiate(vfxHitGreen, transform.position , Quaternion.identity);
+            //vfxHitGreen.transform.position = transform.position;
+            //vfxHitGreen.Emit(1);
+            //Destroy(hitEffect);
             healthSystem = other.GetComponent<Health>();
             healthSystem.TakeDamage(bulletDamage);
-    
+
         }
         else
         {
             //Instantiate(vfxHitRed, transform.position , Quaternion.identity);
+            //vfxHitGreen.transform.position = transform.position;
+            //vfxHitRed.Emit(1);
+          //  Destroy(vfxHitGreen);
             Debug.Log("No target");
         }
+        Instantiate(hitEffect, transform.position , Quaternion.identity);
         Destroy(gameObject);
     }
 
