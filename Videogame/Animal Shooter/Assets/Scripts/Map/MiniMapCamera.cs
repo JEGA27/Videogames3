@@ -6,9 +6,7 @@ public class MiniMapCamera : MonoBehaviour
 {
     public Transform player;
 
-    private void LateUpdate() {
-        Vector3 newPosition = player.position;
-        newPosition.y = transform.position.y;
-        transform.position = newPosition;
+    void Update() {
+        transform.position = new Vector3(player.position.x, transform.position.y, player.position.z);
     }
 }
