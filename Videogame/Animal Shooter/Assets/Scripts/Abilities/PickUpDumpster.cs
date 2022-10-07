@@ -20,28 +20,25 @@ public class PickUpDumpster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canPickUp) 
+        if(canPickUp && Input.GetKeyDown("g")) 
         {
-            if (Input.GetKey("g"))  
+            if (!hasDumpster)
             {
+                hasDumpster = true;
                 Dumpster.GetComponent<Rigidbody>().isKinematic = true; 
                 Dumpster.transform.parent = gameObject.transform;
-                
-                //Dumpster.transform.localRotation = gameObject.transform.rotation;
+                    
                 Dumpster.transform.localPosition = dumpsterPos.transform.localPosition;
                 Dumpster.transform.localRotation = Quaternion.Euler(0f, -90f, 0f);
-                //Debug.Log(gameObject.transform.forward);
-                
-                hasDumpster = true;
             }
+            else
+            {
+                hasDumpster = false;
+                Dumpster.GetComponent<Rigidbody>().isKinematic = false;
+                Dumpster.transform.parent = null;
+            } 
         }
-        if (Input.GetKey("e") && hasDumpster) 
-        {
-            Debug.Log("Drop");
-            Dumpster.GetComponent<Rigidbody>().isKinematic = false;
-            Dumpster.transform.parent = null;
-            hasDumpster = false;
-        }
+        GetComponent<ThirdPersonShooterController>().enabled = !hasDumpster;
     }
     void OnTriggerEnter(Collider other) 
     {
