@@ -16,7 +16,6 @@ public class Health : MonoBehaviour
     public float timeToRecover;
     private float timer;
 
-
     //private Rigidbody rb;
     private ThirdPersonController thirdPersonController;
 
