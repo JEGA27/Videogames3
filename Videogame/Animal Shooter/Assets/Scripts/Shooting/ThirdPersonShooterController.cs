@@ -63,8 +63,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     void Update()
     {
 
-
-        if (Input.GetKeyDown(KeyCode.JoystickButton3)) {
+        if (starterAssetsInputs.swapWeapon) {
+            starterAssetsInputs.swapWeapon = false;
             weapon = -weapon;
             swap = true;
 
@@ -118,7 +118,11 @@ public class ThirdPersonShooterController : MonoBehaviour
         if (weaponStats.allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = starterAssetsInputs.shoot;
 
-        if ((Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Joystick1Button2)) && bulletsLeft < weaponStats.magazineSize && !reloading) Reload();
+        if (starterAssetsInputs.reload && bulletsLeft < weaponStats.magazineSize && !reloading) {
+            Reload();
+            starterAssetsInputs.reload = false;
+        }
+        
 
         //Shoot
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0){

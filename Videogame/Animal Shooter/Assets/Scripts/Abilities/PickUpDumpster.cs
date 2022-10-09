@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,19 +9,21 @@ public class PickUpDumpster : MonoBehaviour
 
     private bool canPickUp;
     private GameObject Dumpster; 
-    private bool hasDumpster; 
+    private bool hasDumpster;
+    private StarterAssetsInputs starterAssetsInputs;
 
     // Start is called before the first frame update
     void Start()
     {
         canPickUp = false; 
         hasDumpster = false;
+        starterAssetsInputs = GetComponent<StarterAssetsInputs>();
     }
  
     // Update is called once per frame
     void Update()
     {
-        if(canPickUp && Input.GetKeyDown("g") || Input.GetKeyDown(KeyCode.JoystickButton1)) 
+        if(starterAssetsInputs.interact) 
         {
             if (!hasDumpster)
             {
@@ -36,7 +39,8 @@ public class PickUpDumpster : MonoBehaviour
                 hasDumpster = false;
                 Dumpster.GetComponent<Rigidbody>().isKinematic = false;
                 Dumpster.transform.parent = null;
-            } 
+            }
+            starterAssetsInputs.interact = false;
         }
         GetComponent<ThirdPersonShooterController>().enabled = !hasDumpster;
     }

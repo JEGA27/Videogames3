@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class RobTrash : MonoBehaviour
 
     private float timer;
     private float timeForRobbery;
+    private StarterAssetsInputs starterAssetsInputs;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,7 @@ public class RobTrash : MonoBehaviour
         playerTeam = this.gameObject.tag;
         robbedTrash = 0.0f;
         timer = 0.0f;
+        starterAssetsInputs = GetComponent<StarterAssetsInputs>();
     }
 
     // Update is called once per frame
@@ -35,7 +38,7 @@ public class RobTrash : MonoBehaviour
             timeForRobbery = (float) GameManager.blueTeamTrash / rateOfRobbing;
             if (playerTeam == "RedPlayer")
             {
-                if (Input.GetKey("g") || Input.GetKeyDown(KeyCode.JoystickButton1))
+                if (starterAssetsInputs.interact)
                 {
                     timer += Time.deltaTime;
                     if (timer > timeForRobbery) 
@@ -43,8 +46,10 @@ public class RobTrash : MonoBehaviour
                         PickUpTrash.currentTrash += GameManager.blueTeamTrash;
                         GameManager.blueTeamTrash = 0;
                     }
-                     
+
+                    starterAssetsInputs.interact = false;
                 }
+                
             }
 
         }
@@ -54,7 +59,7 @@ public class RobTrash : MonoBehaviour
             timeForRobbery = (float) GameManager.redTeamTrash / rateOfRobbing;
             if (playerTeam == "BluePlayer")
             {
-                if (Input.GetKey("g") || Input.GetKeyDown(KeyCode.JoystickButton1))
+                if (starterAssetsInputs.interact)
                 {
                     timer += Time.deltaTime;
                     if (timer > timeForRobbery) 
@@ -62,7 +67,7 @@ public class RobTrash : MonoBehaviour
                         PickUpTrash.currentTrash += GameManager.redTeamTrash;
                         GameManager.redTeamTrash = 0;
                     }
-                     
+                    starterAssetsInputs.interact = false;
                 }
             }
 
