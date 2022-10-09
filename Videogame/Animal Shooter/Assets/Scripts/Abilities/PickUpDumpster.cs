@@ -20,7 +20,7 @@ public class PickUpDumpster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canPickUp && Input.GetKeyDown("g")) 
+        if(canPickUp && Input.GetKeyDown("g") || Input.GetKeyDown(KeyCode.JoystickButton1)) 
         {
             if (!hasDumpster)
             {

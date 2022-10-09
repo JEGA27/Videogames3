@@ -35,7 +35,7 @@ public class RobTrash : MonoBehaviour
             timeForRobbery = (float) GameManager.blueTeamTrash / rateOfRobbing;
             if (playerTeam == "RedPlayer")
             {
-                if (Input.GetKey("g"))
+                if (Input.GetKey("g") || Input.GetKeyDown(KeyCode.JoystickButton1))
                 {
                     timer += Time.deltaTime;
                     if (timer > timeForRobbery) 
@@ -54,7 +54,7 @@ public class RobTrash : MonoBehaviour
             timeForRobbery = (float) GameManager.redTeamTrash / rateOfRobbing;
             if (playerTeam == "BluePlayer")
             {
-                if (Input.GetKey("g"))
+                if (Input.GetKey("g") || Input.GetKeyDown(KeyCode.JoystickButton1))
                 {
                     timer += Time.deltaTime;
                     if (timer > timeForRobbery) 

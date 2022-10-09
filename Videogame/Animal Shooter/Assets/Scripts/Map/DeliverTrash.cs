@@ -28,7 +28,7 @@ public class DeliverTrash : MonoBehaviour
 
             if (playerTeam == "BluePlayer")
             {
-                if (Input.GetKeyDown("g"))
+                if (Input.GetKeyDown("g") || Input.GetKeyDown(KeyCode.JoystickButton1))
                 {
                     GameManager.blueTeamTrash += PickUpTrash.currentTrash;
                     PickUpTrash.currentTrash = 0;   
@@ -41,7 +41,7 @@ public class DeliverTrash : MonoBehaviour
 
             if (playerTeam == "RedPlayer")
             {
-                if (Input.GetKeyDown("g"))
+                if (Input.GetKeyDown("g") || Input.GetKeyDown(KeyCode.JoystickButton1))
                 {
                     GameManager.redTeamTrash += PickUpTrash.currentTrash;
                     PickUpTrash.currentTrash = 0;   

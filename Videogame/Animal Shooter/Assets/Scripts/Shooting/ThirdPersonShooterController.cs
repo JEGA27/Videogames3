@@ -4,6 +4,8 @@ using UnityEngine;
 using Cinemachine;
 using StarterAssets;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
+using UnityEditor.Experimental.GraphView;
 
 public class ThirdPersonShooterController : MonoBehaviour
 {
@@ -29,7 +31,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     Vector3 mouseWorldPosition;
     private WeaponStats weaponStats;
     private ParticleSystem muzzleFlash;
-
+    private float weapon = 1f;
+    private bool swap = true;
 
     int bulletsLeft, bulletsShot;
 
@@ -59,6 +62,19 @@ public class ThirdPersonShooterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+        if (Input.GetKeyDown(KeyCode.JoystickButton3)) {
+            weapon = -weapon;
+            swap = true;
+
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") != 0f)
+        {
+            weapon = Input.GetAxis("Mouse ScrollWheel");
+            swap = true;
+        }
 
         StartCoroutine(SwapWeapon());
 
@@ -102,7 +118,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         if (weaponStats.allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = starterAssetsInputs.shoot;
 
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < weaponStats.magazineSize && !reloading) Reload();
+        if ((Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Joystick1Button2)) && bulletsLeft < weaponStats.magazineSize && !reloading) Reload();
 
         //Shoot
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0){
@@ -129,8 +145,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
       Invoke("ResetShot", weaponStats.timeBetweenShooting);
 
-      if(bulletsShot > 0 && bulletsLeft > 0)
-      Invoke("Shoot", weaponStats.timeBetweenShots);
+      if(bulletsShot > 0 && bulletsLeft > 0) Invoke("Shoot", weaponStats.timeBetweenShots);
 
       CineMachineShake.Instance.ShakeCamera(5f, 0.1f);
       AimCinemachineShake.Instance.ShakeCamera(2f, 0.1f);
@@ -158,8 +173,11 @@ public class ThirdPersonShooterController : MonoBehaviour
     private IEnumerator SwapWeapon()
     {
       //Swap weapon
-      if(Input.GetKeyDown(KeyCode.Alpha1))
+      //if(Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.JoystickButton3) || weapon > 0)
+
+      if (swap && weapon > 0)
       {
+          swap = false;
           readyToShoot = false;
           weapon2.SetActive(false);
           yield return new WaitForSeconds(swapWeaponTime);
@@ -167,8 +185,10 @@ public class ThirdPersonShooterController : MonoBehaviour
           weapon1.SetActive(true);
           weaponStats = weapon1.GetComponent<WeaponStats>();
       }
-      else if(Input.GetKeyDown(KeyCode.Alpha2))
+      //else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.JoystickButton1) || weapon < 0)
+      else if(swap && weapon < 0)
       {
+          swap = false;
           readyToShoot = false;
           weapon1.SetActive(false);
           yield return new WaitForSeconds(swapWeaponTime);

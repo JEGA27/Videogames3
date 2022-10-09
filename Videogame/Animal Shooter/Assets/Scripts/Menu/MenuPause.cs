@@ -13,7 +13,7 @@ public class MenuPause : MonoBehaviour
 
     void Update ()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)) {
+        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7)) {
             textoPausa.enabled = true;
             botonResume.SetActive(true);
             botonReturn.SetActive(true);
