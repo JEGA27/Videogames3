@@ -5,6 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - NavPoint
+  - Trash
+  - Dumpster
+  - Car
+  - CinemachineTarget
+  - BlueTrashBase
+  - BluePlayer
+  - RedTrashBase
+  - New tag
+  - Sewer
   layers:
   - Default
   - TransparentFX
