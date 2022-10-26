@@ -15,6 +15,9 @@ public class TrashSpawner : MonoBehaviour
     private float distanceFromCenterMax;
     private float sizeZ;
 
+    public float time;
+    public float timeToSpawn;
+
     private Vector3 extends;
     private Vector3 bottomLeft;
     private Vector3 bottomRight;
@@ -24,6 +27,8 @@ public class TrashSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        time = 0;
+
         centerOfSpawn = this.GetComponent< Renderer>().bounds.center;
         
         MeshFilter meshFilter = GetComponent<MeshFilter>();
@@ -73,8 +78,25 @@ public class TrashSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        time += Time.deltaTime;
 
+        if (time > timeToSpawn)
+        {
+            StartCoroutine(TimedSpawner());
+            time = 0.0f;
+        }
 
     }
 
+    IEnumerator TimedSpawner()
+    {
+        float posZ = Random.Range(bottomLeft.z, topRight.z);
+        float posX = Random.Range(bottomLeft.x, topRight.x);
+        Vector3 pos = new Vector3(posX, centerOfSpawn.y, posZ);
+        Instantiate(trashPrefabs[Random.Range(0, trashPrefabs.Count)], pos, Random.rotation);
+        yield return new WaitForSeconds(1f);
+    }
+
 }
+
+
