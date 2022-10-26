@@ -31,8 +31,7 @@ public class MenuPause : MonoBehaviour
             botonResume.SetActive(true);
             botonReturn.SetActive(true);
             crosshair.SetActive(false);
-            Time.timeScale = 0f;
-            starterAssetsInputs.pause = false;
+            Time.timeScale = 1f;
         }
     }
 
