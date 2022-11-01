@@ -16,6 +16,8 @@ public class MainMenu : MonoBehaviour
 
     [Space]
     public GameObject StageCanvas_Play;
+    public GameObject Panel_PlayJoin;
+    public GameObject Panel_PlayCreate;
 
     [Space]
     public GameObject StageCanvas_Options;
@@ -29,7 +31,9 @@ public class MainMenu : MonoBehaviour
     {
         stageCam = 0;
         StageCanvas_0.SetActive(true);
+
         StageCanvas_Play.SetActive(false);
+
         StageCanvas_Options.SetActive(false);
         StageCanvas_Extras.SetActive(false);
         currentCanvasTab = -1;
@@ -114,6 +118,18 @@ public class MainMenu : MonoBehaviour
     public void ShowExtras()
     {
         stageCam = 3;
+    }
+
+    public void ShowJoinPanel()
+    {
+       Panel_PlayJoin.SetActive(true);
+       Panel_PlayCreate.SetActive(false);
+    }
+
+    public void ShowCreatePanel()
+    {
+       Panel_PlayJoin.SetActive(false);
+       Panel_PlayCreate.SetActive(true);
     }
 
     public void Play() {
