@@ -5,7 +5,8 @@ using Cinemachine;
 using StarterAssets;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
-using UnityEditor.Experimental.GraphView;
+using Photon.Pun;
+//using UnityEditor.Experimental.GraphView;
 
 public class ThirdPersonShooterController : MonoBehaviour
 {
@@ -39,16 +40,22 @@ public class ThirdPersonShooterController : MonoBehaviour
     //bools
     bool shooting, readyToShoot, reloading;
 
-
+    PhotonView PV;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        if(!PV.IsMine){
+            animVirtualCamera.gameObject.SetActive(false);
+            gameObject.transform.Find("HUD").gameObject.SetActive(false);
+            gameObject.transform.Find("Cameras").gameObject.SetActive(false);
+        }
+            
     }
 
     void Awake()
     {
+        PV = GetComponent<PhotonView>();
         thirdPersonController = GetComponent<ThirdPersonController>();
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         animator = GetComponent<Animator>();
@@ -86,7 +93,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             mouseWorldPosition = raycastHit.point;
         }
 
-        if(starterAssetsInputs.aim)
+        if(starterAssetsInputs.aim && PV.IsMine)
         {
             animVirtualCamera.gameObject.SetActive(true);
             thirdPersonController.SetSensitivity(aimSensitivity);
