@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : MonoBehaviourPunCallbacks
 {
     public GameObject cam;
     public GameObject rot_camera;
@@ -25,6 +26,9 @@ public class MainMenu : MonoBehaviour
     [Space]
     public GameObject StageCanvas_Extras;
 
+    [Space]
+    public GameObject StageCanvas_Loading;
+
     private int currentCanvasTab;
 
     void Start() 
@@ -36,6 +40,7 @@ public class MainMenu : MonoBehaviour
 
         StageCanvas_Options.SetActive(false);
         StageCanvas_Extras.SetActive(false);
+        StageCanvas_Loading.SetActive(false);
         currentCanvasTab = -1;
     }
 
@@ -61,6 +66,7 @@ public class MainMenu : MonoBehaviour
                 StageCanvas_Options.SetActive(false);
                 StageCanvas_Play.SetActive(true);
                 StageCanvas_Extras.SetActive(false);
+                StageCanvas_Loading.SetActive(false);
                 break;
             case 3:
                 StageCanvas_0.SetActive(false);
@@ -69,6 +75,14 @@ public class MainMenu : MonoBehaviour
                 StageCanvas_Play.SetActive(false);
                 StageCanvas_Extras.SetActive(true);
                 break;
+            case 4:
+                StageCanvas_Loading.SetActive(true);
+
+                StageCanvas_0.SetActive(false);
+                StageCanvas_Options.SetActive(false);
+                StageCanvas_Play.SetActive(false);
+                StageCanvas_Extras.SetActive(false);
+                break;
             default:
                 cam.transform.RotateAround(rot_camera.transform.position, Vector3.up, rot_velocity * Time.deltaTime);
                 break;
@@ -76,7 +90,9 @@ public class MainMenu : MonoBehaviour
 
         if (Input.anyKeyDown && stageCam == 0)
         {
-            stageCam = 2;
+            stageCam = 4;
+            // Connect to Photon
+            PhotonNetwork.ConnectUsingSettings();
         }
         
         if (Input.GetKeyDown("right"))
@@ -139,5 +155,17 @@ public class MainMenu : MonoBehaviour
     public void Quit() {
         Application.Quit();
         Debug.Log("Saliendo del juego");
+    }
+
+    // Photon connection to master
+    public override void OnConnectedToMaster()
+    {
+        PhotonNetwork.JoinLobby();
+    }
+
+    // Photon connection to lobby
+    public override void OnJoinedLobby()
+    {
+        stageCam = 2;
     }
 }
