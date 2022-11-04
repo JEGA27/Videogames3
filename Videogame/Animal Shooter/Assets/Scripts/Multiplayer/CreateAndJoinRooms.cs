@@ -1,0 +1,66 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using Photon.Pun;
+using Photon.Realtime;
+using TMPro;
+
+public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
+{
+    public TMP_InputField createInput;
+    public TMP_InputField joinInput;
+
+    private byte maxPlayers = 2;
+
+    public static CreateAndJoinRooms instance;
+
+    void Awake()    
+    {
+        instance = this;
+    }
+
+    public void CreateRoomName() {
+        RoomOptions roomOptions = new RoomOptions();
+        roomOptions.MaxPlayers = maxPlayers;
+        PhotonNetwork.CreateRoom(createInput.text, roomOptions, null);
+
+    }
+    public void CreateRoom()
+    {
+        RoomOptions roomOptions = new RoomOptions();
+        roomOptions.MaxPlayers = maxPlayers;
+        PhotonNetwork.CreateRoom(null, roomOptions, null);
+    }
+
+    public void QuickMatch()
+    {
+        PhotonNetwork.JoinRandomRoom();
+    }
+
+    public void JoinRoom()
+    {
+
+        PhotonNetwork.JoinRoom(joinInput.text);
+    }
+
+    public override void OnJoinRandomFailed(short returnCode, string message)
+    {
+        CreateRoom();
+    }
+
+    public override void OnJoinedRoom()
+    {
+        Player local = PhotonNetwork.LocalPlayer;
+
+        //int number = PhotonNetwork.PlayerList.Count;
+        //PhotonNetwork.LocalPlayer.NickName = name.text;
+
+        PhotonNetwork.LoadLevel("City");
+    }
+
+    public void JoinRoomName(RoomInfo info)
+    {
+        PhotonNetwork.JoinRoom(info.Name);
+    }
+}

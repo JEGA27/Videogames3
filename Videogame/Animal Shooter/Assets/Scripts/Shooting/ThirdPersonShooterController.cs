@@ -4,6 +4,9 @@ using UnityEngine;
 using Cinemachine;
 using StarterAssets;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
+using Photon.Pun;
+//using UnityEditor.Experimental.GraphView;
 
 public class ThirdPersonShooterController : MonoBehaviour
 {
@@ -29,23 +32,30 @@ public class ThirdPersonShooterController : MonoBehaviour
     Vector3 mouseWorldPosition;
     private WeaponStats weaponStats;
     private ParticleSystem muzzleFlash;
-
+    private float weapon = 1f;
+    private bool swap = true;
 
     int bulletsLeft, bulletsShot;
 
     //bools
     bool shooting, readyToShoot, reloading;
 
-
+    PhotonView PV;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        if(!PV.IsMine){
+            animVirtualCamera.gameObject.SetActive(false);
+            gameObject.transform.Find("HUD").gameObject.SetActive(false);
+            gameObject.transform.Find("Cameras").gameObject.SetActive(false);
+        }
+            
     }
 
     void Awake()
     {
+        PV = GetComponent<PhotonView>();
         thirdPersonController = GetComponent<ThirdPersonController>();
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         animator = GetComponent<Animator>();
@@ -60,6 +70,19 @@ public class ThirdPersonShooterController : MonoBehaviour
     void Update()
     {
 
+        if (starterAssetsInputs.swapWeapon) {
+            starterAssetsInputs.swapWeapon = false;
+            weapon = -weapon;
+            swap = true;
+
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") != 0f)
+        {
+            weapon = Input.GetAxis("Mouse ScrollWheel");
+            swap = true;
+        }
+
         StartCoroutine(SwapWeapon());
 
         mouseWorldPosition = Vector3.zero;
@@ -70,7 +93,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             mouseWorldPosition = raycastHit.point;
         }
 
-        if(starterAssetsInputs.aim)
+        if(starterAssetsInputs.aim && PV.IsMine)
         {
             animVirtualCamera.gameObject.SetActive(true);
             thirdPersonController.SetSensitivity(aimSensitivity);
@@ -102,7 +125,11 @@ public class ThirdPersonShooterController : MonoBehaviour
         if (weaponStats.allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = starterAssetsInputs.shoot;
 
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < weaponStats.magazineSize && !reloading) Reload();
+        if (starterAssetsInputs.reload && bulletsLeft < weaponStats.magazineSize && !reloading) {
+            Reload();
+            starterAssetsInputs.reload = false;
+        }
+        
 
         //Shoot
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0){
@@ -129,8 +156,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
       Invoke("ResetShot", weaponStats.timeBetweenShooting);
 
-      if(bulletsShot > 0 && bulletsLeft > 0)
-      Invoke("Shoot", weaponStats.timeBetweenShots);
+      if(bulletsShot > 0 && bulletsLeft > 0) Invoke("Shoot", weaponStats.timeBetweenShots);
 
       CineMachineShake.Instance.ShakeCamera(5f, 0.1f);
       AimCinemachineShake.Instance.ShakeCamera(2f, 0.1f);
@@ -158,8 +184,11 @@ public class ThirdPersonShooterController : MonoBehaviour
     private IEnumerator SwapWeapon()
     {
       //Swap weapon
-      if(Input.GetKeyDown(KeyCode.Alpha1))
+      //if(Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.JoystickButton3) || weapon > 0)
+
+      if (swap && weapon > 0)
       {
+          swap = false;
           readyToShoot = false;
           weapon2.SetActive(false);
           yield return new WaitForSeconds(swapWeaponTime);
@@ -167,8 +196,10 @@ public class ThirdPersonShooterController : MonoBehaviour
           weapon1.SetActive(true);
           weaponStats = weapon1.GetComponent<WeaponStats>();
       }
-      else if(Input.GetKeyDown(KeyCode.Alpha2))
+      //else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.JoystickButton1) || weapon < 0)
+      else if(swap && weapon < 0)
       {
+          swap = false;
           readyToShoot = false;
           weapon1.SetActive(false);
           yield return new WaitForSeconds(swapWeaponTime);

@@ -14,7 +14,11 @@ namespace StarterAssets
 		public bool sprint;
 		public bool aim;
 		public bool shoot;
-		[Header("Movement Settings")]
+		public bool reload;
+        public bool interact;
+        public bool swapWeapon;
+        public bool pause;
+        [Header("Movement Settings")]
 		public bool analogMovement;
 
 		[Header("Mouse Cursor Settings")]
@@ -49,16 +53,33 @@ namespace StarterAssets
 		{
 			AimInput(value.isPressed);
 		}
+        public void OnInteract(InputValue value)
+        {
+            InteractInput(value.isPressed);
+        }
+        public void OnReload(InputValue value)
+        {
+            ReloadInput(value.isPressed);
+        }
+        public void OnSwapWeapon(InputValue value)
+        {
+            SwapWeaponInput(value.isPressed);
+        }
 
-		public void OnShoot(InputValue value)
+        public void OnShoot(InputValue value)
 		{
 			ShootInput(value.isPressed);
 		}
 
+        public void OnPause(InputValue value)
+        {
+            PauseInput(value.isPressed);
+        }
+
 #endif
 
 
-		public void MoveInput(Vector2 newMoveDirection)
+        public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
 		}
@@ -83,7 +104,22 @@ namespace StarterAssets
 			aim = newAimState;
 		}
 
-		public void ShootInput(bool newShootState)
+        public void InteractInput(bool newInteractState)
+        {
+            interact = newInteractState;
+        }
+
+        public void ReloadInput(bool newReloadState)
+        {
+            reload = newReloadState;
+        }
+
+        public void SwapWeaponInput(bool newSwapWeaponState)
+        {
+            swapWeapon = newSwapWeaponState;
+        }
+
+        public void ShootInput(bool newShootState)
 		{
 			shoot = newShootState;
 		}
@@ -97,6 +133,11 @@ namespace StarterAssets
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
-	}
+
+        public void PauseInput(bool newPauseState)
+        {
+            pause = newPauseState;
+        }
+    }
 
 }

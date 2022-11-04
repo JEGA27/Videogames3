@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
+using Photon.Pun;
 
 public class Health : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Health : MonoBehaviour
     public float timeToRecover;
     private float timer;
 
+    PhotonView PV;
 
     //private Rigidbody rb;
     private ThirdPersonController thirdPersonController;
@@ -28,6 +30,8 @@ public class Health : MonoBehaviour
         maxHp = hp;
         GameManager.maxRaccoonHealth = hp;
         timer = 0.0f;
+
+        PV = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
@@ -60,6 +64,14 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        PV.RPC("TakeDamageRPC", RpcTarget.All, damage);
+    }
+
+    [PunRPC]
+    public void TakeDamageRPC(float damage)
+    {
+        if(!PV.IsMine) return;
+        
         hp -= damage;
         timer = 0f;
     }

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
+using StarterAssets;
 
 public class MenuPause : MonoBehaviour
 {
@@ -10,19 +13,30 @@ public class MenuPause : MonoBehaviour
     public GameObject botonResume;
     public GameObject botonReturn;
     public GameObject crosshair;
+    private StarterAssetsInputs starterAssetsInputs;
 
-    void Update ()
+    void Awake()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)) {
+        starterAssetsInputs = GameObject.Find("Racoon").GetComponent<StarterAssetsInputs>();
+
+
+
+    }
+
+    void Update()
+    {
+        if (starterAssetsInputs.pause)
+        {
             textoPausa.enabled = true;
             botonResume.SetActive(true);
             botonReturn.SetActive(true);
             crosshair.SetActive(false);
-            Time.timeScale = 0f;
+            Time.timeScale = 1f;
         }
     }
 
-    public void ResumeGame() {
+    public void ResumeGame()
+    {
         Time.timeScale = 1f;
         textoPausa.enabled = false;
         botonResume.SetActive(false);
@@ -30,7 +44,8 @@ public class MenuPause : MonoBehaviour
         crosshair.SetActive(true);
     }
 
-    public void ExitGame() {
+    public void ExitGame()
+    {
         SceneManager.LoadScene(0);
     }
 }
