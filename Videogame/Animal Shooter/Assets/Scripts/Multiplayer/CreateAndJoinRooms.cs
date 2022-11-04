@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 
 public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 {
-    public InputField createInput;
- 
-   public InputField joinInput;
+    public TMP_InputField createInput;
+    public TMP_InputField joinInput;
+
     private byte maxPlayers = 2;
 
     // Start is called before the first frame update
@@ -22,7 +23,6 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     }
     public void CreateRoom()
     {
-
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = maxPlayers;
         PhotonNetwork.CreateRoom(null, roomOptions, null);
