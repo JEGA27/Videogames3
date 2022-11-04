@@ -13,7 +13,12 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 
     private byte maxPlayers = 2;
 
-    // Start is called before the first frame update
+    public static CreateAndJoinRooms instance;
+
+    void Awake()    
+    {
+        instance = this;
+    }
 
     public void CreateRoomName() {
         RoomOptions roomOptions = new RoomOptions();
@@ -52,5 +57,10 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
         //PhotonNetwork.LocalPlayer.NickName = name.text;
 
         PhotonNetwork.LoadLevel("City");
+    }
+
+    public void JoinRoomName(RoomInfo info)
+    {
+        PhotonNetwork.JoinRoom(info.Name);
     }
 }

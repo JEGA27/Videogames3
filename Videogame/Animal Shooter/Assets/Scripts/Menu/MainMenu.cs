@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class MainMenu : MonoBehaviourPunCallbacks
 {
@@ -30,6 +31,9 @@ public class MainMenu : MonoBehaviourPunCallbacks
     public GameObject StageCanvas_Loading;
 
     private int currentCanvasTab;
+
+    [SerializeField] Transform roomListContent;
+    [SerializeField] GameObject roomListPrefab;
 
     void Start() 
     {
@@ -167,5 +171,17 @@ public class MainMenu : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         stageCam = 2;
+    }
+
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        foreach (Transform child in roomListContent)
+        {
+            Destroy(child.gameObject);
+        }
+        for (int i = 0; i < roomList.Count; i++)
+        {
+            Instantiate(roomListPrefab, roomListContent).GetComponent<ListItem>().SetUp(roomList[i]);
+        }
     }
 }
