@@ -11,8 +11,12 @@ public class DummyHealth : MonoBehaviour
     public float timeToRecover;
     public GameObject healthUI;
     public Slider slider;
-
     private float timer;
+    //Vehicle Variables
+    public int objectsToSpawn;
+    public List<GameObject> objectsPrefabs = new List<GameObject>();
+    public bool ActiveTrashDrop = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +40,15 @@ public class DummyHealth : MonoBehaviour
           else
           {
               Eliminate();
+          }
+
+          if (hp == 0 && ActiveTrashDrop)
+          {
+              for (int i = 0; i < objectsToSpawn; i++)
+              {
+                  Instantiate(objectsPrefabs[Random.Range(0, objectsPrefabs.Count)], transform.position, Random.rotation);
+              }
+              Destroy(this.gameObject);
           }
       }
     }
@@ -63,7 +76,6 @@ public class DummyHealth : MonoBehaviour
             hp = maxHp;
             timer = 0;
         }
-
     }
 
     void Eliminate()
