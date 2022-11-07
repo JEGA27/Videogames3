@@ -15,6 +15,9 @@ public class RobTrash : MonoBehaviour
     private float timeForRobbery;
     private StarterAssetsInputs starterAssetsInputs;
 
+    // Script to handle the stolem trash
+    ScoreSW scoreSW;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,7 @@ public class RobTrash : MonoBehaviour
         robbedTrash = 0.0f;
         timer = 0.0f;
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
+        scoreSW = GetComponent<ScoreSW>();
     }
 
     // Update is called once per frame
@@ -44,6 +48,8 @@ public class RobTrash : MonoBehaviour
                     if (timer > timeForRobbery) 
                     {
                         PickUpTrash.currentTrash += GameManager.blueTeamTrash;
+                        // Update trash robbed
+                        scoreSW.trashRobbed += GameManager.blueTeamTrash;
                         GameManager.blueTeamTrash = 0;
                     }
 
@@ -65,6 +71,8 @@ public class RobTrash : MonoBehaviour
                     if (timer > timeForRobbery) 
                     {
                         PickUpTrash.currentTrash += GameManager.redTeamTrash;
+                        // Update trash robbed
+                        scoreSW.trashRobbed += GameManager.redTeamTrash;
                         GameManager.redTeamTrash = 0;
                     }
                     starterAssetsInputs.interact = false;

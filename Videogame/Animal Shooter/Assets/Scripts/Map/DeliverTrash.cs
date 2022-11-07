@@ -10,11 +10,16 @@ public class DeliverTrash : MonoBehaviour
     private StarterAssetsInputs starterAssetsInputs;
 
     private string playerTeam;
+
+    // Script to handle the delivery of trash to the base
+    ScoreSW scoreSW;
+
     // Start is called before the first frame update
     void Start()
     {
         playerTeam = this.gameObject.tag;
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
+        scoreSW = GetComponent<ScoreSW>();
     }
 
     // Update is called once per frame
@@ -34,6 +39,8 @@ public class DeliverTrash : MonoBehaviour
                 if (starterAssetsInputs.interact)
                 {
                     GameManager.blueTeamTrash += PickUpTrash.currentTrash;
+                    // Update trash delivered
+                    scoreSW.trashDelivered += PickUpTrash.currentTrash; 
                     PickUpTrash.currentTrash = 0;
                     starterAssetsInputs.interact = false;
                 }
@@ -49,6 +56,8 @@ public class DeliverTrash : MonoBehaviour
                 if (starterAssetsInputs.interact)
                 {
                     GameManager.redTeamTrash += PickUpTrash.currentTrash;
+                    // Update trash delivered
+                    scoreSW.trashDelivered += PickUpTrash.currentTrash;
                     PickUpTrash.currentTrash = 0;
                     starterAssetsInputs.interact = false;
                 }

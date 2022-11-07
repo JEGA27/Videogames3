@@ -1046,6 +1046,7 @@ GameObject:
   - component: {fileID: 929642362152193202}
   - component: {fileID: 6479032947009225061}
   - component: {fileID: 1939177568474598803}
+  - component: {fileID: 219934778835900118}
   - component: {fileID: 8389655604431164333}
   - component: {fileID: 7695993120461140460}
   - component: {fileID: 3651024308126330106}
@@ -1436,6 +1437,35 @@ MonoBehaviour:
   PickUpTrash: {fileID: 8414313416230472920}
   GameManager: {fileID: 4449636719312260323}
   rateOfRobbing: 0
+--- !u!114 &219934778835900118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664499059249402867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7446f80111442d5b9effabe5337b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalPoints: 0
+  trashPicked: 0
+  trashDelivered: 0
+  trashRobbed: 0
+  eliminations: 0
+  trashMultPickG: 0
+  trashMultPickSW: 0
+  trashMultRobG: 0
+  trashMultRobSW: 0
+  trashMultDeliverG: 0
+  trashMultDeliverSW: 0
+  eliminationMultG: 0
+  eliminationMultSW: 0
+  specialWeaponPoints: 0
+  specialWeaponCost: 0
+  specialWeaponProgress: 0
+  specialWeaponReady: 0
 --- !u!114 &8389655604431164333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2079,6 +2109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4578747848711871756}
   - component: {fileID: 3238375121245836756}
+  - component: {fileID: 3326554157314907382}
   m_Layer: 0
   m_Name: Cube_Cube.001
   m_TagString: Untagged
@@ -2121,7 +2152,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 72b969d5eb51e4ebebde113012721d93, type: 2}
+  - {fileID: 2100000, guid: a51ef51c77ed14d419de3ec45159a638, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2182,6 +2213,21 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00003418885, y: 0.007219943, z: -0.008651628}
     m_Extent: {x: 0.0321742, y: 0.035336833, z: 0.022136651}
   m_DirtyAABB: 0
+--- !u!114 &3326554157314907382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9059074993777220949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1127e9a305f384bdf8392b5b4205c936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 2100000, guid: 16470d24b58364bd6a7c422916f9a1e3, type: 2}
+  outlineScaleFactor: -1.1
+  outlineColor: {r: 0.9622642, g: 0, b: 0, a: 0}
 --- !u!1 &9221581688331754511
 GameObject:
   m_ObjectHideFlags: 0
