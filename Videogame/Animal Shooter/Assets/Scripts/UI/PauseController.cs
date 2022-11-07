@@ -15,6 +15,8 @@ public class PauseController : MonoBehaviour
     
     [Space]
     public GameObject OptionsPanel;
+    public GameObject OptionsBtnsPanel;
+    public GameObject OptionsSettsPanel;
     public GameObject ScoreboardPanel;
     public GameObject MapPanel;
 
@@ -38,6 +40,9 @@ public class PauseController : MonoBehaviour
         OptionsPanel.SetActive(false);
         ScoreboardPanel.SetActive(false);
         MapPanel.SetActive(false);
+
+        OptionsBtnsPanel.SetActive(true);
+        OptionsSettsPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -97,11 +102,17 @@ public class PauseController : MonoBehaviour
                 OptionsPanel.SetActive(false);
                 ScoreboardPanel.SetActive(true);
                 MapPanel.SetActive(false);
+
+                OptionsBtnsPanel.SetActive(true);
+                OptionsSettsPanel.SetActive(false);
                 break;
             case 2:
                 OptionsPanel.SetActive(false);
                 ScoreboardPanel.SetActive(false);
                 MapPanel.SetActive(true);
+
+                OptionsBtnsPanel.SetActive(true);
+                OptionsSettsPanel.SetActive(false);
                 break;
             default:
                 OptionsPanel.SetActive(true);
@@ -114,6 +125,12 @@ public class PauseController : MonoBehaviour
     public void ShowOptions()
     {
         currentCanvasTab = 0;
+    }
+
+    public void ShowSettingsOptions()
+    {
+        OptionsBtnsPanel.SetActive(false);
+        OptionsSettsPanel.SetActive(true);
     }
 
     public void ShowScoreboard()
