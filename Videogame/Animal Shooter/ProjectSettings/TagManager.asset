@@ -15,6 +15,7 @@ TagManager:
   - RedTrashBase
   - New tag
   - Sewer
+  - Bullet
   layers:
   - Default
   - TransparentFX

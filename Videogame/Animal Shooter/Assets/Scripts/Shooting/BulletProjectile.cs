@@ -16,21 +16,22 @@ public class BulletProjectile : MonoBehaviour
 
 
     //private AudioSource audioSource;
-    private Rigidbody bulletRigidbody;
+    //private Rigidbody bulletRigidbody;
     private Health healthSystem;
     private DummyHealth dummyHealth;
+   
 
 
     void Awake()
     {
-        bulletRigidbody = GetComponent<Rigidbody>();
+        //bulletRigidbody = GetComponent<Rigidbody>();
         //audioSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        bulletRigidbody.velocity = transform.forward * speed;
+        //bulletRigidbody.velocity = transform.forward * speed;
     }
 
     // Update is called once per frame
@@ -64,7 +65,11 @@ public class BulletProjectile : MonoBehaviour
 
         Instantiate(hitEffect, transform.position , Quaternion.identity);
         //audioSource.Play();
-        Destroy(gameObject);
+        /*if(other.gameObject.tag != "Bullet")
+        {
+            Destroy(gameObject);
+        }*/
+        
 
     }
 
