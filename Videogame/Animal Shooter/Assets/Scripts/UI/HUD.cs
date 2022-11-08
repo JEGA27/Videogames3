@@ -21,6 +21,8 @@ public class HUD : MonoBehaviour
     public Text blueScoreTxt;
     public Text redScoreTxt;
 
+    public Image specialWeaponProgressCircle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,8 @@ public class HUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        specialWeaponProgressCircle.fillAmount = (player.GetComponent<ScoreSW>().specialWeaponPoints) / 100.0f;
+
         hpBar.value = health.hp / GameManager.maxRaccoonHealth;
 
         trashTxt.text = pickUpTrash.currentTrash.ToString();
