@@ -10,19 +10,27 @@ public class WeaponStats : MonoBehaviour
     public Transform spawnBulletPosition;
     [SerializeField]
     public ParticleSystem muzzleFlash;
+    //[SerializeField]
+    //private float speed;
 
     public float timeBetweenShooting, spread, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
+
+    private BulletProjectile bulletProjectile;
+   
+
     // Start is called before the first frame update
     void Start()
     {
-
+        bulletProjectile = bulletProjectilePrefab.GetComponent<BulletProjectile>();
+        bulletProjectile.spread = spread;
     }
 
     // Update is called once per frame
     void Update()
     {
 
+       
     }
 }

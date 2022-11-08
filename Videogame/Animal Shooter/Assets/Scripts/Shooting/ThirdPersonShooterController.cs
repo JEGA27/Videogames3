@@ -141,11 +141,12 @@ public class ThirdPersonShooterController : MonoBehaviour
     private void Shoot()
     {
       Vector3 aimDir = (mouseWorldPosition - weaponStats.spawnBulletPosition.position).normalized;
+      float x = Random.Range(-weaponStats.spread, weaponStats.spread);
+      float y = Random.Range(-weaponStats.spread, weaponStats.spread);
       Instantiate(weaponStats.bulletProjectilePrefab, weaponStats.spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
       starterAssetsInputs.shoot = false;
       readyToShoot = false;
-      float x = Random.Range(-weaponStats.spread, weaponStats.spread);
-      float y = Random.Range(-weaponStats.spread, weaponStats.spread);
+      
 
       //Calculate Direction with Spread
       //Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);

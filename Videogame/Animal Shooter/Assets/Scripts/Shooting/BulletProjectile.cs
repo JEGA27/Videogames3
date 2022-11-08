@@ -11,42 +11,48 @@ public class BulletProjectile : MonoBehaviour
     private float speed;
     [SerializeField]
     private float bulletDamage;
-    //[SerializeField]
-    //private AudioClip audioClip;
+   
 
 
-    //private AudioSource audioSource;
+
+    private AudioSource audioSource;
     private Rigidbody bulletRigidbody;
     private Health healthSystem;
     private DummyHealth dummyHealth;
+    private bool isShotgun;
+
+    float x;
+    float y;
+    Vector3 direction;
+    public float spread;
 
 
     void Awake()
     {
         bulletRigidbody = GetComponent<Rigidbody>();
-        //audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        bulletRigidbody.velocity = transform.forward * speed;
+        x = Random.Range(-spread, spread);
+        y = Random.Range(-spread, spread);
+        direction = bulletRigidbody.transform.forward + new Vector3(x, y, 0);
+        bulletRigidbody.velocity = direction * speed;
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-
+       
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.GetComponent<BulletTarget>() != null)
         {
-            //Instantiate(vfxHitGreen, transform.position , Quaternion.identity);
-            //vfxHitGreen.transform.position = transform.position;
-            //vfxHitGreen.Emit(1);
-            //Destroy(hitEffect);
 
 
             if(other.GetComponent<DummyHealth>() != null)
@@ -62,10 +68,14 @@ public class BulletProjectile : MonoBehaviour
 
         }
 
-        Instantiate(hitEffect, transform.position , Quaternion.identity);
-        //audioSource.Play();
-        Destroy(gameObject);
-
+            
+            if(other.gameObject.tag != "Bullet")
+            {
+                Instantiate(hitEffect, transform.position , Quaternion.identity);
+                Destroy(gameObject);
+            }
+     
+        
     }
 
 }

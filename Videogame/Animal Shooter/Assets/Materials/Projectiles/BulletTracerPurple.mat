@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BulletTracer1
+  m_Name: BulletTracerPurple
   m_Shader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
   m_ValidKeywords:
   - _EMISSION
@@ -117,10 +117,10 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.8763337, b: 1, a: 1}
+    - _BaseColor: {r: 1, g: 0, b: 0.23484704, a: 1}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 0, g: 0.8763337, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 2.1455688, b: 4, a: 1}
+    - _Color: {r: 1, g: 0, b: 0.23484701, a: 1}
+    - _EmissionColor: {r: 5.3403134, g: 0, b: 0.12385726, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
