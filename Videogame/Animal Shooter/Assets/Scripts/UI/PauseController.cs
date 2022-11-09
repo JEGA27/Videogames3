@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 using StarterAssets;
+using Photon.Pun;
 
 public class PauseController : MonoBehaviour
 {
@@ -24,101 +25,111 @@ public class PauseController : MonoBehaviour
 
     private StarterAssetsInputs starterAssetsInputs;
 
+    PhotonView PV;
+
     void Awake()
     {
+        PV = GetComponent<PhotonView>();
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        PauseCanvas.SetActive(false);
-        HUDCanvas.SetActive(true);
+        if(PV.IsMine)
+        {
+            PauseCanvas.SetActive(false);
+            HUDCanvas.SetActive(true);
 
-        currentCanvasTab = 0;
+            currentCanvasTab = 0;
 
-        OptionsPanel.SetActive(false);
-        ScoreboardPanel.SetActive(false);
-        MapPanel.SetActive(false);
+            OptionsPanel.SetActive(false);
+            ScoreboardPanel.SetActive(false);
+            MapPanel.SetActive(false);
 
-        OptionsBtnsPanel.SetActive(true);
-        OptionsSettsPanel.SetActive(false);
+            OptionsBtnsPanel.SetActive(true);
+            OptionsSettsPanel.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if(PV.IsMine)
         {
-            if (HUDCanvas.active)
-            {
-                PauseCanvas.SetActive(true);
-                HUDCanvas.SetActive(false);
-                currentCanvasTab = 0;
-            }
-            else
-            {
-                PauseCanvas.SetActive(false);
-                HUDCanvas.SetActive(true);
-            }
 
-        }
-
-        if (PauseCanvas.active)
-        {
-            if (Input.GetKeyDown("right"))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (currentCanvasTab == 2)
+                if (HUDCanvas.active)
                 {
+                    PauseCanvas.SetActive(true);
+                    HUDCanvas.SetActive(false);
                     currentCanvasTab = 0;
                 }
                 else
                 {
-                    currentCanvasTab += 1;
+                    PauseCanvas.SetActive(false);
+                    HUDCanvas.SetActive(true);
                 }
+
             }
 
-            if (Input.GetKeyDown("left"))
+            if (PauseCanvas.active)
             {
-                if (currentCanvasTab == 0)
+                if (Input.GetKeyDown("right"))
                 {
-                    currentCanvasTab = 2;
+                    if (currentCanvasTab == 2)
+                    {
+                        currentCanvasTab = 0;
+                    }
+                    else
+                    {
+                        currentCanvasTab += 1;
+                    }
                 }
-                else
+
+                if (Input.GetKeyDown("left"))
                 {
-                    currentCanvasTab -= 1;
+                    if (currentCanvasTab == 0)
+                    {
+                        currentCanvasTab = 2;
+                    }
+                    else
+                    {
+                        currentCanvasTab -= 1;
+                    }
                 }
             }
-        }
 
-        switch(currentCanvasTab)
-        {
-            case 0:
-                OptionsPanel.SetActive(true);
-                ScoreboardPanel.SetActive(false);
-                MapPanel.SetActive(false);
-                break;
-            case 1:
-                OptionsPanel.SetActive(false);
-                ScoreboardPanel.SetActive(true);
-                MapPanel.SetActive(false);
+            switch(currentCanvasTab)
+            {
+                case 0:
+                    OptionsPanel.SetActive(true);
+                    ScoreboardPanel.SetActive(false);
+                    MapPanel.SetActive(false);
+                    break;
+                case 1:
+                    OptionsPanel.SetActive(false);
+                    ScoreboardPanel.SetActive(true);
+                    MapPanel.SetActive(false);
 
-                OptionsBtnsPanel.SetActive(true);
-                OptionsSettsPanel.SetActive(false);
-                break;
-            case 2:
-                OptionsPanel.SetActive(false);
-                ScoreboardPanel.SetActive(false);
-                MapPanel.SetActive(true);
+                    OptionsBtnsPanel.SetActive(true);
+                    OptionsSettsPanel.SetActive(false);
+                    break;
+                case 2:
+                    OptionsPanel.SetActive(false);
+                    ScoreboardPanel.SetActive(false);
+                    MapPanel.SetActive(true);
 
-                OptionsBtnsPanel.SetActive(true);
-                OptionsSettsPanel.SetActive(false);
-                break;
-            default:
-                OptionsPanel.SetActive(true);
-                ScoreboardPanel.SetActive(false);
-                MapPanel.SetActive(false);
-                break;
+                    OptionsBtnsPanel.SetActive(true);
+                    OptionsSettsPanel.SetActive(false);
+                    break;
+                default:
+                    OptionsPanel.SetActive(true);
+                    ScoreboardPanel.SetActive(false);
+                    MapPanel.SetActive(false);
+                    break;
+            }
         }
     }
 

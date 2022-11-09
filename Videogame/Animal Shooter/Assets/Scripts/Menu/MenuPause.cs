@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 using StarterAssets;
+using Photon.Pun;
 
 public class MenuPause : MonoBehaviour
 {
@@ -15,12 +16,14 @@ public class MenuPause : MonoBehaviour
     public GameObject crosshair;
     private StarterAssetsInputs starterAssetsInputs;
 
+    PhotonView PV;
+
     void Awake()
     {
-        starterAssetsInputs = GameObject.Find("Racoon").GetComponent<StarterAssetsInputs>();
-
-
-
+        PV = GetComponent<PhotonView>();
+        if(PV.IsMine){
+            starterAssetsInputs = this.GetComponent<StarterAssetsInputs>();
+        }
     }
 
     void Update()

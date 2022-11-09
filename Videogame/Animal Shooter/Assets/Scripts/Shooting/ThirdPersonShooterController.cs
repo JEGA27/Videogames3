@@ -48,6 +48,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         if(!PV.IsMine){
             animVirtualCamera.gameObject.SetActive(false);
             gameObject.transform.Find("HUD").gameObject.SetActive(false);
+            gameObject.transform.Find("Pause").gameObject.SetActive(false);
             gameObject.transform.Find("Cameras").gameObject.SetActive(false);
         }
             
