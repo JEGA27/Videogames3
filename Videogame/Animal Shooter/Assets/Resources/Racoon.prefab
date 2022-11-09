@@ -1051,6 +1051,7 @@ GameObject:
   - component: {fileID: 7695993120461140460}
   - component: {fileID: 3651024308126330106}
   - component: {fileID: -4506395486836063965}
+  - component: {fileID: 3387640018608696408}
   m_Layer: 3
   m_Name: Racoon
   m_TagString: BluePlayer
@@ -1579,6 +1580,18 @@ MonoBehaviour:
   specialWeaponCost: 0
   specialWeaponProgress: 0
   specialWeaponReady: 0
+--- !u!114 &3387640018608696408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664499059249402867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4544cf0d8c0974393c105785d01b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5820989894807656783
 GameObject:
   m_ObjectHideFlags: 0
