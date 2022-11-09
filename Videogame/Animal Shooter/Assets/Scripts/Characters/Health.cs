@@ -18,6 +18,7 @@ public class Health : MonoBehaviour
     private float timer;
 
     PhotonView PV;
+    public int deaths;
 
     //private Rigidbody rb;
     private ThirdPersonController thirdPersonController;
@@ -99,7 +100,8 @@ public class Health : MonoBehaviour
     void Eliminate()
     {
         Debug.Log("Dead");
-        Destroy(this.gameObject);
+        PhotonNetwork.Destroy(this.gameObject);
+        deaths++;
     }
 
 }

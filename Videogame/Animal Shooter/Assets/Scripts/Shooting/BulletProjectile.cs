@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class BulletProjectile : MonoBehaviour
 {
@@ -71,8 +72,8 @@ public class BulletProjectile : MonoBehaviour
             
             if(other.gameObject.tag != "Bullet")
             {
-                Instantiate(hitEffect, transform.position , Quaternion.identity);
-                Destroy(gameObject);
+                PhotonNetwork.Instantiate(hitEffect, transform.position , Quaternion.identity);
+                PhotonNetwork.Destroy(gameObject);
             }
      
         
