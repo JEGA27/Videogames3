@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class DestroyParticle : MonoBehaviour
 {
@@ -16,6 +17,6 @@ public class DestroyParticle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Destroy(gameObject, secondsToDestroy);
+        PhotonNetwork.Destroy(gameObject, secondsToDestroy);
     }
 }

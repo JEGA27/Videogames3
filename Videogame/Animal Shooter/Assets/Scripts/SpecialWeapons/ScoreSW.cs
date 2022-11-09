@@ -6,6 +6,7 @@ public class ScoreSW : MonoBehaviour
 {
     [Header("Scores")]
     public int globalPoints;
+    public int globalTrash;
     public int trashPicked;
     public int trashDelivered;
     public int trashRobbed;
@@ -36,6 +37,7 @@ public class ScoreSW : MonoBehaviour
     {
         // Scores
         globalPoints = 0;
+        globalTrash = 0;
         trashPicked = 0;
         trashDelivered = 0;
         trashRobbed = 0;
@@ -81,6 +83,8 @@ public class ScoreSW : MonoBehaviour
                                (trashDelivered * trashMultDeliverSW) + 
                                (trashRobbed * trashMultRobSW) +
                                (eliminations * eliminationMultSW);
+
+        globalTrash += trashDelivered;
 
         // Update Special Weapon Progress
         if(specialWeaponPoints != 0)
