@@ -25,6 +25,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = maxPlayers;
         PhotonNetwork.CreateRoom(createInput.text, roomOptions, null);
+        
 
     }
     public void CreateRoom()
@@ -33,6 +34,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = maxPlayers;
         PhotonNetwork.CreateRoom(null, roomOptions, null);
+        
     }
 
     public void QuickMatch()
@@ -55,30 +57,17 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     {
         int team = 0;
 
-        int blueteam = 0;
-
-        Debug.Log(PhotonNetwork.PlayerList.Length);
-
-        
-        for (int i = 1; i < PhotonNetwork.PlayerList.Length; i++)
-        {
-            Debug.Log("Team: " + (int)PhotonNetwork.CurrentRoom.Players[i].CustomProperties["Team"]);
-
-            if (i % 2 < 1) team = 0;
-            else team = 1;
-
-
-            /*if ((int)PhotonNetwork.PlayerList[i].CustomProperties["Team"] < 1)
-            {
-                blueteam++;
-            }*/
-            
-        }
-
-        /*if (blueteam <= (int)maxPlayers / 2) team = 0;
-        else team = 1;*/
+        /*var hash1 = PhotonNetwork.CurrentRoom.CustomProperties;
+        double startTime = PhotonNetwork.Time;
+        Debug.Log("Start Time: " + startTime);
+        hash1.Add("StartTime", startTime);
+        PhotonNetwork.CurrentRoom.SetCustomProperties(hash1);*/
 
         Debug.Log(team);
+
+
+        if (PhotonNetwork.PlayerList.Length % 2 < 1) team = 1;
+        else team = 0;
 
         if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("Team"))
         {
@@ -87,45 +76,18 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
         }
         else
         {
-            //we dont have a team yet- create the custom property and set it
-            //0 for blue, 1 for red
-            //set the player properties of this client to the team they clicked
-
-
 
             var hash = PhotonNetwork.LocalPlayer.CustomProperties;
             hash.Add("Team", team);
             PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
 
-
-            /*ExitGames.Client.Photon.Hashtable playerProps = new ExitGames.Client.Photon.Hashtable
-            {
-                { "Team", team }
-            };
-            //set the property of Team to the value the user wants
-            PhotonNetwork.SetPlayerCustomProperties(playerProps);*/
         }
-        //Debug.Log(SetTeam());
+
 
         PhotonNetwork.LoadLevel("City");
     }
 
-    int SetTeam()
-    {
-        int blueteam = 0;
-
-
-        for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) 
-        {
-            Debug.Log((int)PhotonNetwork.CurrentRoom.Players[i].CustomProperties["Team"]);
-            if ((int)PhotonNetwork.CurrentRoom.Players[i].CustomProperties["Team"] < 1) {
-                blueteam++;
-            }
-        }
-
-        if (blueteam <= (int)maxPlayers / 2) return 0;
-        else return 1;
-    }
+    
 }
 
 /*

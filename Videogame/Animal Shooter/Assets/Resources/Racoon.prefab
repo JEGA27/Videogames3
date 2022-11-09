@@ -934,6 +934,7 @@ GameObject:
   - component: {fileID: 3483222660712588403}
   - component: {fileID: 3483222660712588404}
   - component: {fileID: 3483222660712588303}
+  - component: {fileID: 4106696204821438130}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -1060,10 +1061,23 @@ MonoBehaviour:
   player: {fileID: 5664499059249402867}
   hpBar: {fileID: 3483222662177726265}
   trashTxt: {fileID: 3483222660422187290}
-  timerTxt: {fileID: 3483222660400654099}
   timeInSec: 180
   blueScoreTxt: {fileID: 3483222660750481674}
   redScoreTxt: {fileID: 3483222660987541493}
+--- !u!114 &4106696204821438130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3483222660712588405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 181a4c657058848beb334a92d0a4d7cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerTxt: {fileID: 3483222660400654099}
+  decTimer: 0
 --- !u!1 &3483222660746954764
 GameObject:
   m_ObjectHideFlags: 0
