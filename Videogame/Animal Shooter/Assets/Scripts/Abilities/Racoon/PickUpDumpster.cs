@@ -9,6 +9,7 @@ public class PickUpDumpster : MonoBehaviour
 
     private bool canPickUp;
     private GameObject Dumpster; 
+    private GameObject UI_Dumpster;
     private bool hasDumpster;
     private StarterAssetsInputs starterAssetsInputs;
 
@@ -18,19 +19,21 @@ public class PickUpDumpster : MonoBehaviour
         canPickUp = false; 
         hasDumpster = false;
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
+        
     }
  
     // Update is called once per frame
     void Update()
     {
-        if(starterAssetsInputs.interact) 
+        
+        if(starterAssetsInputs.interact && canPickUp)
         {
             if (!hasDumpster)
             {
                 hasDumpster = true;
                 Dumpster.GetComponent<Rigidbody>().isKinematic = true; 
                 Dumpster.transform.parent = gameObject.transform;
-                    
+                        
                 Dumpster.transform.localPosition = dumpsterPos.transform.localPosition;
                 Dumpster.transform.localRotation = Quaternion.Euler(0f, -90f, 0f);
             }
@@ -42,6 +45,7 @@ public class PickUpDumpster : MonoBehaviour
             }
             starterAssetsInputs.interact = false;
         }
+        
         GetComponent<ThirdPersonShooterController>().enabled = !hasDumpster;
     }
     void OnTriggerEnter(Collider other) 
@@ -50,10 +54,17 @@ public class PickUpDumpster : MonoBehaviour
         {
             canPickUp = true;  
             Dumpster = other.gameObject;
+            UI_Dumpster = Dumpster.transform.GetChild(0).gameObject;
+            UI_Dumpster.SetActive(true);
         }
     }
     void OnTriggerExit(Collider other)
     {
-        canPickUp = false;
+        if(other.gameObject.CompareTag("Dumpster"))
+        {
+            canPickUp = false;
+            UI_Dumpster.SetActive(false);
+        }
+        
     }
 }
