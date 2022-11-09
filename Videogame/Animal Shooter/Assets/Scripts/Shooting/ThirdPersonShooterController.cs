@@ -97,13 +97,14 @@ public class ThirdPersonShooterController : MonoBehaviour
         worldLookTarget.y = transform.position.y;
         Vector3 lookDirection = (worldLookTarget - transform.position).normalized;
         transform.forward = Vector3.Lerp(transform.forward, lookDirection, Time.deltaTime * 20f);
-        thirdPersonController.SetRotateOnMove(false);
+        
 
         if(starterAssetsInputs.aim && PV.IsMine)
         {
             animVirtualCamera.gameObject.SetActive(true);
             thirdPersonController.SetSensitivity(aimSensitivity);
             animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 1f, Time.deltaTime * 10f));
+            thirdPersonController.SetRotateOnMove(false);
 
         }
         else
@@ -111,6 +112,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             animVirtualCamera.gameObject.SetActive(false);
             thirdPersonController.SetSensitivity(normalSensitivity);
             animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
+            thirdPersonController.SetRotateOnMove(true);
 
         }
 
