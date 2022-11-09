@@ -1078,6 +1078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerTxt: {fileID: 3483222660400654099}
   decTimer: 0
+  roundTime: 180
 --- !u!1 &3483222660746954764
 GameObject:
   m_ObjectHideFlags: 0

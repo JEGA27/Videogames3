@@ -11,14 +11,6 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
  
     public InputField joinInput;
     private byte maxPlayers = 2;
-    private int minPlayers;
-
-    // Start is called before the first frame update
-
-    void Start()
-    {
-        minPlayers = (int)maxPlayers / 2;
-    }
 
 
     public void CreateRoomName() {
@@ -56,12 +48,6 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         int team = 0;
-
-        /*var hash1 = PhotonNetwork.CurrentRoom.CustomProperties;
-        double startTime = PhotonNetwork.Time;
-        Debug.Log("Start Time: " + startTime);
-        hash1.Add("StartTime", startTime);
-        PhotonNetwork.CurrentRoom.SetCustomProperties(hash1);*/
 
         Debug.Log(team);
 

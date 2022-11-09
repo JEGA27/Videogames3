@@ -14,6 +14,8 @@ public class Timer : MonoBehaviour
     public Text timerTxt;
     public double decTimer;
 
+    public double roundTime = 180.0;
+
     ExitGames.Client.Photon.Hashtable CustomeValue;
 
     void Start()
@@ -38,7 +40,7 @@ public class Timer : MonoBehaviour
         if (!startTimer) return;
         timerIncrementValue = PhotonNetwork.Time - startTime;
 
-        double roundTime = 10.0;
+        
         decTimer = roundTime - timerIncrementValue;
 
         //timerTxt.text = ((int)decTimer).ToString();
