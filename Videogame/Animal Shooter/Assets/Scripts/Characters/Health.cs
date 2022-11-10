@@ -110,14 +110,16 @@ public class Health : MonoBehaviour
     {
         Debug.Log("Dead");
         PhotonNetwork.Destroy(this.gameObject);
+        // StartCoroutine(Respawn());
         deaths++;
-        StartCoroutine(Respawn());
     }
 
     IEnumerator Respawn()
     {
+        Debug.Log("Rompere");
         yield return new WaitForSeconds(respawnCD);
         Vector3 randomPosition = new Vector3(Random.Range(minX,maxX), -0.1608448f, Random.Range(minY,maxY));
-        PhotonNetwork.Instantiate(playerPrefab.name, randomPosition, Quaternion.identity);
+        Debug.Log("Respawned");
+        PhotonNetwork.Instantiate(playerPrefab.name, randomPosition, Quaternion.identity, 0, new object[] { PV.ViewID });
     }
 }
