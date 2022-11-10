@@ -71,7 +71,7 @@ MonoBehaviour:
     type: 3}
   speed: 35
   bulletDamage: 35
-  spread: 0
+  spread: 0.02
 --- !u!135 &8989323921845381767
 SphereCollider:
   m_ObjectHideFlags: 0
