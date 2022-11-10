@@ -1330,6 +1330,12 @@ MonoBehaviour:
   hpFallDamage: 15
   timeToRecover: 7
   deaths: 0
+  respawnCD: 0
+  playerPrefab: {fileID: 5664499059249402867}
+  minX: -10.88
+  maxX: -10.88
+  minY: 45.85
+  maxY: 45.85
 --- !u!82 &6479032947009225061
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2145,7 +2151,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4578747848711871756}
   - component: {fileID: 3238375121245836756}
-  - component: {fileID: 3636745846396822401}
   m_Layer: 0
   m_Name: Cube_Cube.001
   m_TagString: Untagged
@@ -2249,21 +2254,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00003418885, y: 0.007219943, z: -0.008651628}
     m_Extent: {x: 0.0321742, y: 0.035336833, z: 0.022136651}
   m_DirtyAABB: 0
---- !u!114 &3636745846396822401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9059074993777220949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1127e9a305f384bdf8392b5b4205c936, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMaterial: {fileID: 2100000, guid: 16470d24b58364bd6a7c422916f9a1e3, type: 2}
-  outlineScaleFactor: -1.1
-  outlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &9221581688331754511
 GameObject:
   m_ObjectHideFlags: 0
