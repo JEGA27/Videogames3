@@ -1334,12 +1334,6 @@ MonoBehaviour:
   hpFallDamage: 15
   timeToRecover: 7
   deaths: 0
-  respawnCD: 0
-  playerPrefab: {fileID: 5664499059249402867}
-  minX: -10.88
-  maxX: -10.88
-  minY: 45.85
-  maxY: 45.85
 --- !u!82 &6479032947009225061
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2512,6 +2506,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause
       objectReference: {fileID: 0}
+    - target: {fileID: 6237836734978592286, guid: f5cf84ab8f03e4b4582f5c64589d7701,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7162511616461370760, guid: f5cf84ab8f03e4b4582f5c64589d7701,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3051,6 +3050,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3157347264022311757}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7465314690883289771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071651943427000019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 181a4c657058848beb334a92d0a4d7cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerTxt: {fileID: 1071651943736804789}
+  decTimer: 0
+  roundTime: 180
 --- !u!224 &1071651943427000022 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2670180860737303963, guid: c7526e2a6336f4d5ab25b5444d77a3d0,

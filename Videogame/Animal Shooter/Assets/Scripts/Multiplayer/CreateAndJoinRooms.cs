@@ -4,33 +4,40 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
-using TMPro;
 
 public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 {
-    public TMP_InputField createInput;
-    public TMP_InputField joinInput;
-
-    private byte maxPlayers = 2;
+    public InputField createInput;
+ 
+    public InputField joinInput;
+    private byte maxPlayers = 6;
 
     public static CreateAndJoinRooms instance;
 
-    void Awake()    
+    void Awake()
     {
         instance = this;
+    }
+
+    public void JoinRoomName(RoomInfo info)
+    {
+        PhotonNetwork.JoinRoom(info.Name);
     }
 
     public void CreateRoomName() {
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = maxPlayers;
         PhotonNetwork.CreateRoom(createInput.text, roomOptions, null);
+        
 
     }
     public void CreateRoom()
     {
+
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = maxPlayers;
         PhotonNetwork.CreateRoom(null, roomOptions, null);
+        
     }
 
     public void QuickMatch()
@@ -51,16 +58,42 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        Player local = PhotonNetwork.LocalPlayer;
+        int team = 0;
 
-        //int number = PhotonNetwork.PlayerList.Count;
-        //PhotonNetwork.LocalPlayer.NickName = name.text;
+        Debug.Log(team);
+
+
+        if (PhotonNetwork.PlayerList.Length % 2 < 1) team = 1;
+        else team = 0;
+
+        if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("Team"))
+        {
+            //we already have a team- so switch teams
+            PhotonNetwork.LocalPlayer.CustomProperties["Team"] = team;
+        }
+        else
+        {
+
+            var hash = PhotonNetwork.LocalPlayer.CustomProperties;
+            hash.Add("Team", team);
+            PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+
+        }
+
 
         PhotonNetwork.LoadLevel("City");
     }
 
-    public void JoinRoomName(RoomInfo info)
-    {
-        PhotonNetwork.JoinRoom(info.Name);
-    }
+
+
+    
 }
+
+/*
+for(int i=0; i<PhotonNetwork.PlayerList.Length; i++)
+{
+    var team = PhotonNetwork.PlayerList[i].CustomProperties[teamPropKey];
+}
+
+if (PhotonNetwork.CurrentRoom.PlayerCount == 1) 
+*/

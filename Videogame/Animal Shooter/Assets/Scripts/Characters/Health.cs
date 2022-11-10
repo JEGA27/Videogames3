@@ -18,15 +18,10 @@ public class Health : MonoBehaviour
     private float timer;
 
     PhotonView PV;
-    public int deaths;
-    public int respawnCD;
 
-    public GameObject playerPrefab;
+    SpawnPlayers sp;
 
-    public float minX;
-    public float maxX;
-    public float minY;
-    public float maxY;
+    public int deaths = 0;
 
     //private Rigidbody rb;
     private ThirdPersonController thirdPersonController;
@@ -39,9 +34,10 @@ public class Health : MonoBehaviour
         maxHp = hp;
         GameManager.maxRaccoonHealth = hp;
         timer = 0.0f;
-        respawnCD = 5;
 
         PV = GetComponent<PhotonView>();
+
+        sp = GameObject.Find("PlayerSpawner").GetComponent<SpawnPlayers>();
     }
 
     // Update is called once per frame
@@ -109,17 +105,10 @@ public class Health : MonoBehaviour
     void Eliminate()
     {
         Debug.Log("Dead");
-        PhotonNetwork.Destroy(this.gameObject);
-        // StartCoroutine(Respawn());
+        //Destroy(this.gameObject);
         deaths++;
+        PhotonNetwork.Destroy(this.gameObject);
+        sp.Spawn();
     }
 
-    IEnumerator Respawn()
-    {
-        Debug.Log("Rompere");
-        yield return new WaitForSeconds(respawnCD);
-        Vector3 randomPosition = new Vector3(Random.Range(minX,maxX), -0.1608448f, Random.Range(minY,maxY));
-        Debug.Log("Respawned");
-        PhotonNetwork.Instantiate(playerPrefab.name, randomPosition, Quaternion.identity, 0, new object[] { PV.ViewID });
-    }
 }

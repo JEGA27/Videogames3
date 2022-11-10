@@ -15,8 +15,8 @@ public class HUD : MonoBehaviour
     public Text trashTxt;
     private PickUpTrash pickUpTrash;
 
-    public Text timerTxt;
-    public float timeInSec;
+    //public Text timerTxt;
+    //public float timeInSec;
 
     public Text blueScoreTxt;
     public Text redScoreTxt;
@@ -43,7 +43,7 @@ public class HUD : MonoBehaviour
 
         trashTxt.text = pickUpTrash.currentTrash.ToString();
 
-        timeInSec -= Time.deltaTime;
+        /*timeInSec -= Time.deltaTime;
         if (timeInSec >= 0)
         {
             TimeSpan ts = TimeSpan.FromSeconds(timeInSec);
@@ -53,11 +53,13 @@ public class HUD : MonoBehaviour
         {
             Debug.Log("Game Over!");
         }
+        */
+
         blueScoreTxt.text = GameManager.blueTeamTrash.ToString();
         redScoreTxt.text = GameManager.redTeamTrash.ToString();
 
         ammo.text = tpsc.bulletsLeft.ToString() + "/" + tpsc.magazine.ToString();
     }
 
-  
+
 }
