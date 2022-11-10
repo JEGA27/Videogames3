@@ -12,7 +12,6 @@ public class PickUpDumpster : MonoBehaviour
     private GameObject UI_Dumpster;
     private bool hasDumpster;
     private StarterAssetsInputs starterAssetsInputs;
-    public Transform camera;
 
     // Start is called before the first frame update
     void Start()
