@@ -56,7 +56,7 @@ public class SewerTeleport : MonoBehaviour
         if(other.gameObject.tag == "Sewer")
         {
 
-            abilityMessage.SetActive(true);
+            other.gameObject.transform.GetChild(0).gameObject.SetActive(true);
             isOnSewer = true;
         }
     }
@@ -66,7 +66,7 @@ public class SewerTeleport : MonoBehaviour
       if(other.gameObject.tag == "Sewer")
       {
 
-          abilityMessage.SetActive(false);
+          other.gameObject.transform.GetChild(0).gameObject.SetActive(false);
           sewersCanvas.SetActive(false);
           isOnSewer = false;
           tpsc.enabled = true;
