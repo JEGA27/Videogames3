@@ -10,7 +10,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     public InputField createInput;
  
     public InputField joinInput;
-    private byte maxPlayers = 2;
+    private byte maxPlayers = 6;
 
 
     public void CreateRoomName() {

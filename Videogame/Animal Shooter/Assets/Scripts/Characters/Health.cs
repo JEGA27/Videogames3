@@ -19,6 +19,8 @@ public class Health : MonoBehaviour
 
     PhotonView PV;
 
+    SpawnPlayers sp;
+
     //private Rigidbody rb;
     private ThirdPersonController thirdPersonController;
 
@@ -32,6 +34,8 @@ public class Health : MonoBehaviour
         timer = 0.0f;
 
         PV = GetComponent<PhotonView>();
+
+        sp = GameObject.Find("PlayerSpawner").GetComponent<SpawnPlayers>();
     }
 
     // Update is called once per frame
@@ -99,7 +103,9 @@ public class Health : MonoBehaviour
     void Eliminate()
     {
         Debug.Log("Dead");
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
+        PhotonNetwork.Destroy(this.gameObject);
+        sp.Spawn();
     }
 
 }
