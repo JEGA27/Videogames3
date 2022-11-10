@@ -21,7 +21,8 @@ public class MenuPause : MonoBehaviour
     void Awake()
     {
         PV = GetComponent<PhotonView>();
-        if(PV.IsMine){
+        if(PV.IsMine)
+        {
             starterAssetsInputs = this.GetComponent<StarterAssetsInputs>();
         }
     }

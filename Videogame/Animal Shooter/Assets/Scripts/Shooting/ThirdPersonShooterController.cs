@@ -144,7 +144,7 @@ public class ThirdPersonShooterController : MonoBehaviour
       Vector3 aimDir = (mouseWorldPosition - weaponStats.spawnBulletPosition.position).normalized;
       float x = Random.Range(-weaponStats.spread, weaponStats.spread);
       float y = Random.Range(-weaponStats.spread, weaponStats.spread);
-      PhotonNetwork.Instantiate(weaponStats.bulletProjectilePrefab, weaponStats.spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+      PhotonNetwork.Instantiate(weaponStats.bulletProjectilePrefab.name, weaponStats.spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
       starterAssetsInputs.shoot = false;
       readyToShoot = false;
       
