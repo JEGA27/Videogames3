@@ -1289,7 +1289,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dumpsterPos: {fileID: 1255820664839149336}
-  camera: {fileID: 7032695489549083682}
 --- !u!114 &8414313416230472920
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -80,7 +80,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         mouseWorldPosition = Vector3.zero;
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen .height /2f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
-        if(Physics.Raycast(ray, out RaycastHit raycastHit, 40f, aimColliderLayerMask))
+        if(Physics.Raycast(ray, out RaycastHit raycastHit, 80f, aimColliderLayerMask))
         {
             mouseWorldPosition = raycastHit.point;
         }
