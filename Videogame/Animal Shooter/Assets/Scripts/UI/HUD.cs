@@ -21,13 +21,17 @@ public class HUD : MonoBehaviour
     public Text blueScoreTxt;
     public Text redScoreTxt;
 
+    public Text ammo;
+
     public Image specialWeaponProgressCircle;
+    private ThirdPersonShooterController tpsc;
 
     // Start is called before the first frame update
     void Start()
     {
         health = player.GetComponent<Health>();
         pickUpTrash = player.GetComponent<PickUpTrash>();
+        tpsc = player.GetComponent<ThirdPersonShooterController>();
     }
 
     // Update is called once per frame
@@ -51,6 +55,8 @@ public class HUD : MonoBehaviour
         }
         blueScoreTxt.text = GameManager.blueTeamTrash.ToString();
         redScoreTxt.text = GameManager.redTeamTrash.ToString();
+
+        ammo.text = tpsc.bulletsLeft.ToString() + "/" + tpsc.magazine.ToString();
     }
 
   

@@ -14,7 +14,7 @@ public class WeaponStats : MonoBehaviour
     //private float speed;
 
     public float timeBetweenShooting, spread, reloadTime, timeBetweenShots;
-    public int magazineSize, bulletsPerTap;
+    public int magazineSize, bulletsPerTap, bulletsLeft;
     public bool allowButtonHold;
 
     private BulletProjectile bulletProjectile;
@@ -25,6 +25,7 @@ public class WeaponStats : MonoBehaviour
     {
         bulletProjectile = bulletProjectilePrefab.GetComponent<BulletProjectile>();
         bulletProjectile.spread = spread;
+        bulletsLeft = magazineSize;
     }
 
     // Update is called once per frame

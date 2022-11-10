@@ -187,6 +187,7 @@ MonoBehaviour:
   timeBetweenShots: 0.08
   magazineSize: 30
   bulletsPerTap: 1
+  bulletsLeft: 0
   allowButtonHold: 0
 --- !u!1 &1148511124690044231
 GameObject:
@@ -308,6 +309,7 @@ MonoBehaviour:
   timeBetweenShots: 0.08
   magazineSize: 30
   bulletsPerTap: 3
+  bulletsLeft: 0
   allowButtonHold: 0
 --- !u!1 &1255820664839149336
 GameObject:
@@ -1185,6 +1187,8 @@ MonoBehaviour:
   weapon1: {fileID: 1148511124029382314}
   weapon2: {fileID: 6402954789126465975}
   swapWeaponTime: 3
+  bulletsLeft: 0
+  magazine: 0
 --- !u!114 &4782046755827736031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1285,6 +1289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dumpsterPos: {fileID: 1255820664839149336}
+  camera: {fileID: 7032695489549083682}
 --- !u!114 &8414313416230472920
 MonoBehaviour:
   m_ObjectHideFlags: 0

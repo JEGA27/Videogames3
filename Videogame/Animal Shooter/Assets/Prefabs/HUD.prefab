@@ -1353,6 +1353,7 @@ MonoBehaviour:
   timeInSec: 180
   blueScoreTxt: {fileID: 2670180860707850465}
   redScoreTxt: {fileID: 0}
+  ammo: {fileID: 3125770975096771352}
   specialWeaponProgressCircle: {fileID: 8329018125964461139}
 --- !u!1 &3385666324877742186
 GameObject:

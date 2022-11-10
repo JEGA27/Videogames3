@@ -35,10 +35,12 @@ public class ThirdPersonShooterController : MonoBehaviour
     private float weapon = 1f;
     private bool swap = true;
 
-    int bulletsLeft, bulletsShot;
+    public int bulletsLeft, magazine;
+    int bulletsShot;
 
     //bools
     bool shooting, readyToShoot, reloading;
+    
 
     PhotonView PV;
 
@@ -51,7 +53,8 @@ public class ThirdPersonShooterController : MonoBehaviour
             gameObject.transform.Find("Pause").gameObject.SetActive(false);
             gameObject.transform.Find("Cameras").gameObject.SetActive(false);
         }
-            
+        
+        
     }
 
     void Awake()
@@ -61,7 +64,8 @@ public class ThirdPersonShooterController : MonoBehaviour
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         animator = GetComponent<Animator>();
         weaponStats = weapon1.GetComponent<WeaponStats>();
-        bulletsLeft = weaponStats.magazineSize;
+        magazine = weaponStats.magazineSize;
+        bulletsLeft = weaponStats.bulletsLeft;
         readyToShoot = true;
         weapon1.SetActive(true);
         weapon2.SetActive(false);
@@ -70,7 +74,39 @@ public class ThirdPersonShooterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        magazine = weaponStats.magazineSize;
+        bulletsLeft = weaponStats.bulletsLeft;
+        
+        mouseWorldPosition = Vector3.zero;
+        Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen .height /2f);
+        Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
+        if(Physics.Raycast(ray, out RaycastHit raycastHit, 40f, aimColliderLayerMask))
+        {
+            mouseWorldPosition = raycastHit.point;
+        }
 
+        Vector3 worldLookTarget = mouseWorldPosition;
+        worldLookTarget.y = transform.position.y;
+        Vector3 lookDirection = (worldLookTarget - transform.position).normalized;
+        transform.forward = Vector3.Lerp(transform.forward, lookDirection, Time.deltaTime * 20f);
+        thirdPersonController.SetRotateOnMove(false);
+
+        if(starterAssetsInputs.aim && PV.IsMine)
+        {
+            animVirtualCamera.gameObject.SetActive(true);
+            thirdPersonController.SetSensitivity(aimSensitivity);
+            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 1f, Time.deltaTime * 10f));
+            //thirdPersonController.SetRotateOnMove(false);
+
+        }
+        else
+        {
+            animVirtualCamera.gameObject.SetActive(false);
+            thirdPersonController.SetSensitivity(normalSensitivity);
+            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
+            //thirdPersonController.SetRotateOnMove(true);
+
+        }
         if (starterAssetsInputs.swapWeapon) {
             starterAssetsInputs.swapWeapon = false;
             weapon = -weapon;
@@ -85,38 +121,6 @@ public class ThirdPersonShooterController : MonoBehaviour
         }
 
         StartCoroutine(SwapWeapon());
-
-        mouseWorldPosition = Vector3.zero;
-        Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen .height /2f);
-        Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
-        if(Physics.Raycast(ray, out RaycastHit raycastHit, 40f, aimColliderLayerMask))
-        {
-            mouseWorldPosition = raycastHit.point;
-        }
-
-        Vector3 worldLookTarget = mouseWorldPosition;
-        worldLookTarget.y = transform.position.y;
-        Vector3 lookDirection = (worldLookTarget - transform.position).normalized;
-        transform.forward = Vector3.Lerp(transform.forward, lookDirection, Time.deltaTime * 20f);
-        
-
-        if(starterAssetsInputs.aim && PV.IsMine)
-        {
-            animVirtualCamera.gameObject.SetActive(true);
-            thirdPersonController.SetSensitivity(aimSensitivity);
-            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 1f, Time.deltaTime * 10f));
-            thirdPersonController.SetRotateOnMove(false);
-
-        }
-        else
-        {
-            animVirtualCamera.gameObject.SetActive(false);
-            thirdPersonController.SetSensitivity(normalSensitivity);
-            animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
-            thirdPersonController.SetRotateOnMove(true);
-
-        }
-
         MyInput();
 
     }
@@ -153,7 +157,7 @@ public class ThirdPersonShooterController : MonoBehaviour
       //Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
 
       //camShake.Shake(camShakeDuration, camShakeMagnitude);
-      bulletsLeft--;
+      weaponStats.bulletsLeft--;
       bulletsShot--;
 
       Invoke("ResetShot", weaponStats.timeBetweenShooting);
@@ -179,7 +183,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     }
     private void ReloadFinished()
     {
-        bulletsLeft = weaponStats.magazineSize;
+        weaponStats.bulletsLeft = weaponStats.magazineSize;
         reloading = false;
     }
 

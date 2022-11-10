@@ -12,6 +12,7 @@ public class PickUpDumpster : MonoBehaviour
     private GameObject UI_Dumpster;
     private bool hasDumpster;
     private StarterAssetsInputs starterAssetsInputs;
+    public Transform camera;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class PickUpDumpster : MonoBehaviour
         canPickUp = false; 
         hasDumpster = false;
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
+      
         
     }
  
@@ -47,6 +49,17 @@ public class PickUpDumpster : MonoBehaviour
         }
         
         GetComponent<ThirdPersonShooterController>().enabled = !hasDumpster;
+
+        if(hasDumpster)
+        {
+            GetComponent<ThirdPersonController>().SetRotateOnMove(false); 
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, Camera.main.transform.eulerAngles.y, transform.rotation.eulerAngles.z);
+        }
+        
+
+
+
+       
     }
     void OnTriggerEnter(Collider other) 
     {
