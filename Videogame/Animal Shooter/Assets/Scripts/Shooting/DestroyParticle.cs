@@ -17,6 +17,6 @@ public class DestroyParticle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PhotonNetwork.Destroy(gameObject, secondsToDestroy);
+        Destroy(gameObject, secondsToDestroy);
     }
 }

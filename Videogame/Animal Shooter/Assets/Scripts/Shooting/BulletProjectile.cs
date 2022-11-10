@@ -72,7 +72,7 @@ public class BulletProjectile : MonoBehaviour
             
             if(other.gameObject.tag != "Bullet")
             {
-                PhotonNetwork.Instantiate(hitEffect, transform.position , Quaternion.identity);
+                PhotonNetwork.Instantiate(hitEffect.name, transform.position , Quaternion.identity);
                 PhotonNetwork.Destroy(gameObject);
             }
      

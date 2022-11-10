@@ -1329,6 +1329,7 @@ MonoBehaviour:
   maxFallVel: 10
   hpFallDamage: 15
   timeToRecover: 7
+  deaths: 0
 --- !u!82 &6479032947009225061
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1564,6 +1565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globalPoints: 0
+  globalTrash: 0
   trashPicked: 0
   trashDelivered: 0
   trashRobbed: 0
