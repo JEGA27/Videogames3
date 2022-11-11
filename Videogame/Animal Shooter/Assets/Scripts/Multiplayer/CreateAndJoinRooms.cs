@@ -25,19 +25,18 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     }
 
     public void CreateRoomName() {
+        Debug.Log("Room created: " + createInput.text);
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = maxPlayers;
         PhotonNetwork.CreateRoom(createInput.text, roomOptions, null);
-        
-
+        Debug.Log("Room created: " + createInput.text);
     }
     public void CreateRoom()
     {
-
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = maxPlayers;
-        PhotonNetwork.CreateRoom(null, roomOptions, null);
-        
+        int roomCount = PhotonNetwork.CountOfRooms + 1;
+        PhotonNetwork.CreateRoom("RandomRoom" + roomCount, roomOptions, null);   
     }
 
     public void QuickMatch()
@@ -79,7 +78,6 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
             PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
 
         }
-
 
         PhotonNetwork.LoadLevel("City");
     }

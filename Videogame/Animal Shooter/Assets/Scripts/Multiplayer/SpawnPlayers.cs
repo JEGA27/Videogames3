@@ -22,8 +22,6 @@ public class SpawnPlayers : MonoBehaviour
         blueteam = new List<GameObject>();
 
         Spawn();
-
-
     }
 
     public void Spawn() {
