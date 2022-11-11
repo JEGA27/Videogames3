@@ -1186,7 +1186,7 @@ MonoBehaviour:
     m_Bits: 1
   weapon1: {fileID: 1148511124029382314}
   weapon2: {fileID: 6402954789126465975}
-  swapWeaponTime: 3
+  swapWeaponTime: 1
   bulletsLeft: 0
   magazine: 0
 --- !u!114 &4782046755827736031
