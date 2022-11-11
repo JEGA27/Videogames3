@@ -9,6 +9,8 @@ public class Explosive : MonoBehaviour
     private float radius;
     [SerializeField]
     private float force;
+    [SerializeField]
+    private float up_force;
 
     private bool hasExploded;
     // Start is called before the first frame update
@@ -32,7 +34,11 @@ public class Explosive : MonoBehaviour
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
             if(rb != null)
             {
-                rb.AddExplosionForce(force, transform.position, radius);
+                rb.AddExplosionForce(force, transform.position, radius, up_force);
+            }
+            if (nearbyObject.GetComponent<Health>() != null)
+            {
+                nearbyObject.GetComponent<Health>().TakeDamage(force / 8f + up_force / 2f);
             }
         }
 
