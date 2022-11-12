@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -51975,7 +51975,7 @@ PrefabInstance:
     - target: {fileID: 8346010187325908770, guid: f9568195a37d646bfaf8531355618d72,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8346010187325908770, guid: f9568195a37d646bfaf8531355618d72,
         type: 3}
@@ -52026,6 +52026,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346010187325908771, guid: f9568195a37d646bfaf8531355618d72,
+        type: 3}
+      propertyPath: limitTrash
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8346010187325908771, guid: f9568195a37d646bfaf8531355618d72,
         type: 3}
@@ -82609,7 +82614,7 @@ PrefabInstance:
     - target: {fileID: 7782555014825939108, guid: 8913e685363bb4805b7091103cc0dfd7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7782555014825939108, guid: 8913e685363bb4805b7091103cc0dfd7,
         type: 3}
@@ -82940,7 +82945,7 @@ PrefabInstance:
     - target: {fileID: 8346010187325908770, guid: f9568195a37d646bfaf8531355618d72,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8346010187325908770, guid: f9568195a37d646bfaf8531355618d72,
         type: 3}
@@ -82991,6 +82996,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346010187325908771, guid: f9568195a37d646bfaf8531355618d72,
+        type: 3}
+      propertyPath: limitTrash
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8346010187325908771, guid: f9568195a37d646bfaf8531355618d72,
         type: 3}
