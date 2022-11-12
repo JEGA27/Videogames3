@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4392157, g: 0.67058825, b: 0.7921569, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 7781212015870841830}
   - component: {fileID: 3098709142586966386}
   m_Layer: 5
-  m_Name: RedTeamScoreImg
+  m_Name: EnemyTeamScoreImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9843137, g: 0.30980393, b: 0.31764707, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 3791999870911351898}
   - component: {fileID: 1189698584692678832}
   m_Layer: 5
-  m_Name: RedTeamScore
+  m_Name: EnemyTeamScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1141,7 +1141,7 @@ GameObject:
   - component: {fileID: 2670180860707850466}
   - component: {fileID: 2670180860707850465}
   m_Layer: 5
-  m_Name: BlueTeamScore
+  m_Name: OwnTeamScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1348,13 +1348,17 @@ MonoBehaviour:
   GameManager: {fileID: 0}
   player: {fileID: 0}
   hpBar: {fileID: 2670180858746883794}
+  blueColor: {r: 0.4392157, g: 0.67058825, b: 0.7921569, a: 1}
+  redColor: {r: 0.9843137, g: 0.30980393, b: 0.31764707, a: 1}
   trashTxt: {fileID: 2670180860482316529}
-  timerTxt: {fileID: 2670180860528162552}
-  timeInSec: 180
-  blueScoreTxt: {fileID: 2670180860707850465}
-  redScoreTxt: {fileID: 0}
+  ownTeamTxt: {fileID: 2670180860707850465}
+  ownTeamImg: {fileID: 4315184660987404889}
+  enemyTeamTxt: {fileID: 1189698584692678832}
+  enemyTeamImg: {fileID: 3098709142586966386}
   ammo: {fileID: 3125770975096771352}
   specialWeaponProgressCircle: {fileID: 8329018125964461139}
+  swBlueCircle: {fileID: 21300000, guid: 7fb6d35eb334b49e08df08c8143b6a07, type: 3}
+  swRedCircle: {fileID: 21300000, guid: 371d59ccb390340c2ac51db8474f201f, type: 3}
 --- !u!1 &3385666324877742186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,7 +1371,7 @@ GameObject:
   - component: {fileID: 6011095837711089047}
   - component: {fileID: 4315184660987404889}
   m_Layer: 5
-  m_Name: BlueTeamScoreImg
+  m_Name: OwnTeamScoreImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1415,7 +1419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4392157, g: 0.67058825, b: 0.7924528, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

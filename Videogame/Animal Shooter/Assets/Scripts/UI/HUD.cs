@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine.UI;
 using UnityEngine;
+using Photon.Pun;
 
 public class HUD : MonoBehaviour
 {
@@ -12,18 +13,26 @@ public class HUD : MonoBehaviour
     private Health health;
     public Slider hpBar;
 
+    public Color blueColor;
+    public Color redColor;
+
     public Text trashTxt;
     private PickUpTrash pickUpTrash;
 
     //public Text timerTxt;
     //public float timeInSec;
 
-    public Text blueScoreTxt;
-    public Text redScoreTxt;
+    public Text ownTeamTxt;
+    public Image ownTeamImg;
+    public Text enemyTeamTxt;
+    public Image enemyTeamImg;
 
     public Text ammo;
 
     public Image specialWeaponProgressCircle;
+    public Sprite swBlueCircle;
+    public Sprite swRedCircle;
+
     private ThirdPersonShooterController tpsc;
 
     // Start is called before the first frame update
@@ -32,6 +41,22 @@ public class HUD : MonoBehaviour
         health = player.GetComponent<Health>();
         pickUpTrash = player.GetComponent<PickUpTrash>();
         tpsc = player.GetComponent<ThirdPersonShooterController>();
+
+        int team = (int)PhotonNetwork.LocalPlayer.CustomProperties["Team"];
+        if (team == 0)
+        {
+            ammo.color = blueColor;
+            specialWeaponProgressCircle.sprite = swBlueCircle;
+            ownTeamImg.color = blueColor;
+            enemyTeamImg.color = redColor;
+        }
+        else
+        {
+            ammo.color = redColor;
+            specialWeaponProgressCircle.sprite = swRedCircle;
+            ownTeamImg.color = redColor;
+            enemyTeamImg.color = blueColor;
+        }
     }
 
     // Update is called once per frame
@@ -55,8 +80,8 @@ public class HUD : MonoBehaviour
         }
         */
 
-        blueScoreTxt.text = GameManager.blueTeamTrash.ToString();
-        redScoreTxt.text = GameManager.redTeamTrash.ToString();
+        ownTeamTxt.text = GameManager.blueTeamTrash.ToString();
+        enemyTeamTxt.text = GameManager.redTeamTrash.ToString();
 
         ammo.text = tpsc.bulletsLeft.ToString() + "/" + tpsc.magazine.ToString();
     }
