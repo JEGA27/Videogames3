@@ -17,6 +17,10 @@ public class TimeManager : MonoBehaviour
 
     public double roundTime = 180.0;
 
+    public string nextScene;
+
+    bool scenechanged = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +30,21 @@ public class TimeManager : MonoBehaviour
             CustomeValue = new ExitGames.Client.Photon.Hashtable();
             startTime = PhotonNetwork.Time;
             startTimer = true;
-            CustomeValue.Add("StartTime", startTime);
-            PhotonNetwork.CurrentRoom.SetCustomProperties(CustomeValue);
+            //CustomeValue.Add("StartTime", startTime);
+            //PhotonNetwork.CurrentRoom.SetCustomProperties(CustomeValue);
+
+            if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("StartTime"))
+            {
+                //we already have a team- so switch teams
+                PhotonNetwork.LocalPlayer.CustomProperties["StartTime"] = startTime;
+            }
+            else
+            {
+
+                CustomeValue.Add("StartTime", startTime);
+                PhotonNetwork.CurrentRoom.SetCustomProperties(CustomeValue);
+
+            }
         }
         else
         {
@@ -46,7 +63,14 @@ public class TimeManager : MonoBehaviour
 
         decTimer = roundTime - timerIncrementValue;
 
+        if ((int)decTimer <= 0 && !scenechanged)
+        {
+            PhotonNetwork.LoadLevel(nextScene);
+            scenechanged = true;
+
+        }
         
+
     }
 
     public int CurrentTime() {

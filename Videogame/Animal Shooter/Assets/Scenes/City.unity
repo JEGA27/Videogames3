@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -44320,6 +44320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decTimer: 0
   roundTime: 180
+  nextScene: City
 --- !u!1 &1111309992
 GameObject:
   m_ObjectHideFlags: 0
@@ -77470,7 +77471,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e42c2a5fa7441f5a86c800b817fa40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 5664499059249402867, guid: de5fb88215c694182ac4b5355a03e4bc,
+  raccoonPrefab: {fileID: 5664499059249402867, guid: de5fb88215c694182ac4b5355a03e4bc,
+    type: 3}
+  ratPrefab: {fileID: 5664499059249402867, guid: de5fb88215c694182ac4b5355a03e4bc,
+    type: 3}
+  catPrefab: {fileID: 5664499059249402867, guid: de5fb88215c694182ac4b5355a03e4bc,
     type: 3}
   minX: -10.88
   maxX: -10.88

@@ -59,8 +59,6 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     {
         int team = 0;
 
-        Debug.Log(team);
-
 
         if (PhotonNetwork.PlayerList.Length % 2 < 1) team = 1;
         else team = 0;
@@ -79,7 +77,24 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 
         }
 
-        PhotonNetwork.LoadLevel("City");
+        if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("Character"))
+        {
+            //we already have a team- so switch teams
+            PhotonNetwork.LocalPlayer.CustomProperties["Character"] = "none";
+        }
+        else
+        {
+
+            var hash = PhotonNetwork.LocalPlayer.CustomProperties;
+            hash.Add("Character", "none");
+            PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+
+        }
+
+        //if(PhotonNetwork.PlayerList.Length == maxPlayers) PhotonNetwork.LoadLevel("CharacterSelection");
+
+        PhotonNetwork.LoadLevel("CharacterSelection");
+        //PhotonNetwork.LoadLevel("City");
     }
 
 
