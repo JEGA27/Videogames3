@@ -28,6 +28,7 @@ public class CharacterManager : MonoBehaviour
 
     string selection = "none";
     bool scenechanged = false;
+    bool available;
 
     //public string selection;
 
@@ -67,7 +68,7 @@ public class CharacterManager : MonoBehaviour
             //Debug.Log(PhotonNetwork.PlayerList[i].ToStringFull());
             if ((string)PhotonNetwork.PlayerList[i].CustomProperties["Character"] != "none")
             {
-                Debug.Log((string)PhotonNetwork.PlayerList[i].CustomProperties["Character"] + i.ToString());
+                //Debug.Log((string)PhotonNetwork.PlayerList[i].CustomProperties["Character"] + i.ToString());
                 
                 if ((int)PhotonNetwork.PlayerList[i].CustomProperties["Team"] == (int)PhotonNetwork.LocalPlayer.CustomProperties["Team"]) {
                     
@@ -128,28 +129,62 @@ public class CharacterManager : MonoBehaviour
 
     public void Confirm()
     {
+        available = true;
 
         if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("Character"))
         {
+            for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
+            {
 
-            var hash = PhotonNetwork.LocalPlayer.CustomProperties;
-            hash["Character"] = selection;
-            PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+                if ((string)PhotonNetwork.PlayerList[i].CustomProperties["Character"] == selection) {
+
+                    available = false;
+                }
+                
+            }
+
+            if (available)
+            {
+
+                var hash = PhotonNetwork.LocalPlayer.CustomProperties;
+                hash["Character"] = selection;
+                PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+
+            }
+
+
         }
         else
         {
+            for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
+            {
 
-            var hash = PhotonNetwork.LocalPlayer.CustomProperties;
-            hash.Add("Character", selection);
-            PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+                if ((string)PhotonNetwork.PlayerList[i].CustomProperties["Character"] == selection)
+                {
+
+                    available = false;
+                }
+
+            }
+
+            if (available) {
+
+                var hash = PhotonNetwork.LocalPlayer.CustomProperties;
+                hash.Add("Character", selection);
+                PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+            }
 
         }
 
-        button1.interactable = false;
-        button2.interactable = false;
-        button3.interactable = false;
+        if (available) {
+            button1.interactable = false;
+            button2.interactable = false;
+            button3.interactable = false;
 
-        confirm.gameObject.SetActive(false);
+            confirm.gameObject.SetActive(false);
+
+        }
+        
     }
 
     void CreateText(int player, Color text_color)
