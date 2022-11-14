@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class TrashSpawner : MonoBehaviour
 {
@@ -52,7 +53,7 @@ public class TrashSpawner : MonoBehaviour
             float posX = Random.Range(bottomLeft.x, topRight.x);
             float posZ = Random.Range(distanceFromCenterMin, distanceFromCenterMax);
             Vector3 pos = new Vector3(posX, centerOfSpawn.y, posZ);
-            Instantiate(trashPrefabs[Random.Range(0, trashPrefabs.Count)], pos, Random.rotation);
+            PhotonNetwork.Instantiate(trashPrefabs[Random.Range(0, trashPrefabs.Count)].name, pos, Random.rotation);
         }
 
         trashToSpawn -= (int)rateInMiddle;
@@ -62,7 +63,7 @@ public class TrashSpawner : MonoBehaviour
             float posX = Random.Range(bottomLeft.x, topRight.x);
             float posZ = Random.Range(bottomRight.z, distanceFromCenterMin);
             Vector3 pos = new Vector3(posX, centerOfSpawn.y, posZ);
-            Instantiate(trashPrefabs[Random.Range(0, trashPrefabs.Count)], pos, Random.rotation);
+            PhotonNetwork.Instantiate(trashPrefabs[Random.Range(0, trashPrefabs.Count)].name, pos, Random.rotation);
         }
 
         for (int i = 0; i < (trashToSpawn / 2); i++)
@@ -70,7 +71,7 @@ public class TrashSpawner : MonoBehaviour
             float posX = Random.Range(bottomLeft.x, topRight.x);
             float posZ = Random.Range(distanceFromCenterMax, topRight.z);
             Vector3 pos = new Vector3(posX, centerOfSpawn.y, posZ);
-            Instantiate(trashPrefabs[Random.Range(0, trashPrefabs.Count)], pos, Random.rotation);
+            PhotonNetwork.Instantiate(trashPrefabs[Random.Range(0, trashPrefabs.Count)].name, pos, Random.rotation);
         }
         
     }
@@ -93,7 +94,7 @@ public class TrashSpawner : MonoBehaviour
         float posZ = Random.Range(bottomLeft.z, topRight.z);
         float posX = Random.Range(bottomLeft.x, topRight.x);
         Vector3 pos = new Vector3(posX, centerOfSpawn.y, posZ);
-        Instantiate(trashPrefabs[Random.Range(0, trashPrefabs.Count)], pos, Random.rotation);
+        PhotonNetwork.Instantiate(trashPrefabs[Random.Range(0, trashPrefabs.Count)].name, pos, Random.rotation);
         yield return new WaitForSeconds(1f);
     }
 

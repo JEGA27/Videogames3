@@ -27,16 +27,18 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     public void CreateRoomName() {
         Debug.Log("Room created: " + createInput.text);
         RoomOptions roomOptions = new RoomOptions();
+        roomOptions.CustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { "MapReady", false } };
         roomOptions.MaxPlayers = maxPlayers;
         PhotonNetwork.CreateRoom(createInput.text, roomOptions, null);
-        Debug.Log("Room created: " + createInput.text);
     }
     public void CreateRoom()
     {
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = maxPlayers;
+        roomOptions.CustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { "MapReady", false } };
         int roomCount = PhotonNetwork.CountOfRooms + 1;
-        PhotonNetwork.CreateRoom("RandomRoom" + roomCount, roomOptions, null);   
+        PhotonNetwork.CreateRoom("RandomRoom" + roomCount, roomOptions, null);
+
     }
 
     public void QuickMatch()

@@ -13,9 +13,13 @@ TagManager:
   - BlueTrashBase
   - BluePlayer
   - RedTrashBase
-  - New tag
   - Sewer
   - Bullet
+  - Agent
+  - TrashSpawner
+  - Dummy
+  - RedPlayer
+  - Marker
   layers:
   - Default
   - TransparentFX
@@ -29,7 +33,7 @@ TagManager:
   - Ground
   - Postprocessing
   - Outline
-  - 
+  - Mark
   - 
   - 
   - 
@@ -55,4 +59,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Markers
+    uniqueID: 1448336947
     locked: 0
