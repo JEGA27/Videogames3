@@ -9,7 +9,9 @@ public class CharacterManager : MonoBehaviour
     public string nextScene;
     public Font myFont;
 
-    public Transform Canvas;
+    public Transform PlayersTxt;
+
+    public GameObject CharacterPanel;
 
     public Button button1;
     public Button button2;
@@ -62,7 +64,7 @@ public class CharacterManager : MonoBehaviour
             if (PhotonNetwork.PlayerList[i] == PhotonNetwork.LocalPlayer) {
 
                 texts[(int)i / 2].text += " (me)";
-                texts[(int)i / 2].color = Color.yellow;
+                texts[(int)i / 2].color = Color.white;
             } 
 
             //Debug.Log(PhotonNetwork.PlayerList[i].ToStringFull());
@@ -107,24 +109,27 @@ public class CharacterManager : MonoBehaviour
     public void Mapache() {
 
         selection = "raccoon";
+        CharacterPanel.SetActive(true);
     }
 
     public void Ardilla()
     {
 
         selection = "squirrel";
+        CharacterPanel.SetActive(true);
     }
 
     public void Rata()
     {
-
         selection = "rat";
+        CharacterPanel.SetActive(true);
     }
 
     public void Gato()
     {
 
         selection = "cat";
+        CharacterPanel.SetActive(true);
     }
 
     public void Confirm()
@@ -191,13 +196,13 @@ public class CharacterManager : MonoBehaviour
     {
         string name = "Player " + player.ToString();
         GameObject UItextGO = new GameObject(name);
-        UItextGO.transform.SetParent(Canvas);
+        UItextGO.transform.SetParent(PlayersTxt);
 
         RectTransform trans = UItextGO.AddComponent<RectTransform>();
 
-        float y = texts[texts.Count-1].GetComponent<RectTransform>().anchoredPosition.y - 120f;
+        float y = texts[texts.Count-1].GetComponent<RectTransform>().anchoredPosition.y - 224f;
 
-        trans.anchoredPosition = new Vector2(-697, y);
+        trans.anchoredPosition = new Vector2(224, y);
         trans.sizeDelta = new Vector2(321, 87);
 
 

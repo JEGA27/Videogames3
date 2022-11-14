@@ -68,18 +68,6 @@ public class HUD : MonoBehaviour
 
         trashTxt.text = pickUpTrash.currentTrash.ToString();
 
-        /*timeInSec -= Time.deltaTime;
-        if (timeInSec >= 0)
-        {
-            TimeSpan ts = TimeSpan.FromSeconds(timeInSec);
-            timerTxt.text = string.Format("{0}", new DateTime(ts.Ticks).ToString("mm:ss"));
-        }
-        else
-        {
-            Debug.Log("Game Over!");
-        }
-        */
-
         ownTeamTxt.text = GameManager.blueTeamTrash.ToString();
         enemyTeamTxt.text = GameManager.redTeamTrash.ToString();
 
