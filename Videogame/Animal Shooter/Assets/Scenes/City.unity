@@ -43793,7 +43793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decTimer: 0
   roundTime: 180
-  nextScene: 
+  nextScene: City
 --- !u!1 &1111309992
 GameObject:
   m_ObjectHideFlags: 0
