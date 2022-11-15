@@ -98,10 +98,12 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
         //     hash.Add("MapReady", false);
         //     PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
         // }
+        
         if(PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("IdPlayer"))
         {
             PhotonNetwork.LocalPlayer.CustomProperties["IdPlayer"] = PhotonNetwork.CurrentRoom.PlayerCount;
         }
+        
         else
         {
             var hash = PhotonNetwork.LocalPlayer.CustomProperties;

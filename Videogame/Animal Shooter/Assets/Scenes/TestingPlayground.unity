@@ -2498,7 +2498,7 @@ GameObject:
   - component: {fileID: 1341681145}
   - component: {fileID: 1341681144}
   - component: {fileID: 1341681143}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (2)
   m_TagString: RedPlayer
   m_Icon: {fileID: 0}
@@ -2965,7 +2965,7 @@ GameObject:
   - component: {fileID: 1740508448}
   - component: {fileID: 1740508447}
   - component: {fileID: 1740508446}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (1)
   m_TagString: RedPlayer
   m_Icon: {fileID: 0}

@@ -53,7 +53,6 @@ public class SpawnPlayers : MonoBehaviour
                 mapManager.name = "MapManager";
             }
         }
-
     }
 
     public void Spawn()

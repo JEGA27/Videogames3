@@ -90,8 +90,14 @@ public class SetMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Set the map
-        Set();
+        if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("IdPlayer"))
+        {
+            byte id = 1;
+            if ((byte)PhotonNetwork.LocalPlayer.CustomProperties["IdPlayer"] == id) 
+            {
+                Set();
+            }
+        }
     }
 
     // Update is called once per frame
