@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &880477991870670991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 880477991870670989}
+  - component: {fileID: 880477991870670990}
+  - component: {fileID: 1850226151959149393}
+  - component: {fileID: -1253476907815797151}
+  m_Layer: 0
+  m_Name: MapManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &880477991870670989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880477991870670991}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &880477991870670990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880477991870670991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5950198e2d62a78e4a76c8efc6cf88bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trashSpawnerPrefab: {fileID: 1049967352373202713, guid: 92146f16df0e01564b79f37f410f2430,
+    type: 3}
+  trashSpawnersPositions:
+  - {x: -8.875001, y: 18.72696, z: 20.875}
+  - {x: 8.624999, y: 18.72696, z: 20.875}
+  agentPrefab: {fileID: 7349990445791795342, guid: de8ec157503ac75da86b237a9017a304,
+    type: 3}
+  agentPositions:
+  - {x: -14.61, y: 0.224, z: -2.706}
+  agentRotations:
+  - {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
+  navPointPrefab: {fileID: 2510373028276070847, guid: ee62dff8137969291b34c83457789c52,
+    type: 3}
+  navPointsPositions:
+  - {x: -21.201, y: 0.2, z: 0.039}
+  - {x: 20.536, y: 0.2, z: -0.045}
+  - {x: 20.15, y: 0.2, z: 48.22}
+  - {x: -2.02, y: 0.2, z: 47.217}
+  - {x: -2.09, y: 0.2, z: 2.79}
+  - {x: -18.63, y: 0.2, z: 3.59}
+  - {x: -17.94, y: 0.2, z: 44.93}
+  - {x: -22.02, y: 0.2, z: 47.2}
+  navPointsTransform: []
+  dumpsterPrefab: {fileID: 6374742427168462425, guid: 7a31769f6db813b0684bfcf996abe97c,
+    type: 3}
+  dumpsterPositions:
+  - {x: -13.34, y: 0.16, z: 12.47}
+  - {x: 13.89, y: 0.16, z: 38.77}
+  dumpsterRotations:
+  - {x: 0, y: -0.70710677, z: 0, w: 0.70710677}
+  - {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
+  dummyPrefab: {fileID: 5123293793326213023, guid: 882e86408d51e875b8c67a1db8090f73,
+    type: 3}
+  dummyPositions:
+  - {x: 12.36, y: 0.021, z: 32.52}
+  - {x: 8.37, y: 0.021, z: 33.13}
+  - {x: 11.98, y: 0.021, z: 35.81}
+  - {x: 8.69, y: 0.021, z: 35.9}
+  - {x: 11.76, y: -0.16, z: 38.85}
+  - {x: 9.22, y: -0.16, z: 38.94}
+  dummyRotations:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  reset: 0
+--- !u!114 &1850226151959149393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880477991870670991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: -1253476907815797151}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &-1253476907815797151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880477991870670991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 1
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0

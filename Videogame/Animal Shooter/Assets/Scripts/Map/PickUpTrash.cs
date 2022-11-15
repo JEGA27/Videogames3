@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class PickUpTrash : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class PickUpTrash : MonoBehaviour
             currentTrash++;
             // Update trash collected
             scoreSW.trashPicked++;
-            Destroy(other.gameObject);
+            PhotonNetwork.Destroy(other.gameObject);
         }
     }
 }

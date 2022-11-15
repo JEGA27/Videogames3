@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class DummyHealth : MonoBehaviour
 {
@@ -46,9 +47,9 @@ public class DummyHealth : MonoBehaviour
           {
               for (int i = 0; i < objectsToSpawn; i++)
               {
-                  Instantiate(objectsPrefabs[Random.Range(0, objectsPrefabs.Count)], transform.position, Random.rotation);
+                PhotonNetwork.Instantiate(objectsPrefabs[Random.Range(0, objectsPrefabs.Count)].name, transform.position, Random.rotation);
               }
-              Destroy(this.gameObject);
+              PhotonNetwork.Destroy(this.gameObject);
           }
       }
     }
@@ -81,7 +82,7 @@ public class DummyHealth : MonoBehaviour
     void Eliminate()
     {
         Debug.Log("Dead");
-        Destroy(this.gameObject);
+        PhotonNetwork.Destroy(this.gameObject);
     }
 
     float CalculateHealth()
