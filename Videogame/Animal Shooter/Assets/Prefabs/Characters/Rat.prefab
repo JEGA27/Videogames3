@@ -216,6 +216,7 @@ MonoBehaviour:
   timeBetweenShots: 0.08
   magazineSize: 30
   bulletsPerTap: 1
+  bulletsLeft: 0
   allowButtonHold: 0
 --- !u!1 &1825890384641513474
 GameObject:
@@ -337,6 +338,7 @@ MonoBehaviour:
   timeBetweenShots: 0.08
   magazineSize: 30
   bulletsPerTap: 3
+  bulletsLeft: 0
   allowButtonHold: 0
 --- !u!1 &1886607836722777402
 GameObject:
@@ -1263,6 +1265,8 @@ MonoBehaviour:
   weapon1: {fileID: 6948645529973202893}
   weapon2: {fileID: 5655769194036409586}
   swapWeaponTime: 3
+  bulletsLeft: 0
+  magazine: 0
 --- !u!114 &6123689712236101786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1425,6 +1429,7 @@ MonoBehaviour:
   maxFallVel: 10
   hpFallDamage: 15
   timeToRecover: 7
+  deaths: 0
 --- !u!82 &5714134761038830624
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2495,7 +2500,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.22080003
+      value: -0.06949995
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -2649,17 +2654,17 @@ PrefabInstance:
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.035
+      value: -0.032324206
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.05615
+      value: -0.012900001
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.14580002
+      value: 0.83132976
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f,
         type: 3}
@@ -2807,7 +2812,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.14580002
+      value: -0.069499955
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
