@@ -92,7 +92,7 @@ public class CharacterManager : MonoBehaviour
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
         {
 
-            Debug.Log(PhotonNetwork.PlayerList[i].ToStringFull());
+            //Debug.Log(PhotonNetwork.PlayerList[i].ToStringFull());
 
             if ((string)PhotonNetwork.PlayerList[i].CustomProperties["Character"] != "none")
             {
