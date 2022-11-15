@@ -91,12 +91,13 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 
         }
 
-        if (!PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("MapReady"))
-        {
-            var hash = PhotonNetwork.CurrentRoom.CustomProperties;
-            hash.Add("MapReady", false);
-            PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
-        }
+        // CHECAR
+        // if (!PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("MapReady"))
+        // {
+        //     var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+        //     hash.Add("MapReady", false);
+        //     PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+        // }
 
         //if(PhotonNetwork.PlayerList.Length == maxPlayers) PhotonNetwork.LoadLevel("CharacterSelection");
 

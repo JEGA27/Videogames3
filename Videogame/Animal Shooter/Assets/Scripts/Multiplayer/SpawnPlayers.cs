@@ -29,18 +29,24 @@ public class SpawnPlayers : MonoBehaviour
         Spawn();
 
         // Set the map
-        if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("MapReady"))
-        {
-            if(!(bool)PhotonNetwork.CurrentRoom.CustomProperties["MapReady"])
-            {
-                GameObject mapManager = PhotonNetwork.Instantiate("MapManager", Vector3.zero, Quaternion.identity);
-                mapManager.name = "MapManager";
+        // CHECAR
+        // if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("MapReady"))
+        // {
+        //     if(!(bool)PhotonNetwork.CurrentRoom.CustomProperties["MapReady"])
+        //     {
+        //         GameObject mapManager = PhotonNetwork.Instantiate("MapManager", Vector3.zero, Quaternion.identity);
+        //         mapManager.name = "MapManager";
 
-                mapReady = true;
-                var hash = PhotonNetwork.CurrentRoom.CustomProperties;
-                hash["MapReady"] = mapReady;
-                PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
-            }
+        //         mapReady = true;
+        //         var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+        //         hash["MapReady"] = mapReady;
+        //         PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+        //     }
+        // }
+        if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+        {
+            GameObject mapManager = PhotonNetwork.Instantiate("MapManager", Vector3.zero, Quaternion.identity);
+            mapManager.name = "MapManager";
         }
     }
 
