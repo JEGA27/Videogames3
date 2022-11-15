@@ -43,7 +43,8 @@ public class SpawnPlayers : MonoBehaviour
         //         PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
         //     }
         // }
-        if (PhotonNetwork.IsMasterClient) //(PhotonNetwork.CurrentRoom.PlayerCount == 1)
+        
+        if (GameObject.FindGameObjectWithTag("MapManager") == null) //(PhotonNetwork.CurrentRoom.PlayerCount == 1)
         {
             GameObject mapManager = PhotonNetwork.Instantiate("MapManager", Vector3.zero, Quaternion.identity);
             mapManager.name = "MapManager";
