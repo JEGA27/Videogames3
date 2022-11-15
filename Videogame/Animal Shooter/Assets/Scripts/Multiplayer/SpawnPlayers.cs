@@ -8,7 +8,7 @@ public class SpawnPlayers : MonoBehaviour
     public GameObject raccoonPrefab;
     public GameObject ratPrefab;
     public GameObject catPrefab;
-    
+
 
     public float minX;
     public float maxX;
@@ -43,19 +43,25 @@ public class SpawnPlayers : MonoBehaviour
         //         PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
         //     }
         // }
-        
-        if (GameObject.FindGameObjectWithTag("MapManager") == null) //(PhotonNetwork.CurrentRoom.PlayerCount == 1)
+
+        if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("IdPlayer"))
         {
-            GameObject mapManager = PhotonNetwork.Instantiate("MapManager", Vector3.zero, Quaternion.identity);
-            mapManager.name = "MapManager";
+            byte id = 1;
+            if ((byte)PhotonNetwork.LocalPlayer.CustomProperties["IdPlayer"] == id)  //(GameObject.FindGameObjectWithTag("MapManager") == null) //(PhotonNetwork.CurrentRoom.PlayerCount == 1)
+            {
+                GameObject mapManager = PhotonNetwork.Instantiate("MapManager", Vector3.zero, Quaternion.identity);
+                mapManager.name = "MapManager";
+            }
         }
+
     }
 
-    public void Spawn() {
-   
+    public void Spawn()
+    {
+
 
         int team = (int)PhotonNetwork.LocalPlayer.CustomProperties["Team"];
-        
+
         //instantiate the blue player if team is 0 and red if it is not
         if (team == 0)
         {

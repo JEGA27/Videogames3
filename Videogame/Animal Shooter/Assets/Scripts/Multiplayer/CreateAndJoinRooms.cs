@@ -98,6 +98,17 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
         //     hash.Add("MapReady", false);
         //     PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
         // }
+        if(PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("IdPlayer"))
+        {
+            PhotonNetwork.LocalPlayer.CustomProperties["IdPlayer"] = PhotonNetwork.CurrentRoom.PlayerCount;
+        }
+        else
+        {
+            var hash = PhotonNetwork.LocalPlayer.CustomProperties;
+            hash.Add("IdPlayer", PhotonNetwork.CurrentRoom.PlayerCount);
+            PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+        }
+        Debug.Log("Id" + PhotonNetwork.LocalPlayer.CustomProperties["IdPlayer"]);
 
         //if(PhotonNetwork.PlayerList.Length == maxPlayers) PhotonNetwork.LoadLevel("CharacterSelection");
 
