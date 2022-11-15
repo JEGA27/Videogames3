@@ -59,10 +59,10 @@ public class CharacterManager : MonoBehaviour
             Team2.color = new Color(112f / 255f, 171f / 255f, 202f / 255f);
         }
 
-        for (int i = 0; i < (int)PhotonNetwork.CurrentRoom.MaxPlayers/2; i++) {
+        for (int i = 1; i < (int)PhotonNetwork.CurrentRoom.MaxPlayers/2; i++) {
 
-            CreateText(i + 2, Color.white,false);
-            CreateText(i + 2, Color.white,true);
+            CreateText(i + 1, Color.white,false);
+            CreateText(i + 1, Color.white,true);
         }
 
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
