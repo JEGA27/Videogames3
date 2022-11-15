@@ -27,7 +27,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     public void CreateRoomName() {
         Debug.Log("Room created: " + createInput.text);
         RoomOptions roomOptions = new RoomOptions();
-        roomOptions.CustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { "MapReady", false } };
+        // roomOptions.CustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { "MapReady", false } };
         roomOptions.MaxPlayers = maxPlayers;
         PhotonNetwork.CreateRoom(createInput.text, roomOptions, null);
     }
@@ -35,7 +35,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     {
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = maxPlayers;
-        roomOptions.CustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { "MapReady", false } };
+        // roomOptions.CustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { "MapReady", false } };
         int roomCount = PhotonNetwork.CountOfRooms + 1;
         PhotonNetwork.CreateRoom("RandomRoom" + roomCount, roomOptions, null);
 
@@ -63,7 +63,6 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 
         Debug.Log(team);
 
-
         if (PhotonNetwork.PlayerList.Length % 2 < 1) team = 1;
         else team = 0;
 
@@ -79,6 +78,13 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
             hash.Add("Team", team);
             PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
 
+        }
+
+        if (!PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("MapReady"))
+        {
+            var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+            hash.Add("MapReady", false);
+            PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
         }
 
         PhotonNetwork.LoadLevel("City");

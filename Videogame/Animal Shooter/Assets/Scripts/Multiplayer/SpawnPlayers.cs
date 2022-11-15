@@ -15,6 +15,8 @@ public class SpawnPlayers : MonoBehaviour
     public List<GameObject> redteam;
     public List<GameObject> blueteam;
 
+    bool mapReady;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,11 @@ public class SpawnPlayers : MonoBehaviour
             {
                 GameObject mapManager = PhotonNetwork.Instantiate("MapManager", Vector3.zero, Quaternion.identity);
                 mapManager.name = "MapManager";
-                PhotonNetwork.CurrentRoom.CustomProperties["MapReady"] = true;
+
+                mapReady = true;
+                var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+                hash["MapReady"] = mapReady;
+                PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
             }
         }
     }

@@ -25,14 +25,14 @@ public class SetMap : MonoBehaviour
     public GameObject navPointPrefab;
     public List<Vector3> navPointsPositions;
     // Default Positions
-    // Vector3(-21.201,0.2,0.039) 1
-    // Vector3(20.536,0.2,-0.045) 2
-    // Vector3(20.15,0.2,48.22)   3
-    // Vector3(-2.02,0.2,47.217)  4
-    // Vector3(-2.09,0.2,2.79)    5
-    // Vector3(-18.63,0.2,3.59)   6
-    // Vector3(-17.94,0.2,44.93)  7
-    // Vector3(-22.02,0.2,47.2)   8
+    // Vector3(-20.1,0.15,-3.16) 1
+    // Vector3(21.6,0.15,-3.25) 2
+    // Vector3(21.24,0.15,45.02)   3
+    // Vector3(-0.92,0.15,44.17)  4
+    // Vector3(-0.99,0.15,-0.41)    5
+    // Vector3(-17.53,0.15,0.39)   6
+    // Vector3(-16.84,0.15,41.73)  7
+    // Vector3(-20.92,0.15,44.02)   8
     public List<Transform> navPointsTransform;
     bool navPointsSet;
 
@@ -112,14 +112,14 @@ public class SetMap : MonoBehaviour
         trashSpawnersPositions.Add(new Vector3(-8.87f, 18.73f, 20.875f));
         trashSpawnersPositions.Add(new Vector3(8.62f, 18.73f, 20.875f));
         // Agents
-        navPointsPositions.Add(new Vector3(-21.201f, 0.2f, 0.039f));
-        navPointsPositions.Add(new Vector3(20.536f, 0.2f, -0.045f));
-        navPointsPositions.Add(new Vector3(20.15f, 0.2f, 48.22f));
-        navPointsPositions.Add(new Vector3(-2.02f, 0.2f, 47.217f));
-        navPointsPositions.Add(new Vector3(-2.09f, 0.2f, 2.79f));
-        navPointsPositions.Add(new Vector3(-18.63f, 0.2f, 3.59f));
-        navPointsPositions.Add(new Vector3(-17.94f, 0.2f, 44.93f));
-        navPointsPositions.Add(new Vector3(-22.02f, 0.2f, 47.2f));
+        navPointsPositions.Add(new Vector3(-20.1f, 0.15f, -3.16f));
+        navPointsPositions.Add(new Vector3(21.6f, 0.15f, -3.25f));
+        navPointsPositions.Add(new Vector3(21.24f, 0.15f, 45.02f));
+        navPointsPositions.Add(new Vector3(-0.92f, 0.15f, 44.17f));
+        navPointsPositions.Add(new Vector3(-0.99f, 0.15f, -0.41f));
+        navPointsPositions.Add(new Vector3(-17.53f, 0.15f, 0.39f));
+        navPointsPositions.Add(new Vector3(-16.84f, 0.15f, 41.73f));
+        navPointsPositions.Add(new Vector3(-20.92f, 0.15f, 44.02f));
         agentPositions.Add(new Vector3(-14.61f, 0.224f, -2.706f));
         agentRotations.Add(Quaternion.Euler(0, 90, 0));
         // Dumpsters
