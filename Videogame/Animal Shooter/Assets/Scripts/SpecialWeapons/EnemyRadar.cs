@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyRadar : MonoBehaviour
 {
-    public GameObject marker;
-    public int y;
     public int timer;
     GameObject[] enemies;
 
@@ -35,19 +33,18 @@ public class EnemyRadar : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            GameObject temp = Instantiate(marker, new Vector3(enemy.transform.position.x, enemy.transform.position.y + y, enemy.transform.position.z) , Quaternion.identity);
-            temp.transform.LookAt(this.transform);
+            int layer = gameObject.tag == "RedPlayer" ? 13 : 12; 
+            enemy.layer = layer;
         }
-        StartCoroutine(DestroyMarkers());
+        StartCoroutine(EndMark());
     }
 
-    IEnumerator DestroyMarkers()
+    IEnumerator EndMark()
     {
         yield return new WaitForSeconds(timer);
-        GameObject[] markers = GameObject.FindGameObjectsWithTag("Marker");
-        foreach (GameObject marker in markers)
+        foreach (GameObject enemy in enemies)
         {
-            Destroy(marker);
+            enemy.layer = 0;
         }
     }
 
