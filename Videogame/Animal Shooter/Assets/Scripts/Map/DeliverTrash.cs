@@ -2,6 +2,8 @@ using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class DeliverTrash : MonoBehaviour
 {
@@ -9,7 +11,7 @@ public class DeliverTrash : MonoBehaviour
     public GameManager GameManager;
     private StarterAssetsInputs starterAssetsInputs;
 
-    private string playerTeam;
+    private int playerTeam;
 
     // Script to handle the delivery of trash to the base
     ScoreSW scoreSW;
@@ -17,9 +19,18 @@ public class DeliverTrash : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerTeam = this.gameObject.tag;
+        playerTeam = (int)PhotonNetwork.LocalPlayer.CustomProperties["Team"];
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         scoreSW = GetComponent<ScoreSW>();
+
+        var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+        hash.Add("BlueScore", 0);
+        PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+        //Debug.Log(PhotonNetwork.CurrentRoom.CustomProperties["BlueScore"]);
+
+        hash.Add("RedScore", 0);
+        PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+        //Debug.Log(PhotonNetwork.CurrentRoom.CustomProperties["BlueScore"]);
     }
 
     // Update is called once per frame
@@ -31,39 +42,27 @@ public class DeliverTrash : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
 
-        if (other.gameObject.CompareTag("BlueTrashBase"))
+        if (other.gameObject.CompareTag("BlueTrashBase") && playerTeam == 0)
         {
-
-            if (playerTeam == "BluePlayer")
+            if (starterAssetsInputs.interact)
             {
-                if (starterAssetsInputs.interact)
-                {
-                    GameManager.blueTeamTrash += PickUpTrash.currentTrash;
-                    // Update trash delivered
-                    scoreSW.trashDelivered += PickUpTrash.currentTrash; 
-                    PickUpTrash.currentTrash = 0;
-                    starterAssetsInputs.interact = false;
-                }
-                
+                PhotonNetwork.CurrentRoom.CustomProperties["BlueScore"] = (int)PhotonNetwork.CurrentRoom.CustomProperties["BlueScore"] + PickUpTrash.currentTrash;
+                // Update trash delivered
+                scoreSW.trashDelivered += PickUpTrash.currentTrash; 
+                PickUpTrash.currentTrash = 0;
+                starterAssetsInputs.interact = false;
             }
-
         }
-        if (other.gameObject.CompareTag("RedTrashBase"))
+        if (other.gameObject.CompareTag("RedTrashBase") && playerTeam == 1)
         {
-
-            if (playerTeam == "RedPlayer")
+            if (starterAssetsInputs.interact)
             {
-                if (starterAssetsInputs.interact)
-                {
-                    GameManager.redTeamTrash += PickUpTrash.currentTrash;
-                    // Update trash delivered
-                    scoreSW.trashDelivered += PickUpTrash.currentTrash;
-                    PickUpTrash.currentTrash = 0;
-                    starterAssetsInputs.interact = false;
-                }
-                
+                PhotonNetwork.CurrentRoom.CustomProperties["RedScore"] = (int)PhotonNetwork.CurrentRoom.CustomProperties["RedScore"] + PickUpTrash.currentTrash;
+                // Update trash delivered
+                scoreSW.trashDelivered += PickUpTrash.currentTrash;
+                PickUpTrash.currentTrash = 0;
+                starterAssetsInputs.interact = false;
             }
-
         }
     }
 }

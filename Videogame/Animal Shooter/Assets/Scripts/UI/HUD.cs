@@ -24,8 +24,10 @@ public class HUD : MonoBehaviour
 
     public Text ownTeamTxt;
     public Image ownTeamImg;
+    private string ownTeamScore;
     public Text enemyTeamTxt;
     public Image enemyTeamImg;
+    private string enemyTeamScore;
 
     public Text ammo;
 
@@ -49,6 +51,8 @@ public class HUD : MonoBehaviour
             specialWeaponProgressCircle.sprite = swBlueCircle;
             ownTeamImg.color = blueColor;
             enemyTeamImg.color = redColor;
+            ownTeamScore = "BlueScore";
+            enemyTeamScore = "RedScore";
         }
         else
         {
@@ -56,6 +60,8 @@ public class HUD : MonoBehaviour
             specialWeaponProgressCircle.sprite = swRedCircle;
             ownTeamImg.color = redColor;
             enemyTeamImg.color = blueColor;
+            ownTeamScore = "RedScore";
+            enemyTeamScore = "BlueScore";
         }
     }
 
@@ -68,8 +74,8 @@ public class HUD : MonoBehaviour
 
         trashTxt.text = pickUpTrash.currentTrash.ToString();
 
-        ownTeamTxt.text = GameManager.blueTeamTrash.ToString();
-        enemyTeamTxt.text = GameManager.redTeamTrash.ToString();
+        ownTeamTxt.text = ((int)PhotonNetwork.CurrentRoom.CustomProperties[ownTeamScore]).ToString();
+        enemyTeamTxt.text = ((int)PhotonNetwork.CurrentRoom.CustomProperties[enemyTeamScore]).ToString();
 
         ammo.text = tpsc.bulletsLeft.ToString() + "/" + tpsc.magazine.ToString();
     }
