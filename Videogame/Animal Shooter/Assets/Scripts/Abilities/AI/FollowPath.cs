@@ -16,7 +16,7 @@ public class FollowPath : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         currentObjective = 0;
         // Get the navpoints from set map script
-        destinationPoints = GameObject.Find("MapManager").GetComponent<SetMap>().navPointsTransform;
+        destinationPoints = GameObject.FindGameObjectWithTag("MapManager").GetComponent<SetMap>().navPointsTransform;
     }
 
     // Update is called once per frame
