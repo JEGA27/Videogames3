@@ -171,7 +171,7 @@ public class CharacterManager : MonoBehaviour
             for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
             {
 
-                if ((string)PhotonNetwork.PlayerList[i].CustomProperties["Character"] == selection) {
+                if ((string)PhotonNetwork.PlayerList[i].CustomProperties["Character"] == selection && (int)PhotonNetwork.PlayerList[i].CustomProperties["Team"] == localTeam) {
 
                     available = false;
                 }

@@ -23,14 +23,23 @@ public class DeliverTrash : MonoBehaviour
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         scoreSW = GetComponent<ScoreSW>();
 
-        var hash = PhotonNetwork.CurrentRoom.CustomProperties;
-        hash.Add("BlueScore", 0);
-        PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
-        //Debug.Log(PhotonNetwork.CurrentRoom.CustomProperties["BlueScore"]);
+        
+        if (!PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("BlueScore"))
+        {
+            var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+            hash.Add("BlueScore", 0);
+            PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+            //Debug.Log(PhotonNetwork.CurrentRoom.CustomProperties["BlueScore"]);
+        }
+        
+        if (!PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("RedScore"))
+        {
+            var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+            hash.Add("RedScore", 0);
+            PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+            //Debug.Log(PhotonNetwork.CurrentRoom.CustomProperties["BlueScore"]);
+        }
 
-        hash.Add("RedScore", 0);
-        PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
-        //Debug.Log(PhotonNetwork.CurrentRoom.CustomProperties["BlueScore"]);
     }
 
     // Update is called once per frame
@@ -46,7 +55,9 @@ public class DeliverTrash : MonoBehaviour
         {
             if (starterAssetsInputs.interact)
             {
-                PhotonNetwork.CurrentRoom.CustomProperties["BlueScore"] = (int)PhotonNetwork.CurrentRoom.CustomProperties["BlueScore"] + PickUpTrash.currentTrash;
+                var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+                hash["BlueScore"] = (int)PhotonNetwork.CurrentRoom.CustomProperties["BlueScore"] + PickUpTrash.currentTrash;;
+                PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
                 // Update trash delivered
                 scoreSW.trashDelivered += PickUpTrash.currentTrash; 
                 PickUpTrash.currentTrash = 0;
@@ -57,7 +68,9 @@ public class DeliverTrash : MonoBehaviour
         {
             if (starterAssetsInputs.interact)
             {
-                PhotonNetwork.CurrentRoom.CustomProperties["RedScore"] = (int)PhotonNetwork.CurrentRoom.CustomProperties["RedScore"] + PickUpTrash.currentTrash;
+                var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+                hash["RedScore"] = (int)PhotonNetwork.CurrentRoom.CustomProperties["RedScore"] + PickUpTrash.currentTrash;;
+                PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
                 // Update trash delivered
                 scoreSW.trashDelivered += PickUpTrash.currentTrash;
                 PickUpTrash.currentTrash = 0;
