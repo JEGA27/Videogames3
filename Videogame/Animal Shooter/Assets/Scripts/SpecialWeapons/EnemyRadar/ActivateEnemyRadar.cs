@@ -1,27 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class EnemyRadar : MonoBehaviour
+public class ActivateEnemyRadar : MonoBehaviour
 {
     public int timer;
     GameObject[] enemies;
 
-    public bool active = false;
+    private PhotonView PV;
+    ScoreSW sSW;
+
+    void Start()
+    {
+        PV = GetComponent<PhotonView>();
+        sSW = GetComponent<ScoreSW>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if(active)
+        if(PV.IsMine)
         {
-            MarkEnemies();
-            active = false;
+            if (Input.GetKeyDown(KeyCode.Q) && sSW.specialWeaponReady)
+            {
+                Debug.Log("Enemy Radar Activated");
+                sSW.specialWeaponReady = false;
+                PhotonNetwork.CurrentRoom.CustomProperties[sSW.idProgress] = 0;
+                sSW.specialWeaponPoints = 0;
+                sSW.specialWeaponProgress = 0;
+                MarkEnemies();
+            }
         }
-    }
+    }   
 
     // Start is called before the first frame update
     void MarkEnemies()
     {
+        Debug.Log("Marking Enemies");
         if(gameObject.tag == "RedPlayer")
         {
             enemies = GameObject.FindGameObjectsWithTag("BluePlayer");

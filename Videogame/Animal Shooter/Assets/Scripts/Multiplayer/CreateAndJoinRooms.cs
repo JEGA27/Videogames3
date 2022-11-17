@@ -77,6 +77,20 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 
         }
 
+        string idPlayerSWProgress = PhotonNetwork.LocalPlayer.UserId + "SWProgress";
+        
+        // Special Weapon Score
+        if(PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("idPlayerSWProgress"))
+        {
+            PhotonNetwork.CurrentRoom.CustomProperties[idPlayerSWProgress] = 0;
+        }
+        else
+        {
+            var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+            hash.Add(idPlayerSWProgress, 0);
+            PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+        }
+
         if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("Character"))
         {
             //we already have a team- so switch teams
@@ -90,20 +104,11 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
             PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
 
         }
-
-        // CHECAR
-        // if (!PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("MapReady"))
-        // {
-        //     var hash = PhotonNetwork.CurrentRoom.CustomProperties;
-        //     hash.Add("MapReady", false);
-        //     PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
-        // }
         
         if(PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("IdPlayer"))
         {
             PhotonNetwork.LocalPlayer.CustomProperties["IdPlayer"] = PhotonNetwork.CurrentRoom.PlayerCount;
         }
-        
         else
         {
             var hash = PhotonNetwork.LocalPlayer.CustomProperties;

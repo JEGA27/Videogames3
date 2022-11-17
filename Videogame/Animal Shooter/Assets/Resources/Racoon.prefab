@@ -1085,7 +1085,8 @@ GameObject:
   - component: {fileID: 3651024308126330106}
   - component: {fileID: -4506395486836063965}
   - component: {fileID: 3387640018608696408}
-  - component: {fileID: 404173157015145801}
+  - component: {fileID: 6377361560587723734}
+  - component: {fileID: -9178125618661769306}
   m_Layer: 3
   m_Name: Racoon
   m_TagString: BluePlayer
@@ -1616,9 +1617,10 @@ MonoBehaviour:
   eliminationMultG: 0
   eliminationMultSW: 0
   specialWeaponPoints: 0
-  specialWeaponCost: 0
+  specialWeaponCost: 200
   specialWeaponProgress: 0
   specialWeaponReady: 0
+  idProgress: 
 --- !u!114 &3387640018608696408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1631,7 +1633,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4544cf0d8c0974393c105785d01b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &404173157015145801
+--- !u!114 &6377361560587723734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664499059249402867}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c287974aee4c4850be0252d01cc3d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToThrow: {fileID: 2366091793111397289, guid: d5aa4ebf2a06e54448925ad440742c8a,
+    type: 3}
+  throwForce: 15
+  throwUpwardForce: 3
+--- !u!114 &-9178125618661769306
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1640,17 +1658,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5664499059249402867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f76aacb4a432cb04b96197e93a3e5d2f, type: 3}
+  m_Script: {fileID: 11500000, guid: d2973e2704f0baf86a6a39d54e08267f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 7032695489549083682}
-  attackPoint: {fileID: 9128762658833464867}
-  objectToThrow: {fileID: 2366091793111397289, guid: d5aa4ebf2a06e54448925ad440742c8a,
-    type: 3}
-  totalThrows: 1
-  throwCooldown: 5
-  throwForce: 15
-  throwUpwardForce: 3
+  timer: 10
 --- !u!1 &5820989894807656783
 GameObject:
   m_ObjectHideFlags: 0

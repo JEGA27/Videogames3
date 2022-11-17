@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class ScoreSW : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class ScoreSW : MonoBehaviour
     public int specialWeaponCost;
     public int specialWeaponProgress;
     public bool specialWeaponReady;
-
+    public string idProgress;
 
     // Start is called before the first frame update
     void Start()
@@ -57,16 +58,17 @@ public class ScoreSW : MonoBehaviour
         eliminationMultSW = 30;
 
         // Special Weapon Settings (Default)
-        specialWeaponCost = 1000;
+        specialWeaponCost = 200;
         specialWeaponProgress = 0;
-        specialWeaponPoints = 0;
+        idProgress = PhotonNetwork.LocalPlayer.UserId + "SWProgress";
+        specialWeaponPoints = (int)PhotonNetwork.CurrentRoom.CustomProperties[idProgress];
         specialWeaponReady = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Change() && !specialWeaponReady)
+        if (Change())
             UpdateScore();
     }
 
@@ -84,18 +86,17 @@ public class ScoreSW : MonoBehaviour
                                (trashRobbed * trashMultRobSW) +
                                (eliminations * eliminationMultSW);
 
-        globalTrash += trashDelivered;
+        PhotonNetwork.CurrentRoom.CustomProperties[idProgress] = specialWeaponPoints;
 
         // Update Special Weapon Progress
         if(specialWeaponPoints != 0)
             specialWeaponProgress = (specialWeaponPoints * 100) / specialWeaponCost;
 
-        // Check if Special Weapon is Ready
-        if(specialWeaponProgress >= 100)
-        {
+        globalTrash += trashDelivered;
+
+        if (specialWeaponProgress >= 100)
             specialWeaponReady = true;
-            specialWeaponPoints = 0;
-        }
+        
         ResetScores();
     }
 
