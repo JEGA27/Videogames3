@@ -39,16 +39,12 @@ public class DummyHealth : MonoBehaviour
           }
           else
           {
-              Eliminate();
-          }
-
-          if (hp == 0 && ActiveTrashDrop)
-          {
-              for (int i = 0; i < objectsToSpawn; i++)
-              {
-                  Instantiate(objectsPrefabs[Random.Range(0, objectsPrefabs.Count)], transform.position, Random.rotation);
+              if(ActiveTrashDrop) {
+                for(int i = 0; i < objectsToSpawn; i++) {
+                    Instantiate(objectsPrefabs[Random.Range(0, objectsPrefabs.Count)], transform.position, Random.rotation);
+                }
               }
-              Destroy(this.gameObject);
+              Eliminate();
           }
       }
     }
