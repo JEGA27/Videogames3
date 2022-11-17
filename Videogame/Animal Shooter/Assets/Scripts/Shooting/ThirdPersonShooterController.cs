@@ -6,6 +6,7 @@ using StarterAssets;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 using Photon.Pun;
+using UnityEngine.EventSystems;
 //using UnityEditor.Experimental.GraphView;
 
 public class ThirdPersonShooterController : MonoBehaviour
@@ -74,6 +75,10 @@ public class ThirdPersonShooterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         magazine = weaponStats.magazineSize;
         bulletsLeft = weaponStats.bulletsLeft;
         
