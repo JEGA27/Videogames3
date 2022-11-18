@@ -238,6 +238,11 @@ MonoBehaviour:
   Team2: {fileID: 591558613}
   PlayersTxt: {fileID: 1938465361}
   CharacterPanel: {fileID: 538812134}
+  characterNameTxt: {fileID: 1602286295}
+  characterAbilityTxt: {fileID: 294546638}
+  characterMainTxt: {fileID: 1236351192}
+  characterSubTxt: {fileID: 1047704562}
+  characterSpecialTxt: {fileID: 1825347465}
   button1: {fileID: 600542469}
   button2: {fileID: 137767867}
   button3: {fileID: 823314244}

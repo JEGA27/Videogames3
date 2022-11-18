@@ -15,6 +15,12 @@ public class CharacterManager : MonoBehaviour
     public Transform PlayersTxt;
 
     public GameObject CharacterPanel;
+    public Text characterNameTxt;
+    public Text characterAbilityTxt;
+    public Text characterMainTxt;
+    public Text characterSubTxt;
+    public Text characterSpecialTxt;
+    
 
     public Button button1;
     public Button button2;
@@ -137,29 +143,46 @@ public class CharacterManager : MonoBehaviour
     }
 
     public void Mapache() {
-
-        selection = "raccoon";
+        selection = Characters.Raccoon.name;
         CharacterPanel.SetActive(true);
+        characterNameTxt.text = Characters.Raccoon.name;
+        characterAbilityTxt.text = Characters.Raccoon.ability;
+        characterMainTxt.text = Characters.Raccoon.main;
+        characterSubTxt.text = Characters.Raccoon.sub;
+        characterSpecialTxt.text = Characters.Raccoon.special;
     }
 
     public void Ardilla()
     {
-
-        selection = "squirrel";
+        selection = Characters.Squirrel.name;
         CharacterPanel.SetActive(true);
+        characterNameTxt.text = Characters.Squirrel.name;
+        characterAbilityTxt.text = Characters.Squirrel.ability;
+        characterMainTxt.text = Characters.Squirrel.main;
+        characterSubTxt.text = Characters.Squirrel.sub;
+        characterSpecialTxt.text = Characters.Squirrel.special;
     }
 
     public void Rata()
     {
-        selection = "rat";
+        selection = Characters.Rat.name;
         CharacterPanel.SetActive(true);
+        characterNameTxt.text = Characters.Rat.name;
+        characterAbilityTxt.text = Characters.Rat.ability;
+        characterMainTxt.text = Characters.Rat.main;
+        characterSubTxt.text = Characters.Rat.sub;
+        characterSpecialTxt.text = Characters.Rat.special;
     }
 
     public void Gato()
     {
-
-        selection = "cat";
+        selection = Characters.Cat.name;
         CharacterPanel.SetActive(true);
+        characterNameTxt.text = Characters.Cat.name;
+        characterAbilityTxt.text = Characters.Cat.ability;
+        characterMainTxt.text = Characters.Cat.main;
+        characterSubTxt.text = Characters.Cat.sub;
+        characterSpecialTxt.text = Characters.Cat.special;
     }
 
     public void Confirm()
@@ -256,4 +279,9 @@ public class CharacterManager : MonoBehaviour
 
     }
 
+}
+
+public class Raccoon
+{
+    public static string name = "Jhonny";
 }
