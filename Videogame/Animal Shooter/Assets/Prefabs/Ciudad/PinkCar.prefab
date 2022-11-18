@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4943638468888220747}
   - component: {fileID: -4056864760921409018}
   - component: {fileID: 2251197364681366839}
+  - component: {fileID: 3037044784682822865}
+  - component: {fileID: -7439301447203785308}
   m_Layer: 0
   m_Name: PinkCar
   m_TagString: Car
@@ -115,3 +117,41 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3037044784682822865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5430893305772896}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4544cf0d8c0974393c105785d01b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7439301447203785308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5430893305772896}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df815b291ec4d144e837a6a1513b2f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 50
+  limitTrash: 20
+  hpIncrease: 0
+  timeToRecover: 50
+  objectsToSpawn: 10
+  objectsPrefabs:
+  - {fileID: 5293823120083327890, guid: da6b50dd8e0179dbebdb503906dc949b, type: 3}
+  - {fileID: 6886207176778085362, guid: 730bdf3c9d8853d1a997068eb6778109, type: 3}
+  - {fileID: 1013872574159855006, guid: bdfdbe615ee20fd1bb7c483a5e1fe113, type: 3}
+  - {fileID: 331231042634521839, guid: aaf72027acc6d236ea23ab5f82bc60ad, type: 3}
+  - {fileID: 6192380661802840555, guid: c7feb95662b304ea686b253e2aa7870f, type: 3}
+  - {fileID: 7457804360396237169, guid: 7116ab006c4995091ba612082d7bc8af, type: 3}
+  - {fileID: 1607843205709577949, guid: 239348cffb17c8216a48c6547bfd8469, type: 3}
+  ActiveTrashDrop: 1

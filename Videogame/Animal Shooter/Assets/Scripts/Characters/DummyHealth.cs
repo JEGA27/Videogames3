@@ -8,10 +8,11 @@ public class DummyHealth : MonoBehaviour
 {
     public float hp;
     private float maxHp;
+    public int limitTrash;  //Variable for the trash limit
     public float hpIncrease;
     public float timeToRecover;
-    public GameObject healthUI;
-    public Slider slider;
+    //public GameObject healthUI;
+    //public Slider slider;
     private float timer;
     //Vehicle Variables
     public int objectsToSpawn;
@@ -22,34 +23,36 @@ public class DummyHealth : MonoBehaviour
     void Start()
     {
         maxHp = hp;
-        slider.value = CalculateHealth();
+        //slider.value = CalculateHealth();
     }
 
     // Update is called once per frame
     void Update()
     {
-      slider.value = CalculateHealth();
+      //slider.value = CalculateHealth();
+      //GameObject[] trashLimit;
+      //trashLimit = GameObject.FindGameObjectsWithTag("Trash");
+
+      //if(trashLimit.Length <= limitTrash) {
+        //trashLimit = null;
+      //}
 
 
       if (hp < maxHp)
       {
-          healthUI.SetActive(true);
+          //healthUI.SetActive(true);
           if (hp > 0)
           {
               Recover();
           }
           else
           {
-              Eliminate();
-          }
-
-          if (hp == 0 && ActiveTrashDrop)
-          {
-              for (int i = 0; i < objectsToSpawn; i++)
-              {
-                PhotonNetwork.Instantiate(objectsPrefabs[Random.Range(0, objectsPrefabs.Count)].name, transform.position, Random.rotation);
+              if(ActiveTrashDrop) {
+                for(int i = 0; i < objectsToSpawn; i++) {
+                    Instantiate(objectsPrefabs[Random.Range(0, objectsPrefabs.Count)], transform.position, Random.rotation);
+                }
               }
-              PhotonNetwork.Destroy(this.gameObject);
+              Eliminate();
           }
       }
     }

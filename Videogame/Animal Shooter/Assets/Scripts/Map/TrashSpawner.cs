@@ -8,6 +8,7 @@ public class TrashSpawner : MonoBehaviour
     public List<GameObject> trashPrefabs = new List<GameObject>();
 
     public int trashToSpawn;
+    public int limitTrash;  //Variable for the trash limit
     public float rateInMiddle; //0.0 - 1.0 Percentage of which the amount will be in the middle
     public float percentageMiddleSize; //0.0 - 1.0 Percentage of the size considered for middle
 
@@ -80,10 +81,13 @@ public class TrashSpawner : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
+        GameObject[] trashLimit;
+        trashLimit = GameObject.FindGameObjectsWithTag("Trash");
 
-        if (time > timeToSpawn)
+        if (time > timeToSpawn && trashLimit.Length <= limitTrash)
         {
             StartCoroutine(TimedSpawner());
+            trashLimit = null;
             time = 0.0f;
         }
 

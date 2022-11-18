@@ -1629,10 +1629,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
+  limitTrash: 0
   hpIncrease: 100
   timeToRecover: 3
-  healthUI: {fileID: 8815103927790381930}
-  slider: {fileID: 8815103926900823574}
   objectsToSpawn: 0
   objectsPrefabs: []
   ActiveTrashDrop: 0

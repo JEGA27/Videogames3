@@ -107,6 +107,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8723945844768457205}
+  - component: {fileID: 5325642791904534627}
+  - component: {fileID: -6408099517502538449}
   m_Layer: 0
   m_Name: StreetFood
   m_TagString: Untagged
@@ -131,6 +133,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &5325642791904534627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8240037189893430095}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4544cf0d8c0974393c105785d01b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6408099517502538449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8240037189893430095}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df815b291ec4d144e837a6a1513b2f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 40
+  limitTrash: 20
+  hpIncrease: 0
+  timeToRecover: 40
+  objectsToSpawn: 7
+  objectsPrefabs:
+  - {fileID: 5293823120083327890, guid: 8ba7e1ff51d5b403caca1162f6627a9b, type: 3}
+  - {fileID: 6886207176778085362, guid: 20b86cbd9eb234e608e455505e0342d8, type: 3}
+  - {fileID: 1013872574159855006, guid: e0f53154543a74ba8999e17508dc7ad1, type: 3}
+  - {fileID: 331231042634521839, guid: ce26b56036551487fa4ab5a2e689f0bc, type: 3}
+  - {fileID: 6192380661802840555, guid: cb291d8b420a74dbb9732007c8d25164, type: 3}
+  - {fileID: 7457804360396237169, guid: 5a63951b940064cc0846c3721aaafc21, type: 3}
+  - {fileID: 1607843205709577949, guid: 42e55eeb0b7e94d72871b2b18e135774, type: 3}
+  ActiveTrashDrop: 1
 --- !u!1 &8437340482527564922
 GameObject:
   m_ObjectHideFlags: 0
