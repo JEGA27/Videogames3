@@ -63,6 +63,9 @@ public class ScoreSW : MonoBehaviour
         idProgress = PhotonNetwork.LocalPlayer.UserId + "SWProgress";
         specialWeaponPoints = (int)PhotonNetwork.CurrentRoom.CustomProperties[idProgress];
         specialWeaponReady = false;
+
+        if(specialWeaponPoints != 0)
+            specialWeaponProgress = (specialWeaponPoints * 100) / specialWeaponCost;
     }
 
     // Update is called once per frame

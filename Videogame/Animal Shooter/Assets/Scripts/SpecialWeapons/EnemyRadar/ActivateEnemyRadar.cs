@@ -5,6 +5,7 @@ using Photon.Pun;
 
 public class ActivateEnemyRadar : MonoBehaviour
 {
+    public GameObject marker;
     public int timer;
     GameObject[] enemies;
 
@@ -20,7 +21,7 @@ public class ActivateEnemyRadar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PV.IsMine)
+        if (PV.IsMine)
         {
             if (Input.GetKeyDown(KeyCode.Q) && sSW.specialWeaponReady)
             {
@@ -32,13 +33,14 @@ public class ActivateEnemyRadar : MonoBehaviour
                 MarkEnemies();
             }
         }
-    }   
+    }
 
     // Start is called before the first frame update
     void MarkEnemies()
     {
+        
         Debug.Log("Marking Enemies");
-        if(gameObject.tag == "RedPlayer")
+        if (gameObject.tag == "RedPlayer")
         {
             enemies = GameObject.FindGameObjectsWithTag("BluePlayer");
         }
@@ -49,8 +51,18 @@ public class ActivateEnemyRadar : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            int layer = gameObject.tag == "RedPlayer" ? 13 : 12; 
-            enemy.layer = layer;
+            int layer = gameObject.tag == "RedPlayer" ? 13 : 12;
+
+            var enemyMarker = Instantiate(marker, enemy.transform.position, Quaternion.identity, enemy.transform);
+            enemyMarker.layer = layer;
+            enemyMarker.transform.LookAt(transform);
+            enemyMarker.tag = "EnemyMarker";
+
+            // enemy.layer = layer;
+            // foreach (Transform t in enemy.transform)
+            // {
+            //     t.gameObject.layer = layer;
+            // }
         }
         StartCoroutine(EndMark());
     }
@@ -58,9 +70,10 @@ public class ActivateEnemyRadar : MonoBehaviour
     IEnumerator EndMark()
     {
         yield return new WaitForSeconds(timer);
-        foreach (GameObject enemy in enemies)
+        GameObject[] markers = GameObject.FindGameObjectsWithTag("EnemyMarker");
+        foreach (GameObject marker in markers)
         {
-            enemy.layer = 0;
+            Destroy(marker);
         }
     }
 

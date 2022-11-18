@@ -1550,7 +1550,7 @@ GameObject:
   - component: {fileID: 2481518675797140824}
   m_Layer: 8
   m_Name: Dummy
-  m_TagString: Dummy
+  m_TagString: RedPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

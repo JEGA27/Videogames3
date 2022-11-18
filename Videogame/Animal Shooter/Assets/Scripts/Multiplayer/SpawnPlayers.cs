@@ -28,22 +28,6 @@ public class SpawnPlayers : MonoBehaviour
 
         Spawn();
 
-        // Set the map
-        // CHECAR
-        // if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("MapReady"))
-        // {
-        //     if(!(bool)PhotonNetwork.CurrentRoom.CustomProperties["MapReady"])
-        //     {
-        //         GameObject mapManager = PhotonNetwork.Instantiate("MapManager", Vector3.zero, Quaternion.identity);
-        //         mapManager.name = "MapManager";
-
-        //         mapReady = true;
-        //         var hash = PhotonNetwork.CurrentRoom.CustomProperties;
-        //         hash["MapReady"] = mapReady;
-        //         PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
-        //     }
-        // }
-
         if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("IdPlayer"))
         {
             byte id = 1;

@@ -103,12 +103,7 @@ public class SetMap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug
-        // if(reset)
-        // { 
-        //     reset = false;
-        //     Reset();
-        // }
+        
     }
 
     // Set Propierties to the objects
