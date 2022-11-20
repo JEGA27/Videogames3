@@ -1550,7 +1550,7 @@ GameObject:
   - component: {fileID: 2481518675797140824}
   m_Layer: 8
   m_Name: Dummy
-  m_TagString: RedPlayer
+  m_TagString: Dummy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1588,7 +1588,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!136 &8815103928190833599
 CapsuleCollider:
@@ -1636,6 +1636,7 @@ MonoBehaviour:
   objectsToSpawn: 0
   objectsPrefabs: []
   ActiveTrashDrop: 0
+  lastShooterId: 
 --- !u!114 &-7448667593251182734
 MonoBehaviour:
   m_ObjectHideFlags: 0

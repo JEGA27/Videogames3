@@ -46,6 +46,8 @@ public class ActivateBlackHole : MonoBehaviour
     {
         // instantiate projectile
         GameObject projectile = PhotonNetwork.Instantiate(objectToThrow.name, attackPoint.position, cam.rotation);
+        // Set shooter tag
+        projectile.GetComponent<BlackHoleSpawner>().playerTag = gameObject.tag;
 
         // get projectiles rigidbody 
         Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();

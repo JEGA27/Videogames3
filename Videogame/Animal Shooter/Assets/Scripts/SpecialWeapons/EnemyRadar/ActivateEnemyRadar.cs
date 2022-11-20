@@ -53,16 +53,16 @@ public class ActivateEnemyRadar : MonoBehaviour
         {
             int layer = gameObject.tag == "RedPlayer" ? 13 : 12;
 
-            var enemyMarker = Instantiate(marker, enemy.transform.position, Quaternion.identity, enemy.transform);
-            enemyMarker.layer = layer;
-            enemyMarker.transform.LookAt(transform);
-            enemyMarker.tag = "EnemyMarker";
+            // var enemyMarker = Instantiate(marker, enemy.transform.position, Quaternion.identity, enemy.transform);
+            // enemyMarker.layer = layer;
+            // enemyMarker.transform.LookAt(transform);
+            // enemyMarker.tag = "EnemyMarker";
 
-            // enemy.layer = layer;
-            // foreach (Transform t in enemy.transform)
-            // {
-            //     t.gameObject.layer = layer;
-            // }
+            enemy.layer = layer;
+            foreach (Transform t in enemy.transform)
+            {
+                t.gameObject.layer = layer;
+            }
         }
         StartCoroutine(EndMark());
     }
@@ -70,10 +70,18 @@ public class ActivateEnemyRadar : MonoBehaviour
     IEnumerator EndMark()
     {
         yield return new WaitForSeconds(timer);
-        GameObject[] markers = GameObject.FindGameObjectsWithTag("EnemyMarker");
-        foreach (GameObject marker in markers)
+    //     GameObject[] markers = GameObject.FindGameObjectsWithTag("EnemyMarker");
+    //     foreach (GameObject marker in markers)
+    //     {
+    //         Destroy(marker);
+    //     }
+        foreach (GameObject enemy in enemies)
         {
-            Destroy(marker);
+            enemy.layer = 0;
+            foreach (Transform t in enemy.transform)
+            {
+                t.gameObject.layer = 0;
+            }
         }
     }
 

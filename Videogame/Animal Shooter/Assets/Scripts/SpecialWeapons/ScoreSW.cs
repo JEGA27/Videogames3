@@ -12,6 +12,7 @@ public class ScoreSW : MonoBehaviour
     public int trashDelivered;
     public int trashRobbed;
     public int eliminations;
+    // public int globalEliminations;
 
     [Header("Score Multipliers")]
     public int trashMultPickG;
@@ -31,18 +32,32 @@ public class ScoreSW : MonoBehaviour
     public int specialWeaponCost;
     public int specialWeaponProgress;
     public bool specialWeaponReady;
+    
+    // IDs
     public string idProgress;
+    string idScore;
+    string idTrash;
+    string idKills;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+        // IDs
+        idProgress = PhotonNetwork.LocalPlayer.UserId + "SWProgress";
+        idScore = PhotonNetwork.LocalPlayer.UserId + "Score";
+        idTrash = PhotonNetwork.LocalPlayer.UserId + "Trash";
+        idKills = PhotonNetwork.LocalPlayer.UserId + "Kills";
+
         // Scores
-        globalPoints = 0;
-        globalTrash = 0;
+        globalPoints = (int)PhotonNetwork.CurrentRoom.CustomProperties[idScore];
+        globalTrash = (int)PhotonNetwork.CurrentRoom.CustomProperties[idTrash];
         trashPicked = 0;
-        trashDelivered = 0;
+        trashDelivered = 0;;
         trashRobbed = 0;
-        eliminations = 0;
+        eliminations = (int)PhotonNetwork.CurrentRoom.CustomProperties[idKills];
+        // globalEliminations = (int)PhotonNetwork.CurrentRoom.CustomProperties[idKills];
 
         // Score Multipliers (Default)
         trashMultPickG = 1;
@@ -60,7 +75,6 @@ public class ScoreSW : MonoBehaviour
         // Special Weapon Settings (Default)
         specialWeaponCost = 200;
         specialWeaponProgress = 0;
-        idProgress = PhotonNetwork.LocalPlayer.UserId + "SWProgress";
         specialWeaponPoints = (int)PhotonNetwork.CurrentRoom.CustomProperties[idProgress];
         specialWeaponReady = false;
 
@@ -70,26 +84,34 @@ public class ScoreSW : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        // globalEliminations = (int)PhotonNetwork.CurrentRoom.CustomProperties[idKills];
         if (Change())
             UpdateScore();
     }
 
     void UpdateScore()
-    {
+    {   
+        // Update kills
+        int diffElim = 0;
+        int totalKills = (int)PhotonNetwork.CurrentRoom.CustomProperties[idKills];
+        if (totalKills > eliminations)
+            diffElim = totalKills - eliminations;
+
         // Update Global Points
         globalPoints += (trashPicked * trashMultPickG) + 
-                        (trashDelivered * trashMultDeliverG) + 
+                        (trashDelivered * trashMultDeliverG) +
                         (trashRobbed * trashMultRobG) +
-                        (eliminations * eliminationMultG);
+                        (diffElim * eliminationMultG);
 
         // Update Special Weapon Points
         specialWeaponPoints += (trashPicked * trashMultPickSW) + 
                                (trashDelivered * trashMultDeliverSW) + 
                                (trashRobbed * trashMultRobSW) +
-                               (eliminations * eliminationMultSW);
+                               (diffElim * eliminationMultSW);
 
-        PhotonNetwork.CurrentRoom.CustomProperties[idProgress] = specialWeaponPoints;
+        // Update kills count
+        eliminations = totalKills;
 
         // Update Special Weapon Progress
         if(specialWeaponPoints != 0)
@@ -100,6 +122,11 @@ public class ScoreSW : MonoBehaviour
         if (specialWeaponProgress >= 100)
             specialWeaponReady = true;
         
+
+        PhotonNetwork.CurrentRoom.CustomProperties[idProgress] = specialWeaponPoints;
+        PhotonNetwork.CurrentRoom.CustomProperties[idScore] = globalPoints;
+        PhotonNetwork.CurrentRoom.CustomProperties[idTrash] = globalTrash;
+
         ResetScores();
     }
 
@@ -109,12 +136,11 @@ public class ScoreSW : MonoBehaviour
         trashPicked = 0;
         trashDelivered = 0;
         trashRobbed = 0;
-        eliminations = 0;
     }
 
     bool Change()
     {
-        if(trashPicked != 0 || trashDelivered != 0 || trashRobbed != 0 || eliminations != 0)
+        if(trashPicked != 0 || trashDelivered != 0 || trashRobbed != 0 || eliminations != (int)PhotonNetwork.CurrentRoom.CustomProperties[idKills])
             return true;
         else
             return false;

@@ -21,7 +21,9 @@ public class Health : MonoBehaviour
 
     SpawnPlayers sp;
 
-    public int deaths = 0;
+    public int deaths;
+    string idDeaths;
+    public string lastShooterId;
 
     //private Rigidbody rb;
     private ThirdPersonController thirdPersonController;
@@ -38,6 +40,10 @@ public class Health : MonoBehaviour
         PV = GetComponent<PhotonView>();
 
         sp = GameObject.Find("PlayerSpawner").GetComponent<SpawnPlayers>();
+
+        // Store deaths
+        idDeaths = PhotonNetwork.LocalPlayer.UserId + "Deaths";
+        deaths = (int)PhotonNetwork.CurrentRoom.CustomProperties[idDeaths];
     }
 
     // Update is called once per frame
@@ -104,9 +110,15 @@ public class Health : MonoBehaviour
 
     void Eliminate()
     {
-        Debug.Log("Dead");
         //Destroy(this.gameObject);
-        deaths++;
+        // Update deaths
+        PhotonNetwork.CurrentRoom.CustomProperties[idDeaths] = deaths + 1;
+        // Update shooter's kills
+        if (lastShooterId != PhotonNetwork.LocalPlayer.UserId)
+        {
+            PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
+        }
+
         PhotonNetwork.Destroy(this.gameObject);
         sp.Spawn();
     }

@@ -85,6 +85,7 @@ MonoBehaviour:
   speed: 50
   bulletDamage: 7
   spread: 0.02
+  ShooterId: 
 --- !u!96 &90845880892405641
 TrailRenderer:
   serializedVersion: 2

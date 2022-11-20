@@ -72,6 +72,7 @@ MonoBehaviour:
   speed: 30
   bulletDamage: 35
   spread: 0.02
+  ShooterId: 
 --- !u!135 &8989323921845381767
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -100,6 +101,7 @@ MonoBehaviour:
   radius: 2.25
   force: 500
   up_force: 300
+  ShooterId: 
 --- !u!82 &8941165982304213166
 AudioSource:
   m_ObjectHideFlags: 0

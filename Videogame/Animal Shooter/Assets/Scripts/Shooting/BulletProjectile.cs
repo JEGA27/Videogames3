@@ -14,8 +14,6 @@ public class BulletProjectile : MonoBehaviour
     private float bulletDamage;
    
 
-
-
     private AudioSource audioSource;
     private Rigidbody bulletRigidbody;
     private Health healthSystem;
@@ -27,6 +25,7 @@ public class BulletProjectile : MonoBehaviour
     Vector3 direction;
     public float spread;
 
+    public string ShooterId;
 
     void Awake()
     {
@@ -60,11 +59,13 @@ public class BulletProjectile : MonoBehaviour
             {
                 dummyHealth = other.GetComponent<DummyHealth>();
                 dummyHealth.TakeDamage(bulletDamage);
+                dummyHealth.lastShooterId = ShooterId;
             }
             else if (other.tag != this.tag)
             {
                 healthSystem = other.GetComponent<Health>();
                 healthSystem.TakeDamage(bulletDamage);
+                healthSystem.lastShooterId = ShooterId;
             }
 
         }

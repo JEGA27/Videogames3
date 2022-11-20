@@ -1136,7 +1136,7 @@ GameObject:
   - component: {fileID: 8128637971133779659}
   m_Layer: 0
   m_Name: Dumpster
-  m_TagString: Dumpster
+  m_TagString: RedPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1247,6 +1247,7 @@ MonoBehaviour:
   objectsToSpawn: 0
   objectsPrefabs: []
   ActiveTrashDrop: 0
+  lastShooterId: 
 --- !u!114 &1805057366222601334
 MonoBehaviour:
   m_ObjectHideFlags: 0

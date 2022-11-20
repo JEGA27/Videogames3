@@ -1368,6 +1368,7 @@ MonoBehaviour:
   hpFallDamage: 15
   timeToRecover: 7
   deaths: 0
+  lastShooterId: 
 --- !u!82 &6479032947009225061
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1640,7 +1641,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5664499059249402867}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c287974aee4c4850be0252d01cc3d73, type: 3}
   m_Name: 
@@ -1656,13 +1657,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5664499059249402867}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2973e2704f0baf86a6a39d54e08267f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   marker: {fileID: 4634440096377742227, guid: 8c4ed8cebe1bb2e458a7f9b428ec6d34, type: 3}
-  timer: 60
+  timer: 10
 --- !u!1 &5820989894807656783
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,6 +2994,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315613235497259882, guid: f5cf84ab8f03e4b4582f5c64589d7701,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8457710442317358929, guid: f5cf84ab8f03e4b4582f5c64589d7701,
         type: 3}
