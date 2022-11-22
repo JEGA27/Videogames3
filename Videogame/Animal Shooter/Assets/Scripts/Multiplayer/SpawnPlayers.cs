@@ -25,6 +25,7 @@ public class SpawnPlayers : MonoBehaviour
     {
         redteam = new List<GameObject>();
         blueteam = new List<GameObject>();
+        Debug.Log(PhotonNetwork.LocalPlayer.CustomProperties["Character"]);
 
         Spawn();
 
@@ -68,9 +69,9 @@ public class SpawnPlayers : MonoBehaviour
             Vector3 spawnblue = new Vector3(1, 0, 50.4f);
             //PhotonNetwork.Instantiate(playerPrefab.name, blueteam[0].transform.position, Quaternion.identity);
 
-            if ((string)PhotonNetwork.LocalPlayer.CustomProperties["Character"] == "raccoon") PhotonNetwork.Instantiate(raccoonPrefab.name, spawnblue, Quaternion.Euler(0, 180, 0));
-            else if ((string)PhotonNetwork.LocalPlayer.CustomProperties["Character"] == "rat") PhotonNetwork.Instantiate(ratPrefab.name, spawnblue, Quaternion.Euler(0, 180, 0));
-            else if ((string)PhotonNetwork.LocalPlayer.CustomProperties["Character"] == "cat") PhotonNetwork.Instantiate(catPrefab.name, spawnblue, Quaternion.Euler(0, 180, 0));
+            if ((string)PhotonNetwork.LocalPlayer.CustomProperties["Character"] == Characters.Raccoon.name) PhotonNetwork.Instantiate(raccoonPrefab.name, spawnblue, Quaternion.Euler(0, 180, 0));
+            else if ((string)PhotonNetwork.LocalPlayer.CustomProperties["Character"] == Characters.Rat.name) PhotonNetwork.Instantiate(ratPrefab.name, spawnblue, Quaternion.Euler(0, 180, 0));
+            else if ((string)PhotonNetwork.LocalPlayer.CustomProperties["Character"] == Characters.Cat.name) PhotonNetwork.Instantiate(catPrefab.name, spawnblue, Quaternion.Euler(0, 180, 0));
         }
         else
         {
@@ -79,9 +80,9 @@ public class SpawnPlayers : MonoBehaviour
             //PhotonNetwork.Instantiate(playerPrefab.name, redteam[0].transform.position, Quaternion.identity);
             //PhotonNetwork.Instantiate(raccoonPrefab.name, spawnred, Quaternion.identity);
 
-            if ((string)PhotonNetwork.LocalPlayer.CustomProperties["Character"] == "raccoon") PhotonNetwork.Instantiate(raccoonPrefab.name, spawnred, Quaternion.identity);
-            else if ((string)PhotonNetwork.LocalPlayer.CustomProperties["Character"] == "rat") PhotonNetwork.Instantiate(ratPrefab.name, spawnred, Quaternion.identity);
-            else if ((string)PhotonNetwork.LocalPlayer.CustomProperties["Character"] == "cat") PhotonNetwork.Instantiate(catPrefab.name, spawnred, Quaternion.identity);
+            if ((string)PhotonNetwork.LocalPlayer.CustomProperties["Character"] == Characters.Raccoon.name) PhotonNetwork.Instantiate(raccoonPrefab.name, spawnred, Quaternion.identity);
+            else if ((string)PhotonNetwork.LocalPlayer.CustomProperties["Character"] == Characters.Rat.name) PhotonNetwork.Instantiate(ratPrefab.name, spawnred, Quaternion.identity);
+            else if ((string)PhotonNetwork.LocalPlayer.CustomProperties["Character"] == Characters.Cat.name) PhotonNetwork.Instantiate(catPrefab.name, spawnred, Quaternion.identity);
         }
     }
 
