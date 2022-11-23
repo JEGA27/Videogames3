@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Realtime;
 using Photon.Pun;
-using TMPro;
+using UnityEngine.UI;
 
 public class ListItem : MonoBehaviour
 {   
-    [SerializeField] TMP_Text text;
+    [SerializeField] Text text;
 
     RoomInfo info;
 
