@@ -155,6 +155,7 @@ MonoBehaviour:
   timeBetweenShots: 0.08
   magazineSize: 30
   bulletsPerTap: 1
+  bulletsLeft: 0
   allowButtonHold: 0
 --- !u!1 &571758130006363027
 GameObject:
@@ -276,6 +277,7 @@ MonoBehaviour:
   timeBetweenShots: 0.08
   magazineSize: 30
   bulletsPerTap: 3
+  bulletsLeft: 0
   allowButtonHold: 0
 --- !u!1 &692712137509932350
 GameObject:
@@ -847,6 +849,8 @@ MonoBehaviour:
   weapon1: {fileID: 571758129455272062}
   weapon2: {fileID: 5819991306117605219}
   swapWeaponTime: 3
+  bulletsLeft: 0
+  magazine: 0
 --- !u!114 &5350874513916515083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,6 +995,8 @@ MonoBehaviour:
   maxFallVel: 10
   hpFallDamage: 15
   timeToRecover: 7
+  deaths: 0
+  lastShooterId: 
 --- !u!82 &5905688154669387697
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1001,7 +1007,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 974a0d137206b4b618e252c9da3e27cd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b406c63804cd34bbe80aca726d964c77, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
