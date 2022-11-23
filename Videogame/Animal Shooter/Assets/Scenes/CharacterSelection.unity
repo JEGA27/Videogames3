@@ -522,8 +522,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decTimer: 0
-  roundTime: 45
+  roundTime: 10
   nextScene: City
+  menu: 1
 --- !u!1 &502780385
 GameObject:
   m_ObjectHideFlags: 0

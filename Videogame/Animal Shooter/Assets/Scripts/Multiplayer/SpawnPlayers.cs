@@ -19,7 +19,7 @@ public class SpawnPlayers : MonoBehaviour
     public List<GameObject> blueteam;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         redteam = new List<GameObject>();
         blueteam = new List<GameObject>();

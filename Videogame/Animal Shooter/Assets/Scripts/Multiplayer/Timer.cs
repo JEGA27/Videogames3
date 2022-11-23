@@ -61,7 +61,7 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            Debug.Log("Game Over!");
+            return;
         }
 
        

@@ -59,6 +59,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     {
         int team = 0;
 
+        //PhotonNetwork.AutomaticallySyncScene = true;
 
         if (PhotonNetwork.PlayerList.Length % 2 < 1) team = 1;
         else team = 0;
@@ -90,6 +91,64 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
             PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
 
         }
+
+        // CHECAR
+        // if (!PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("MapReady"))
+        // {
+        //     var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+        //     hash.Add("MapReady", false);
+        //     PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+        // }
+        
+        if(PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("IdPlayer"))
+        {
+            PhotonNetwork.LocalPlayer.CustomProperties["IdPlayer"] = PhotonNetwork.CurrentRoom.PlayerCount;
+        }
+        
+        else
+        {
+            var hash = PhotonNetwork.LocalPlayer.CustomProperties;
+            hash.Add("IdPlayer", PhotonNetwork.CurrentRoom.PlayerCount);
+            PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+        }
+
+        if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("Rounds"))
+        {
+            PhotonNetwork.CurrentRoom.CustomProperties["Rounds"] = PhotonNetwork.CurrentRoom.PlayerCount;
+        }
+
+        else
+        {
+            var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+            hash.Add("Rounds", 2);
+            PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+        }
+
+        if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("RedTeamRounds"))
+        {
+            PhotonNetwork.CurrentRoom.CustomProperties["RedTeamRounds"] = PhotonNetwork.CurrentRoom.PlayerCount;
+        }
+
+        else
+        {
+            var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+            hash.Add("RedTeamRounds", 0);
+            PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+        }
+
+        if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("BlueTeamRounds"))
+        {
+            PhotonNetwork.CurrentRoom.CustomProperties["BlueTeamRounds"] = PhotonNetwork.CurrentRoom.PlayerCount;
+        }
+
+        else
+        {
+            var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+            hash.Add("BlueTeamRounds", 0);
+            PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+        }
+
+        Debug.Log("Id" + PhotonNetwork.LocalPlayer.CustomProperties["IdPlayer"]);
 
         //if(PhotonNetwork.PlayerList.Length == maxPlayers) PhotonNetwork.LoadLevel("CharacterSelection");
 

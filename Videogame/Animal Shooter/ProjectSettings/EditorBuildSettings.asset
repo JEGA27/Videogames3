@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CharacterSelection.unity
     guid: 80842f14baadf418e92b267087f00d3c
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: a0d187adf7919f248bc93ae084995c9b
+  - enabled: 1
+    path: Assets/Scenes/Test.unity
+    guid: 0661bf2c73954d7419e2cd299117fbc9
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}
