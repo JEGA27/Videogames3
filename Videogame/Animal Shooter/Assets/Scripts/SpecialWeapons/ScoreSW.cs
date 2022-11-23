@@ -60,20 +60,20 @@ public class ScoreSW : MonoBehaviour
         // globalEliminations = (int)PhotonNetwork.CurrentRoom.CustomProperties[idKills];
 
         // Score Multipliers (Default)
-        trashMultPickG = 1;
+        trashMultPickG = 10;
         trashMultPickSW = 1;
 
-        trashMultRobG = 5;
-        trashMultRobSW = 5;
+        trashMultRobG = 20;
+        trashMultRobSW = 2;
 
-        trashMultDeliverG = 3;
-        trashMultDeliverSW = 3;
+        trashMultDeliverG = 30;
+        trashMultDeliverSW = 2;
 
-        eliminationMultG = 30;
-        eliminationMultSW = 30;
+        eliminationMultG = 50;
+        eliminationMultSW = 50;
 
         // Special Weapon Settings (Default)
-        specialWeaponCost = 200;
+        specialWeaponCost = 500;
         specialWeaponProgress = 0;
         specialWeaponPoints = (int)PhotonNetwork.CurrentRoom.CustomProperties[idProgress];
         specialWeaponReady = false;

@@ -1136,7 +1136,7 @@ GameObject:
   - component: {fileID: 8128637971133779659}
   m_Layer: 0
   m_Name: Dumpster
-  m_TagString: RedPlayer
+  m_TagString: Dumpster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -24,6 +24,7 @@ TagManager:
   - RedBullet
   - Bullet
   - EnemyMarker
+  - CityObject
   layers:
   - Default
   - TransparentFX

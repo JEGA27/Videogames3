@@ -25,14 +25,14 @@ public class SetMap : MonoBehaviour
     public GameObject navPointPrefab;
     public List<Vector3> navPointsPositions;
     // Default Positions
-    // Vector3(-20.1,0.15,-3.16) 1
-    // Vector3(21.6,0.15,-3.25) 2
-    // Vector3(21.24,0.15,45.02)   3
+    // Vector3(-20.1,0.15,-3.16)  1
+    // Vector3(21.6,0.15,-3.25)   2
+    // Vector3(21.24,0.15,45.02)  3
     // Vector3(-0.92,0.15,44.17)  4
-    // Vector3(-0.99,0.15,-0.41)    5
-    // Vector3(-17.53,0.15,0.39)   6
-    // Vector3(-16.84,0.15,41.73)  7
-    // Vector3(-20.92,0.15,44.02)   8
+    // Vector3(-0.99,0.15,-0.41)  5
+    // Vector3(-17.53,0.15,0.39)  6
+    // Vector3(-16.84,0.15,41.73) 7
+    // Vector3(-20.92,0.15,44.02) 8
     public List<Transform> navPointsTransform;
     bool navPointsSet;
 
@@ -63,7 +63,12 @@ public class SetMap : MonoBehaviour
     // Default Rotations
     // Quaternion(0, 0, 0) All
 
-    public bool reset;
+    // CITY OBJECTS
+    [Header("City Objects")]
+    public GameObject redTruck;
+    public GameObject orangeTruck;
+    public GameObject car;
+    public GameObject statue;
 
     void Awake()
     {
@@ -150,6 +155,7 @@ public class SetMap : MonoBehaviour
         Agents();
         Dumpsters();
         Dummies();
+        CityObjects();
     }
 
     // Destroy the objects and set the map again
@@ -184,6 +190,12 @@ public class SetMap : MonoBehaviour
         foreach (GameObject trashObject in trash)
         {
             PhotonNetwork.Destroy(trashObject);
+        }
+        // City Objects
+        GameObject[] cityObjects = GameObject.FindGameObjectsWithTag("CityObject");
+        foreach (GameObject cityObject in cityObjects)
+        {
+            PhotonNetwork.Destroy(cityObject);
         }
         // Set the map
         Set();
@@ -232,6 +244,19 @@ public class SetMap : MonoBehaviour
         {
             PhotonNetwork.Instantiate(dummyPrefab.name, dummyPositions[i], dummyRotations[i]);
         }
+    }
+
+    // Instantiate City Objects
+    void CityObjects()
+    {
+        // Red Truck
+        PhotonNetwork.Instantiate(redTruck.name, redTruck.transform.position, redTruck.transform.rotation);
+        // Orane Truck
+        PhotonNetwork.Instantiate(orangeTruck.name, orangeTruck.transform.position, orangeTruck.transform.rotation);
+        // Blue Car
+        PhotonNetwork.Instantiate(car.name, car.transform.position, car.transform.rotation);
+        // Statue
+        PhotonNetwork.Instantiate(statue.name, statue.transform.position, statue.transform.rotation);
     }
 
 
