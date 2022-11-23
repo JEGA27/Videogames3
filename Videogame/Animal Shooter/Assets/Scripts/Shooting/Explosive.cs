@@ -13,6 +13,10 @@ public class Explosive : MonoBehaviour
     private float up_force;
 
     private bool hasExploded;
+
+    public string ShooterId;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +43,7 @@ public class Explosive : MonoBehaviour
             if (nearbyObject.GetComponent<Health>() != null)
             {
                 nearbyObject.GetComponent<Health>().TakeDamage(force / 8f + up_force / 2f);
+                nearbyObject.GetComponent<Health>().lastShooterId = ShooterId;
             }
         }
 

@@ -14,8 +14,6 @@ public class BulletProjectile : MonoBehaviour
     private float bulletDamage;
    
 
-
-
     private AudioSource audioSource;
     private Rigidbody bulletRigidbody;
     private Health healthSystem;
@@ -27,6 +25,7 @@ public class BulletProjectile : MonoBehaviour
     Vector3 direction;
     public float spread;
 
+    public string ShooterId;
 
     void Awake()
     {
@@ -56,26 +55,28 @@ public class BulletProjectile : MonoBehaviour
         {
 
 
-            if(other.GetComponent<DummyHealth>() != null)
+            if(other.GetComponent<DummyHealth>() != null && other.tag != this.tag)
             {
                 dummyHealth = other.GetComponent<DummyHealth>();
                 dummyHealth.TakeDamage(bulletDamage);
+                dummyHealth.lastShooterId = ShooterId;
             }
-            else
+            else if (other.tag != this.tag)
             {
                 healthSystem = other.GetComponent<Health>();
                 healthSystem.TakeDamage(bulletDamage);
+                healthSystem.lastShooterId = ShooterId;
             }
 
         }
 
             
-            if(other.gameObject.tag != "Bullet")
-            {
-                PhotonNetwork.Instantiate(hitEffect.name, transform.position , Quaternion.identity);
-                PhotonNetwork.Destroy(gameObject);
-            }
-     
+        if(other.gameObject.tag != this.tag)
+        {
+            PhotonNetwork.Instantiate(hitEffect.name, transform.position , Quaternion.identity);
+            PhotonNetwork.Destroy(gameObject);
+        }
+    
         
     }
 

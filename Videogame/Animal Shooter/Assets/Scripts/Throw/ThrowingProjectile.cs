@@ -35,12 +35,10 @@ public class ThrowingProjectile : MonoBehaviour
 
     private void Update()
     {
-        
         if(Input.GetKeyDown(throwKey) && readyToThrow && updatedThrows > 0)
         {
             Throw();
         }
-
     }
 
     private void Throw()

@@ -68,7 +68,7 @@ public class HUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        specialWeaponProgressCircle.fillAmount = (player.GetComponent<ScoreSW>().specialWeaponPoints) / 100.0f;
+        specialWeaponProgressCircle.fillAmount = (player.GetComponent<ScoreSW>().specialWeaponProgress) / 100.0f;
 
         hpBar.value = health.hp / GameManager.maxRaccoonHealth;
 

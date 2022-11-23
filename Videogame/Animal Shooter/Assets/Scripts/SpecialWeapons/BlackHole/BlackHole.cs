@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class BlackHole : MonoBehaviour
 {
-    public Material blackHoleMaterial;
+    public Material blueBlackHoleMaterial;
+    public Material redBlackHoleMaterial;
+    public string playerTag;
+
     private Shape i;
     private Mesh myMesh;
 
@@ -138,7 +142,7 @@ public class BlackHole : MonoBehaviour
             }
             else
             {
-                Destroy(this.gameObject);
+                PhotonNetwork.Destroy(this.gameObject);
             }
         }
     }
@@ -156,7 +160,8 @@ public class BlackHole : MonoBehaviour
             {
                 Rigidbody r = other.gameObject.GetComponent<Rigidbody>();
                 rbsInBlackHole.Remove(r);
-                Destroy(other.gameObject);
+                PhotonNetwork.Destroy(other.gameObject);
+                // Checar
                 GameManager.blueTeamTrash++;
             }
         }
@@ -229,8 +234,15 @@ public class BlackHole : MonoBehaviour
         
         if (gameObject.GetComponent<MeshRenderer>() == null)
         {
-            MeshRenderer mr = gameObject.AddComponent<MeshRenderer>();  
-            mr.material = blackHoleMaterial;
+            MeshRenderer mr = gameObject.AddComponent<MeshRenderer>();
+            if(playerTag == "BluePlayer")
+            {
+                mr.material = blueBlackHoleMaterial;
+            }
+            else
+            {
+                mr.material = redBlackHoleMaterial;
+            }
         }
         if (gameObject.GetComponent<MeshFilter>() == null)
         {

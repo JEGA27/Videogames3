@@ -19,6 +19,8 @@ public class DummyHealth : MonoBehaviour
     public List<GameObject> objectsPrefabs = new List<GameObject>();
     public bool ActiveTrashDrop = false;
 
+    public string lastShooterId;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -84,8 +86,9 @@ public class DummyHealth : MonoBehaviour
 
     void Eliminate()
     {
-        Debug.Log("Dead");
         PhotonNetwork.Destroy(this.gameObject);
+        // Update shooter's kills
+        PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
     }
 
     float CalculateHealth()

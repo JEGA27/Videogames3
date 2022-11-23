@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class BlackHoleSpawner : MonoBehaviour
 {
 
     [SerializeField]
     private GameObject blackHole;
-
-    
+    public string playerTag;
     
     
     // Start is called before the first frame update
@@ -25,9 +25,9 @@ public class BlackHoleSpawner : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        
         Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
-        Instantiate(blackHole, spawnPosition, transform.rotation);
+        var bH = PhotonNetwork.Instantiate(blackHole.name, spawnPosition, transform.rotation);
+        bH.GetComponent<BlackHole>().playerTag = playerTag;
         Destroy(gameObject);
     }
 }

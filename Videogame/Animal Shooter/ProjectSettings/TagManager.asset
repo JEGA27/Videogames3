@@ -14,13 +14,16 @@ TagManager:
   - BluePlayer
   - RedTrashBase
   - Sewer
-  - Bullet
   - Agent
   - TrashSpawner
   - Dummy
   - RedPlayer
   - Marker
   - MapManager
+  - BlueBullet
+  - RedBullet
+  - Bullet
+  - EnemyMarker
   layers:
   - Default
   - TransparentFX

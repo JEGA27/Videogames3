@@ -90,27 +90,69 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
             PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
 
         }
-
-        // CHECAR
-        // if (!PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("MapReady"))
-        // {
-        //     var hash = PhotonNetwork.CurrentRoom.CustomProperties;
-        //     hash.Add("MapReady", false);
-        //     PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
-        // }
         
         if(PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("IdPlayer"))
         {
             PhotonNetwork.LocalPlayer.CustomProperties["IdPlayer"] = PhotonNetwork.CurrentRoom.PlayerCount;
         }
-        
         else
         {
             var hash = PhotonNetwork.LocalPlayer.CustomProperties;
             hash.Add("IdPlayer", PhotonNetwork.CurrentRoom.PlayerCount);
             PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
         }
-        Debug.Log("Id" + PhotonNetwork.LocalPlayer.CustomProperties["IdPlayer"]);
+        
+
+        // Scores and progress (globalscore, trash, elim, deaths, progress)
+        string idPlayerScore = PhotonNetwork.LocalPlayer.UserId + "Score";
+        string idPlayerTrash = PhotonNetwork.LocalPlayer.UserId + "Trash";
+        string idPlayerElim = PhotonNetwork.LocalPlayer.UserId + "Kills";
+        string idPlayerDeaths = PhotonNetwork.LocalPlayer.UserId + "Deaths";
+        string idPlayerSWProgress = PhotonNetwork.LocalPlayer.UserId + "SWProgress";
+        var hashScores = PhotonNetwork.CurrentRoom.CustomProperties;
+
+        if(hashScores.ContainsKey("idPlayerSWProgress"))
+        {
+            hashScores[idPlayerSWProgress] = 0;
+        }
+        else
+        {
+            hashScores.Add(idPlayerSWProgress, 0);
+        }
+        if(hashScores.ContainsKey("idPlayerScore"))
+        {
+            hashScores[idPlayerScore] = 0;
+        }
+        else
+        {
+            hashScores.Add(idPlayerScore, 0);
+        }
+        if(hashScores.ContainsKey("idPlayerTrash"))
+        {
+            hashScores[idPlayerTrash] = 0;
+        }
+        else
+        {
+            hashScores.Add(idPlayerTrash, 0);
+        }
+        if(hashScores.ContainsKey("idPlayerElim"))
+        {
+            hashScores[idPlayerElim] = 0;
+        }
+        else
+        {
+            hashScores.Add(idPlayerElim, 0);
+        }
+        if(hashScores.ContainsKey("idPlayerDeaths"))
+        {
+            hashScores[idPlayerDeaths] = 0;
+        }
+        else
+        {
+            hashScores.Add(idPlayerDeaths, 0);
+        }
+        PhotonNetwork.CurrentRoom.SetCustomProperties(hashScores);
+
 
         //if(PhotonNetwork.PlayerList.Length == maxPlayers) PhotonNetwork.LoadLevel("CharacterSelection");
 
