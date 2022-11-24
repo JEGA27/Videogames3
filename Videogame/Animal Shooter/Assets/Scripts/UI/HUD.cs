@@ -32,6 +32,9 @@ public class HUD : MonoBehaviour
     public Text ammo;
 
     public Image specialWeaponProgressCircle;
+    public Image swIcon;
+    public Sprite swRaccoon;
+    public Sprite swRat;
     public Sprite swBlueCircle;
     public Sprite swRedCircle;
 
@@ -62,6 +65,16 @@ public class HUD : MonoBehaviour
             enemyTeamImg.color = blueColor;
             ownTeamScore = "RedScore";
             enemyTeamScore = "BlueScore";
+        }
+
+        string character = (string) PhotonNetwork.LocalPlayer.CustomProperties["Character"];
+        if (character == Characters.Raccoon.name)
+        {
+            swIcon.sprite = swRaccoon;
+        }
+        else if (character == Characters.Rat.name)
+        {
+            swIcon.sprite = swRat;
         }
     }
 
