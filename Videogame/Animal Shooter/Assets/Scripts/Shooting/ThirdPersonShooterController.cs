@@ -20,9 +20,9 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField]
     private LayerMask aimColliderLayerMask = new LayerMask();
     [SerializeField]
-    private GameObject weapon1;
+    public GameObject weapon1;
     [SerializeField]
-    private GameObject weapon2;
+    public GameObject weapon2;
     [SerializeField]
     private float swapWeaponTime;
 

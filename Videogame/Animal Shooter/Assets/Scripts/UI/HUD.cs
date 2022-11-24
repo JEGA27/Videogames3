@@ -31,6 +31,12 @@ public class HUD : MonoBehaviour
 
     public Text ammo;
 
+    public Image weaponIcon;
+    public Sprite w1RaccoonIcon;
+    public Sprite w2RaccoonIcon;
+    public Sprite w1RatIcon;
+    public Sprite w2RatIcon;
+
     public Image specialWeaponProgressCircle;
     public Image swIcon;
     public Sprite swRaccoon;
@@ -39,6 +45,8 @@ public class HUD : MonoBehaviour
     public Sprite swRedCircle;
 
     private ThirdPersonShooterController tpsc;
+
+    private string character;
 
     // Start is called before the first frame update
     void Start()
@@ -67,7 +75,7 @@ public class HUD : MonoBehaviour
             enemyTeamScore = "BlueScore";
         }
 
-        string character = (string) PhotonNetwork.LocalPlayer.CustomProperties["Character"];
+        character = (string) PhotonNetwork.LocalPlayer.CustomProperties["Character"]; 
         if (character == Characters.Raccoon.name)
         {
             swIcon.sprite = swRaccoon;
@@ -91,6 +99,29 @@ public class HUD : MonoBehaviour
         enemyTeamTxt.text = ((int)PhotonNetwork.CurrentRoom.CustomProperties[enemyTeamScore]).ToString();
 
         ammo.text = tpsc.bulletsLeft.ToString() + "/" + tpsc.magazine.ToString();
+
+        if (character == Characters.Raccoon.name)
+        {
+            if(tpsc.weapon1.active)
+            {
+                weaponIcon.sprite = w1RaccoonIcon;
+            }
+            else
+            {
+                weaponIcon.sprite = w2RaccoonIcon;
+            }
+        }
+        else if (character == Characters.Rat.name)
+        {
+            if(tpsc.weapon1.active)
+            {
+                weaponIcon.sprite = w1RatIcon;
+            }
+            else
+            {
+                weaponIcon.sprite = w2RatIcon;
+            }
+        }
     }
 
 

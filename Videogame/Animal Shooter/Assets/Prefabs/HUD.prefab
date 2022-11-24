@@ -1356,6 +1356,11 @@ MonoBehaviour:
   enemyTeamTxt: {fileID: 1189698584692678832}
   enemyTeamImg: {fileID: 3098709142586966386}
   ammo: {fileID: 3125770975096771352}
+  weaponIcon: {fileID: 1371209693848172253}
+  w1RaccoonIcon: {fileID: 21300000, guid: ec586b3eea2384b33bfd2491995118f5, type: 3}
+  w2RaccoonIcon: {fileID: 21300000, guid: 9562fc95fac7c46b3be2bee05a24e036, type: 3}
+  w1RatIcon: {fileID: 21300000, guid: 1fd0b88a74f58411c93eae60b6a5d564, type: 3}
+  w2RatIcon: {fileID: 21300000, guid: 5d3495692bf1446f388e705b77c92d3c, type: 3}
   specialWeaponProgressCircle: {fileID: 8329018125964461139}
   swIcon: {fileID: 2048042463968717951}
   swRaccoon: {fileID: 21300000, guid: bf6594699f3a846b0835022abc38d2ab, type: 3}
@@ -1576,16 +1581,16 @@ RectTransform:
   m_GameObject: {fileID: 9148939109519078626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5500001, y: 0.5500001, z: 0.55}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2670180860737303963}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -48, y: 48}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -120, y: 80}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5731034937560179678
 CanvasRenderer:
