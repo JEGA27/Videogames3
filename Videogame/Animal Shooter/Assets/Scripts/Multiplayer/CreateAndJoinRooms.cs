@@ -28,6 +28,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
         Debug.Log("Room created: " + createInput.text);
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = maxPlayers;
+        roomOptions.PublishUserId = true;
         PhotonNetwork.CreateRoom(createInput.text, roomOptions, null);
         Debug.Log("Room created: " + createInput.text);
     }
@@ -35,6 +36,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     {
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = maxPlayers;
+        roomOptions.PublishUserId = true;
         int roomCount = PhotonNetwork.CountOfRooms + 1;
         PhotonNetwork.CreateRoom("RandomRoom" + roomCount, roomOptions, null);   
     }
