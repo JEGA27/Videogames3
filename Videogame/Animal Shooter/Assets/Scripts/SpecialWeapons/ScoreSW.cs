@@ -88,6 +88,8 @@ public class ScoreSW : MonoBehaviour
         // globalEliminations = (int)PhotonNetwork.CurrentRoom.CustomProperties[idKills];
         if (Change())
             UpdateScore();
+        // if (globalTrash != (int)PhotonNetwork.CurrentRoom.CustomProperties[idTrash])
+        //     PhotonNetwork.CurrentRoom.CustomProperties[idTrash] = globalTrash;
     }
 
     void UpdateScore()
@@ -140,7 +142,7 @@ public class ScoreSW : MonoBehaviour
 
     bool Change()
     {
-        if(trashPicked != 0 || trashDelivered != 0 || trashRobbed != 0 || eliminations != (int)PhotonNetwork.CurrentRoom.CustomProperties[idKills])
+        if(trashPicked != 0 || trashDelivered != 0 || trashRobbed != 0 || eliminations != (int)PhotonNetwork.CurrentRoom.CustomProperties[idKills] || globalTrash != (int)PhotonNetwork.CurrentRoom.CustomProperties[idTrash])
             return true;
         else
             return false;
