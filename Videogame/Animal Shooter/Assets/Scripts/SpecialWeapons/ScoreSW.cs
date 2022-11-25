@@ -123,7 +123,7 @@ public class ScoreSW : MonoBehaviour
 
         if (specialWeaponProgress >= 100)
             specialWeaponReady = true;
-        
+
         var hash = PhotonNetwork.CurrentRoom.CustomProperties;
         hash[idScore] = globalPoints;
         hash[idTrash] = globalTrash;
