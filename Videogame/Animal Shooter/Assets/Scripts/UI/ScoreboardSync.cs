@@ -16,59 +16,77 @@ public class ScoreboardSync : MonoBehaviour
 
     Dictionary<GameObject, string> Ids = new Dictionary<GameObject, string>();
 
+    PhotonView PV;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        allies = new List<GameObject>();
-        allies.Add(gameObject.transform.Find("BlueP1").gameObject);
-        allies.Add(gameObject.transform.Find("BlueP2").gameObject);
+        PV = GetComponentInParent<PhotonView>();
 
-
-        enemies = new List<GameObject>();
-        enemies.Add(gameObject.transform.Find("RedP1").gameObject);
-        enemies.Add(gameObject.transform.Find("RedP2").gameObject);
-
-        foreach (GameObject ally in allies)
+        if (PV.IsMine)
         {
-            ally.SetActive(false);
-        }
-        foreach (GameObject enemy in enemies)
-        {
-            enemy.SetActive(false);
+            allies = new List<GameObject>();
+            allies.Add(gameObject.transform.Find("BlueP1").gameObject);
+            allies.Add(gameObject.transform.Find("BlueP2").gameObject);
+
+
+            enemies = new List<GameObject>();
+            enemies.Add(gameObject.transform.Find("RedP1").gameObject);
+            enemies.Add(gameObject.transform.Find("RedP2").gameObject);
+
+            foreach (GameObject ally in allies)
+            {
+                ally.SetActive(false);
+            }
+            foreach (GameObject enemy in enemies)
+            {
+                enemy.SetActive(false);
+            }
+
+            localTeam = (int)PhotonNetwork.LocalPlayer.CustomProperties["Team"];
+
+            if (localTeam > 0)
+            {
+                teamColor = new Color(229f / 255f, 61f / 255f, 77f / 255f);
+                enemyColor = new Color(112f / 255f, 171f / 255f, 202f / 255f);
+            }
+            else
+            {
+                teamColor = new Color(112f / 255f, 171f / 255f, 202f / 255f);
+                enemyColor = new Color(229f / 255f, 61f / 255f, 77f / 255f);
+            }
+
+            SetValues(allies[0], PhotonNetwork.LocalPlayer.UserId, PhotonNetwork.LocalPlayer.CustomProperties["Character"].ToString(), teamColor);
+
+            CreateOtherValues();
         }
 
-        localTeam = (int)PhotonNetwork.LocalPlayer.CustomProperties["Team"];
-
-        if (localTeam > 0)
-        {
-            teamColor = new Color(229f / 255f, 61f / 255f, 77f / 255f);
-            enemyColor = new Color(112f / 255f, 171f / 255f, 202f / 255f);
-        }
-        else
-        {
-            teamColor = new Color(112f / 255f, 171f / 255f, 202f / 255f);
-            enemyColor = new Color(229f / 255f, 61f / 255f, 77f / 255f);
-        }
-
-        SetValues(allies[0], PhotonNetwork.LocalPlayer.UserId, PhotonNetwork.LocalPlayer.CustomProperties["Character"].ToString(), teamColor);
-
-        CreateOtherValues();
     }
 
     // Update is called once per frame
     void Update()
-    {   
-        CreateOtherValues();
-        UpdateValues();
+    {
+        if (PV.IsMine)
+        {
+            CreateOtherValues();
+            UpdateValues();
+        }
+        
     }
 
     void SetValues(GameObject line, string userId, string character, Color textColor)
     {
-        Debug.Log("Setting values for " + userId);
-        Debug.Log("Character: " + character);
-        Debug.Log("Text color: " + textColor);
-        Debug.Log("Line: " + line.name);
+        // Debug.Log("Setting values for " + userId);
+        // Debug.Log("Character: " + character);
+        // Debug.Log("Text color: " + textColor);
+        // Debug.Log("Line: " + line.name);
+
+        // Debug.Log("SCORE: " + (int)PhotonNetwork.CurrentRoom.CustomProperties[userId + "Score"]);
+        // Debug.Log("TRASH: " + (int)PhotonNetwork.CurrentRoom.CustomProperties[userId + "Trash"]);
+        // Debug.Log("KILLS: " + (int)PhotonNetwork.CurrentRoom.CustomProperties[userId + "Kills"]);
+        // Debug.Log("DEATHS: " + (int)PhotonNetwork.CurrentRoom.CustomProperties[userId + "Deaths"]);
+
 
         line.SetActive(true);
         line.transform.Find("Player").GetComponent<Text>().text = character;
@@ -115,11 +133,33 @@ public class ScoreboardSync : MonoBehaviour
     {
         List<GameObject> keyList = new List<GameObject>(Ids.Keys);
 
+        Debug.Log(PhotonNetwork.LocalPlayer.UserId);
+        foreach (var key in keyList)
+        {
+            Debug.Log("Updating " + key.name + "   " + Ids[key]);
+        } 
+        Debug.Log("-----");
+
+        // foreach (GameObject key in keyList)
+        // {
+        //     string userId = Ids[key];
+        //     key.transform.Find("Score").GetComponent<Text>().text = PhotonNetwork.CurrentRoom.CustomProperties[userId + "Score"].ToString();
+        //     key.transform.Find("Trash").GetComponent<Text>().text = PhotonNetwork.CurrentRoom.CustomProperties[userId + "Trash"].ToString();
+        //     key.transform.Find("Eliminations").GetComponent<Text>().text = PhotonNetwork.CurrentRoom.CustomProperties[userId + "Kills"].ToString();
+        //     key.transform.Find("Deaths").GetComponent<Text>().text = PhotonNetwork.CurrentRoom.CustomProperties[userId + "Deaths"].ToString();
+        // }
+
         for (int i = 0; i < Ids.Count; i++)
         {
             GameObject line = keyList[i];
             string userId = Ids[line];
 
+            // Debug.Log("Updating values for " + userId);
+            // Debug.Log("SCORE: " + (int)PhotonNetwork.CurrentRoom.CustomProperties[userId + "Score"]);
+            // Debug.Log("TRASH: " + (int)PhotonNetwork.CurrentRoom.CustomProperties[userId + "Trash"]);
+            // Debug.Log("KILLS: " + (int)PhotonNetwork.CurrentRoom.CustomProperties[userId + "Kills"]);
+            // Debug.Log("DEATHS: " + (int)PhotonNetwork.CurrentRoom.CustomProperties[userId + "Deaths"]);
+        
             line.transform.Find("Score").GetComponent<Text>().text = PhotonNetwork.CurrentRoom.CustomProperties[userId + "Score"].ToString();
             line.transform.Find("Trash").GetComponent<Text>().text = PhotonNetwork.CurrentRoom.CustomProperties[userId + "Trash"].ToString();
             line.transform.Find("Eliminations").GetComponent<Text>().text = PhotonNetwork.CurrentRoom.CustomProperties[userId + "Kills"].ToString();
