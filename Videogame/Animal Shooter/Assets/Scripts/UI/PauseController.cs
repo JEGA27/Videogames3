@@ -136,32 +136,44 @@ public class PauseController : MonoBehaviour
     public void ShowOptions()
     {
         currentCanvasTab = 0;
+        PlaySounds pause = GetComponent<PlaySounds>();
+        pause.PlaySound(13);
     }
 
     public void ShowSettingsOptions()
     {
         OptionsBtnsPanel.SetActive(false);
         OptionsSettsPanel.SetActive(true);
+        PlaySounds pause = GetComponent<PlaySounds>();
+        pause.PlaySound(13);
     }
 
     public void ShowScoreboard()
     {
         currentCanvasTab = 1;
+        PlaySounds pause = GetComponent<PlaySounds>();
+        pause.PlaySound(13);
     }
 
     public void ShowMap()
     {
         currentCanvasTab = 2;
+        PlaySounds pause = GetComponent<PlaySounds>();
+        pause.PlaySound(13);
     }
 
     public void Resume()
     {
         PauseCanvas.SetActive(false);
         HUDCanvas.SetActive(true);
+        PlaySounds pause = GetComponent<PlaySounds>();
+        pause.PlaySound(13);
     }
 
     public void LeaveGame()
     {
         SceneManager.LoadScene("Main Menu");
+        PlaySounds pause = GetComponent<PlaySounds>();
+        pause.PlaySound(13);
     }
 }

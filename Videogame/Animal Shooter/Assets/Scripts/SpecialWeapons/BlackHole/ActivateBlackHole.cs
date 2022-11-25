@@ -38,6 +38,8 @@ public class ActivateBlackHole : MonoBehaviour
                 sSW.specialWeaponPoints = 0;
                 sSW.specialWeaponProgress = 0;
                 Throw();
+                PlaySounds blackhole = GetComponent<PlaySounds>();
+                blackhole.PlaySound(12);
             }
         }
     }

@@ -1174,6 +1174,7 @@ GameObject:
   - component: {fileID: 5714134761038830624}
   - component: {fileID: 887172638524461270}
   - component: {fileID: 2213967113543177119}
+  - component: {fileID: -3897436829627999908}
   m_Layer: 3
   m_Name: Rat
   m_TagString: BluePlayer
@@ -1430,6 +1431,7 @@ MonoBehaviour:
   hpFallDamage: 15
   timeToRecover: 7
   deaths: 0
+  lastShooterId: 
 --- !u!82 &5714134761038830624
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1440,7 +1442,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 974a0d137206b4b618e252c9da3e27cd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f32b219998a004ae0baa717b72ee4ec9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1557,6 +1559,35 @@ MonoBehaviour:
   buttons: []
   sewersCanvas: {fileID: 0}
   abilityMessage: {fileID: 2213967114523572527}
+--- !u!114 &-3897436829627999908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6357638503609634486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db7a1ebdbc604578aeeeebf5bb4de27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 5360cb0c61f624f3b824cfe0641325aa, type: 3}
+  - {fileID: 8300000, guid: f07af1887c4b04122b0fe9162131f80c, type: 3}
+  - {fileID: 8300000, guid: 81724a97d33a94a97913c820fbd55daa, type: 3}
+  - {fileID: 8300000, guid: 3929b75db639a456eb68fece279dbbfd, type: 3}
+  - {fileID: 8300000, guid: f748bbed141684d94a74818f08648bce, type: 3}
+  - {fileID: 8300000, guid: 753542b0fee8949f78745ae1ca135121, type: 3}
+  - {fileID: 8300000, guid: 8efdb0ffba6554a528f9fbbec7ce0abc, type: 3}
+  - {fileID: 8300000, guid: 9986309fdd7a044daa0d1ae7f84c2441, type: 3}
+  - {fileID: 8300000, guid: 9b597552801cf404b9141439d6c449c8, type: 3}
+  - {fileID: 8300000, guid: 6bbd57a0bb40447dc8578c55b3a323f8, type: 3}
+  - {fileID: 8300000, guid: 6f054b4efe5eb403c91dc89266f54c77, type: 3}
+  - {fileID: 8300000, guid: 08651602817c9471a826d83180f331e7, type: 3}
+  - {fileID: 8300000, guid: ea31ce8744ee7449baf4598ece5a19f4, type: 3}
+  - {fileID: 8300000, guid: ea7b21b6fb779418aafe162c28b701a9, type: 3}
+  - {fileID: 8300000, guid: d90a9fcb949724be3a40d4179b1321e3, type: 3}
+  - {fileID: 8300000, guid: f32b219998a004ae0baa717b72ee4ec9, type: 3}
 --- !u!1 &6628937761319448045
 GameObject:
   m_ObjectHideFlags: 0

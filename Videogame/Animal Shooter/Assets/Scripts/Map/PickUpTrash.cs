@@ -30,6 +30,8 @@ public class PickUpTrash : MonoBehaviour
             // Update trash collected
             scoreSW.trashPicked++;
             PhotonNetwork.Destroy(other.gameObject);
+            PlaySounds collect = GetComponent<PlaySounds>();
+            collect.PlaySound(0);
         }
     }
 }

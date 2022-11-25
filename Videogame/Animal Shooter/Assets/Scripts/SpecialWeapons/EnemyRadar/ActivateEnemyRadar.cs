@@ -31,6 +31,8 @@ public class ActivateEnemyRadar : MonoBehaviour
                 sSW.specialWeaponPoints = 0;
                 sSW.specialWeaponProgress = 0;
                 MarkEnemies();
+                PlaySounds enemyradar = GetComponent<PlaySounds>();
+                enemyradar.PlaySound(12);
             }
         }
     }
