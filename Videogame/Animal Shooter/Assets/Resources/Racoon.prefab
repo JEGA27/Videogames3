@@ -3183,6 +3183,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 767052647652676302}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &235528380901093577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 712093762984976903, guid: f5cf84ab8f03e4b4582f5c64589d7701,
+    type: 3}
+  m_PrefabInstance: {fileID: 767052647652676302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1025565376467428710 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 332866249465509800, guid: f5cf84ab8f03e4b4582f5c64589d7701,
@@ -3213,7 +3219,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a02e0c5bc1d1c5aaad9a9581c7412e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allies: []
+  allies:
+  - {fileID: 8119377522677410348}
+  - {fileID: 4923114085872765816}
+  enemies:
+  - {fileID: 4448676758214139313}
+  - {fileID: 235528380901093577}
+--- !u!1 &4448676758214139313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3970417442374520703, guid: f5cf84ab8f03e4b4582f5c64589d7701,
+    type: 3}
+  m_PrefabInstance: {fileID: 767052647652676302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4923114085872765816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5690144733594606006, guid: f5cf84ab8f03e4b4582f5c64589d7701,
+    type: 3}
+  m_PrefabInstance: {fileID: 767052647652676302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6643971804485672144 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6237836734978592286, guid: f5cf84ab8f03e4b4582f5c64589d7701,
@@ -3223,6 +3246,12 @@ GameObject:
 --- !u!1 &6911409848470124620 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6147234211782650498, guid: f5cf84ab8f03e4b4582f5c64589d7701,
+    type: 3}
+  m_PrefabInstance: {fileID: 767052647652676302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8119377522677410348 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8793503152753490146, guid: f5cf84ab8f03e4b4582f5c64589d7701,
     type: 3}
   m_PrefabInstance: {fileID: 767052647652676302}
   m_PrefabAsset: {fileID: 0}
