@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
@@ -26,6 +28,12 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     [Space]
     public GameObject StageCanvas_Extras;
+    public GameObject videoPanel;
+    public Text videoName;
+    public VideoClip raccoonMov;
+    public VideoClip ratMov;
+    public RawImage videoRaw;
+    public VideoPlayer videoPlayer;
 
     [Space]
     public GameObject StageCanvas_Loading;
@@ -44,6 +52,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
         StageCanvas_Options.SetActive(false);
         StageCanvas_Extras.SetActive(false);
+        videoPanel.SetActive(false);
         StageCanvas_Loading.SetActive(false);
         currentCanvasTab = -1;
     }
@@ -78,6 +87,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
                 StageCanvas_Options.SetActive(false);
                 StageCanvas_Play.SetActive(false);
                 StageCanvas_Extras.SetActive(true);
+                
                 break;
             case 4:
                 StageCanvas_Loading.SetActive(true);
@@ -140,6 +150,26 @@ public class MainMenu : MonoBehaviourPunCallbacks
         stageCam = 3;
     }
 
+    public void PlayVideoRaccon()
+    {
+        videoPanel.SetActive(true);
+        videoName.text = Characters.Raccoon.name;
+        videoRaw.texture = videoPlayer.texture;
+        videoPlayer.clip = raccoonMov;
+        videoPlayer.Prepare();
+        videoPlayer.Play();
+    }
+
+    public void PlayVideoRat()
+    {
+        videoPanel.SetActive(true);
+        videoName.text = Characters.Rat.name;
+        videoRaw.texture = videoPlayer.texture;
+        videoPlayer.clip = ratMov;
+        videoPlayer.Prepare();
+        videoPlayer.Play();
+    }
+
     public void ShowJoinPanel()
     {
        Panel_PlayJoin.SetActive(true);
@@ -184,4 +214,5 @@ public class MainMenu : MonoBehaviourPunCallbacks
             Instantiate(roomListPrefab, roomListContent).GetComponent<ListItem>().SetUp(roomList[i]);
         }
     }
+
 }
