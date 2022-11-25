@@ -110,14 +110,19 @@ public class Health : MonoBehaviour
 
     void Eliminate()
     {
-        //Destroy(this.gameObject);
         // Update deaths
-        PhotonNetwork.CurrentRoom.CustomProperties[idDeaths] = deaths + 1;
+        var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+        hash[idDeaths] = deaths + 1;
+        // PhotonNetwork.CurrentRoom.CustomProperties[idDeaths] = deaths + 1;
+
         // Update shooter's kills
         if (lastShooterId != PhotonNetwork.LocalPlayer.UserId)
         {
-            PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
+            // PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
+            hash[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
         }
+
+        PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
 
         PhotonNetwork.Destroy(this.gameObject);
         sp.Spawn();
