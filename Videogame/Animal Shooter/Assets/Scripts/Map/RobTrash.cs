@@ -52,8 +52,9 @@ public class RobTrash : MonoBehaviour
                         scoreSW.trashRobbed += GameManager.blueTeamTrash;
                         GameManager.blueTeamTrash = 0;
                     }
-
                     starterAssetsInputs.interact = false;
+                    PlaySounds robtrash = GetComponent<PlaySounds>();
+                    robtrash.PlaySound(9);
                 }
                 
             }
@@ -76,6 +77,8 @@ public class RobTrash : MonoBehaviour
                         GameManager.redTeamTrash = 0;
                     }
                     starterAssetsInputs.interact = false;
+                    PlaySounds robtrash = GetComponent<PlaySounds>();
+                    robtrash.PlaySound(9);
                 }
             }
 

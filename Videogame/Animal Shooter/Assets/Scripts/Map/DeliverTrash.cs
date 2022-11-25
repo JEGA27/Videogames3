@@ -62,6 +62,10 @@ public class DeliverTrash : MonoBehaviour
                 scoreSW.trashDelivered += PickUpTrash.currentTrash; 
                 PickUpTrash.currentTrash = 0;
                 starterAssetsInputs.interact = false;
+                PlaySounds deliver = GetComponent<PlaySounds>();
+                deliver.PlaySound(1);
+                PlaySounds comment = GetComponent<PlaySounds>();
+                comment.PlaySound(8);
             }
         }
         if (other.gameObject.CompareTag("RedTrashBase") && playerTeam == 1)
@@ -75,6 +79,10 @@ public class DeliverTrash : MonoBehaviour
                 scoreSW.trashDelivered += PickUpTrash.currentTrash;
                 PickUpTrash.currentTrash = 0;
                 starterAssetsInputs.interact = false;
+                PlaySounds deliver = GetComponent<PlaySounds>();
+                deliver.PlaySound(1);
+                PlaySounds comment = GetComponent<PlaySounds>();
+                comment.PlaySound(8);
             }
         }
     }

@@ -40,6 +40,8 @@ public class SewerTeleport : MonoBehaviour
          tpsc.enabled = false;
          sewersCanvas.SetActive(true);
          Cursor.lockState= CursorLockMode.None;
+         PlaySounds teleport = GetComponent<PlaySounds>();
+         teleport.PlaySound(15);
       }
     }
 
