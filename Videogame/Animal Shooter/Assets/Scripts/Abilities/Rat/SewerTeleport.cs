@@ -6,7 +6,10 @@ using UnityEngine;
 public class SewerTeleport : MonoBehaviour
 {
     [SerializeField]
-    List<GameObject> sewers;
+    List<string> names;
+
+    //[SerializeField]
+    public List<GameObject> sewers;
 
     [SerializeField]
     List<GameObject> buttons;
@@ -22,9 +25,10 @@ public class SewerTeleport : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < sewers.Count; i++)
+        for(int i = 0; i < names.Count; i++)
         {
-            buttons[i].GetComponent<SewerButton>().sewerCoordinates = sewers[i].transform.position;
+            sewers.Add(GameObject.Find(names[i]));
+            buttons[i].GetComponent<SewerButton>().sewerCoordinates = new Vector3(sewers[i].transform.position.x, transform.position.y, sewers[i].transform.position.z);
         }
         sewersCanvas.SetActive(false);
         abilityMessage.SetActive(false);
