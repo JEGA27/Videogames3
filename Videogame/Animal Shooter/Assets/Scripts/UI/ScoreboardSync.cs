@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
+using Photon.Realtime;
 
-public class ScoreboardSync : MonoBehaviour
+public class ScoreboardSync : MonoBehaviourPunCallbacks
 {
     PhotonView PV;
     GameObject localPlayer;
@@ -48,12 +49,6 @@ public class ScoreboardSync : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PV.IsMine)
-        {
-            // CreateOtherValues();
-            UpdateValues();
-        }
-        
     }
 
     void SetValues()
@@ -101,6 +96,16 @@ public class ScoreboardSync : MonoBehaviour
     //         }
     //     }
     // }
+
+    public override void OnRoomPropertiesUpdate(ExitGames.Client.Photon.Hashtable propertiesThatChanged)
+    {
+        Debug.Log(PhotonNetwork.CurrentRoom.ToStringFull());
+        if (PV.IsMine)
+        {
+            // CreateOtherValues();
+            UpdateValues();
+        }
+    }
 
     void UpdateValues()
     {
