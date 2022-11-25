@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ScoreboardSync : MonoBehaviour
 {
     public List<GameObject> allies;
-    List<GameObject> enemies;
+    public List<GameObject> enemies;
 
     Color teamColor;
     Color enemyColor;
@@ -27,13 +27,13 @@ public class ScoreboardSync : MonoBehaviour
         if (PV.IsMine)
         {
             allies = new List<GameObject>();
-            allies.Add(gameObject.transform.Find("BlueP1").gameObject);
-            allies.Add(gameObject.transform.Find("BlueP2").gameObject);
+            // allies.Add(gameObject.transform.Find("BlueP1").gameObject);
+            // allies.Add(gameObject.transform.Find("BlueP2").gameObject);
 
 
             enemies = new List<GameObject>();
-            enemies.Add(gameObject.transform.Find("RedP1").gameObject);
-            enemies.Add(gameObject.transform.Find("RedP2").gameObject);
+            // enemies.Add(gameObject.transform.Find("RedP1").gameObject);
+            // enemies.Add(gameObject.transform.Find("RedP2").gameObject);
 
             foreach (GameObject ally in allies)
             {
