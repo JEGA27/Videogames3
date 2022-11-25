@@ -91,6 +91,7 @@ public class ScoreSW : MonoBehaviour
         // if (globalTrash != (int)PhotonNetwork.CurrentRoom.CustomProperties[idTrash])
         //     PhotonNetwork.CurrentRoom.CustomProperties[idTrash] = globalTrash;
     }
+    
 
     void UpdateScore()
     {   
@@ -124,16 +125,12 @@ public class ScoreSW : MonoBehaviour
         if (specialWeaponProgress >= 100)
             specialWeaponReady = true;
 
-        var hash1 = PhotonNetwork.CurrentRoom.CustomProperties;
-        hash1[idScore] = globalPoints;
-        PhotonNetwork.CurrentRoom.SetCustomProperties(hash1);
-        var hash2 = PhotonNetwork.CurrentRoom.CustomProperties;
-        hash2[idTrash] = globalTrash;
-        PhotonNetwork.CurrentRoom.SetCustomProperties(hash2);
-        var hash3 = PhotonNetwork.CurrentRoom.CustomProperties;
-        hash3[idProgress] = specialWeaponPoints;
-        PhotonNetwork.CurrentRoom.SetCustomProperties(hash3);
-        
+        var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+        hash[idScore] = globalPoints;
+        hash[idTrash] = globalTrash;
+        hash[idProgress] = specialWeaponPoints;
+        PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+
         // PhotonNetwork.CurrentRoom.CustomProperties[idProgress] = specialWeaponPoints;
         // PhotonNetwork.CurrentRoom.CustomProperties[idScore] = globalPoints;
         // PhotonNetwork.CurrentRoom.CustomProperties[idTrash] = globalTrash;
