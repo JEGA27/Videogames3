@@ -26,16 +26,22 @@ public class TimeManager : MonoBehaviour
     {
         if (PhotonNetwork.IsMasterClient)
         {
+            Debug.Log("Master");
             CustomeValue = new ExitGames.Client.Photon.Hashtable();
             startTime = PhotonNetwork.Time;
             startTimer = true;
             //CustomeValue.Add("StartTime", startTime);
             //PhotonNetwork.CurrentRoom.SetCustomProperties(CustomeValue);
 
-            if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("StartTime"))
+            if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("StartTime"))
             {
-                //we already have a team- so switch teams
-                PhotonNetwork.LocalPlayer.CustomProperties["StartTime"] = startTime;
+
+                var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+                startTime = PhotonNetwork.Time;
+                hash["StartTime"] = startTime;
+                PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+
+                
             }
             else
             {
@@ -47,18 +53,23 @@ public class TimeManager : MonoBehaviour
         }
         else
         {
-            startTime = double.Parse(PhotonNetwork.CurrentRoom.CustomProperties["StartTime"].ToString());
+            //startTime = double.Parse(PhotonNetwork.CurrentRoom.CustomProperties["StartTime"].ToString());
+            Debug.Log("NotMaster");
+            startTime = (double)PhotonNetwork.CurrentRoom.CustomProperties["StartTime"];
             startTimer = true;
+            
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        //startTime = (double)PhotonNetwork.CurrentRoom.CustomProperties["StartTime"];
 
         if (!startTimer) return;
-        timerIncrementValue = PhotonNetwork.Time - startTime;
+        timerIncrementValue = PhotonNetwork.Time - (double)PhotonNetwork.CurrentRoom.CustomProperties["StartTime"];
 
+        
 
         decTimer = roundTime - timerIncrementValue;
 

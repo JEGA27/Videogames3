@@ -61,6 +61,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     {
         int team = 0;
 
+        //PhotonNetwork.AutomaticallySyncScene = true;
 
         if (PhotonNetwork.PlayerList.Length % 2 < 1) team = 1;
         else team = 0;
