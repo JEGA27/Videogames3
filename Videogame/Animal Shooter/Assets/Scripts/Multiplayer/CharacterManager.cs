@@ -21,10 +21,15 @@ public class CharacterManager : MonoBehaviour
     public Text characterSubTxt;
     public Text characterSpecialTxt;
     
+    public GameObject raccoonFbx;
+    public GameObject ratFbx;
+    public GameObject catFbx;
+    public GameObject squirrelFbx;
 
     public Button button1;
     public Button button2;
     public Button button3;
+    public Button button4;
     public Button confirm;
 
     public List<Text> texts;
@@ -84,6 +89,10 @@ public class CharacterManager : MonoBehaviour
            
         }
 
+        raccoonFbx.SetActive(false);
+        ratFbx.SetActive(false);
+        catFbx.SetActive(false);
+        squirrelFbx.SetActive(false);
     }
 
     // Update is called once per frame
@@ -150,6 +159,11 @@ public class CharacterManager : MonoBehaviour
         characterMainTxt.text = Characters.Raccoon.main;
         characterSubTxt.text = Characters.Raccoon.sub;
         characterSpecialTxt.text = Characters.Raccoon.special;
+        raccoonFbx.SetActive(true);
+        ratFbx.SetActive(false);
+        catFbx.SetActive(false);
+        squirrelFbx.SetActive(false);
+
     }
 
     public void Ardilla()
@@ -161,6 +175,10 @@ public class CharacterManager : MonoBehaviour
         characterMainTxt.text = Characters.Squirrel.main;
         characterSubTxt.text = Characters.Squirrel.sub;
         characterSpecialTxt.text = Characters.Squirrel.special;
+        raccoonFbx.SetActive(false);
+        ratFbx.SetActive(false);
+        catFbx.SetActive(false);
+        squirrelFbx.SetActive(true);
     }
 
     public void Rata()
@@ -172,6 +190,10 @@ public class CharacterManager : MonoBehaviour
         characterMainTxt.text = Characters.Rat.main;
         characterSubTxt.text = Characters.Rat.sub;
         characterSpecialTxt.text = Characters.Rat.special;
+        raccoonFbx.SetActive(false);
+        ratFbx.SetActive(true);
+        catFbx.SetActive(false);
+        squirrelFbx.SetActive(false);
     }
 
     public void Gato()
@@ -183,6 +205,10 @@ public class CharacterManager : MonoBehaviour
         characterMainTxt.text = Characters.Cat.main;
         characterSubTxt.text = Characters.Cat.sub;
         characterSpecialTxt.text = Characters.Cat.special;
+        raccoonFbx.SetActive(false);
+        ratFbx.SetActive(false);
+        catFbx.SetActive(true);
+        squirrelFbx.SetActive(false);
     }
 
     public void Confirm()
@@ -238,6 +264,7 @@ public class CharacterManager : MonoBehaviour
             button1.interactable = false;
             button2.interactable = false;
             button3.interactable = false;
+            button4.interactable = false;
 
             confirm.gameObject.SetActive(false);
 
