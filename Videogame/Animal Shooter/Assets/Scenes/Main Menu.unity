@@ -311,9 +311,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4dcee8a99756e4b6daf16218df2099f8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 09ff18ccfbeb745cf889d5db84ef5787, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.76
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -28126,6 +28126,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Particle System (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209111814263882252, guid: c337d35c6e85a4a9c99fdd86bfd7638e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2209111814263882252, guid: c337d35c6e85a4a9c99fdd86bfd7638e,
         type: 3}

@@ -140,6 +140,8 @@ public class MainMenu : MonoBehaviourPunCallbacks
     public void ShowOptions()
     {
         stageCam = 1;
+        PlaySounds menu = GetComponent<PlaySounds>();
+        menu.PlaySound(13);
     }
 
     public void ShowControls()
@@ -157,11 +159,15 @@ public class MainMenu : MonoBehaviourPunCallbacks
     public void ShowPlay()
     {
         stageCam = 2;
+        PlaySounds menu = GetComponent<PlaySounds>();
+        menu.PlaySound(13);
     }
 
     public void ShowExtras()
     {
         stageCam = 3;
+        PlaySounds menu = GetComponent<PlaySounds>();
+        menu.PlaySound(13);
     }
 
     public void PlayVideoRaccon()
@@ -188,16 +194,22 @@ public class MainMenu : MonoBehaviourPunCallbacks
     {
        Panel_PlayJoin.SetActive(true);
        Panel_PlayCreate.SetActive(false);
+       PlaySounds menu = GetComponent<PlaySounds>();
+       menu.PlaySound(13);
     }
 
     public void ShowCreatePanel()
     {
        Panel_PlayJoin.SetActive(false);
        Panel_PlayCreate.SetActive(true);
+       PlaySounds menu = GetComponent<PlaySounds>();
+       menu.PlaySound(13);
     }
 
     public void Play() {
         SceneManager.LoadScene(1);
+        PlaySounds menu = GetComponent<PlaySounds>();
+        menu.PlaySound(13);
     }
 
     public void Quit() {

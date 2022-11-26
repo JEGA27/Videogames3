@@ -46,6 +46,8 @@ public class PickUpDumpster : MonoBehaviour
 
                     Dumpster.transform.localPosition = dumpsterPos.transform.localPosition;
                     Dumpster.transform.localRotation = Quaternion.Euler(0f, -90f, 0f);
+                    PlaySounds pickdumpster = GetComponent<PlaySounds>();
+                    pickdumpster.PlaySound(14);
                 }
                 else
                 {

@@ -194,6 +194,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     {
         reloading = true;
         Invoke("ReloadFinished", weaponStats.reloadTime);
+        PlaySounds reloadweapon = GetComponent<PlaySounds>();
+        reloadweapon.PlaySound(3);
     }
     private void ReloadFinished()
     {
