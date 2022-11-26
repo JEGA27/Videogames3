@@ -25,6 +25,8 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     [Space]
     public GameObject StageCanvas_Options;
+    public GameObject optionsPanel;
+    public GameObject controlsPanel;
 
     [Space]
     public GameObject StageCanvas_Extras;
@@ -138,6 +140,18 @@ public class MainMenu : MonoBehaviourPunCallbacks
     public void ShowOptions()
     {
         stageCam = 1;
+    }
+
+    public void ShowControls()
+    {
+        controlsPanel.SetActive(true);
+        optionsPanel.SetActive(false);
+    }
+
+    public void ShowOptionsPanel()
+    {
+        controlsPanel.SetActive(false);
+        optionsPanel.SetActive(true);
     }
 
     public void ShowPlay()
