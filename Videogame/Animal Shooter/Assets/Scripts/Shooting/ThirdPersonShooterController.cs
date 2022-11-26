@@ -29,6 +29,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     private ThirdPersonController thirdPersonController;
     private StarterAssetsInputs starterAssetsInputs;
+    private ExplosiveObject explosive;
     private Animator animator;
     Vector3 mouseWorldPosition;
     private WeaponStats weaponStats;
@@ -37,6 +38,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     private bool swap = true;
 
     public int bulletsLeft, magazine;
+    public bool hasExplosive;
     int bulletsShot;
 
     //bools
@@ -70,6 +72,15 @@ public class ThirdPersonShooterController : MonoBehaviour
         readyToShoot = true;
         weapon1.SetActive(true);
         weapon2.SetActive(false);
+        if(weapon2.GetComponent<WeaponStats>() != null)
+        {
+            hasExplosive = false;
+        }
+        else
+        {
+            hasExplosive = true;
+            explosive = weapon2.GetComponent<ExplosiveObject>();
+        }
     }
 
     // Update is called once per frame
@@ -144,7 +155,14 @@ public class ThirdPersonShooterController : MonoBehaviour
         //Shoot
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0){
             bulletsShot = weaponStats.bulletsPerTap;
-            Shoot();
+            if(hasExplosive && !weapon1.activeSelf)
+            {
+                explosive.Throw();
+            }
+            else
+            {
+                Shoot();
+            }
         }
     }
 
@@ -225,7 +243,10 @@ public class ThirdPersonShooterController : MonoBehaviour
           yield return new WaitForSeconds(swapWeaponTime);
           readyToShoot = true;
           weapon2.SetActive(true);
-          weaponStats = weapon2.GetComponent<WeaponStats>();
+          if(hasExplosive == false)
+          {
+            weaponStats = weapon2.GetComponent<WeaponStats>(); 
+          }
       }
     }
 }
