@@ -7,6 +7,7 @@ public class BlackHole : MonoBehaviour
 {
     public Material blueBlackHoleMaterial;
     public Material redBlackHoleMaterial;
+    public Material neutralBlackHoleMaterial;
     public string playerTag;
 
     private Shape i;
@@ -28,6 +29,7 @@ public class BlackHole : MonoBehaviour
     public float timeToDestroy;
 
     private Rigidbody rb;
+    
     
 
     struct Shape{
@@ -239,9 +241,13 @@ public class BlackHole : MonoBehaviour
             {
                 mr.material = blueBlackHoleMaterial;
             }
-            else
+            else if(playerTag == "RedPlayer")
             {
                 mr.material = redBlackHoleMaterial;
+            }
+            else 
+            {
+                mr.material = neutralBlackHoleMaterial;
             }
         }
         if (gameObject.GetComponent<MeshFilter>() == null)

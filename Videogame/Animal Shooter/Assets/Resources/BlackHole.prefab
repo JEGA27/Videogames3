@@ -95,6 +95,8 @@ MonoBehaviour:
     type: 2}
   redBlackHoleMaterial: {fileID: 2100000, guid: c007ce30205e4bf9e8cbf751c48a6bf6,
     type: 2}
+  neutralBlackHoleMaterial: {fileID: 2100000, guid: 1929c30059c6431e6ad5a142bad93b25,
+    type: 2}
   playerTag: 
   timeAfterBounce: 2
   riseInY: 1.6
