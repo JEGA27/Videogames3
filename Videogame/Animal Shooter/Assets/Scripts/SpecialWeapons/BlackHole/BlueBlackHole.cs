@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class BlackHole : MonoBehaviour
+public class BlueBlackHole : MonoBehaviour
 {
-    public Material blueBlackHoleMaterial;
-    public Material redBlackHoleMaterial;
-    public Material neutralBlackHoleMaterial;
-    public string playerTag;
+    public Material blackHoleMaterial;
 
     private Shape i;
     private Mesh myMesh;
@@ -237,18 +234,7 @@ public class BlackHole : MonoBehaviour
         if (gameObject.GetComponent<MeshRenderer>() == null)
         {
             MeshRenderer mr = gameObject.AddComponent<MeshRenderer>();
-            if(playerTag == "BluePlayer")
-            {
-                mr.material = blueBlackHoleMaterial;
-            }
-            else if(playerTag == "RedPlayer")
-            {
-                mr.material = redBlackHoleMaterial;
-            }
-            else 
-            {
-                mr.material = neutralBlackHoleMaterial;
-            }
+            mr.material = blackHoleMaterial;
         }
         if (gameObject.GetComponent<MeshFilter>() == null)
         {

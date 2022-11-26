@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 7782555014825939097}
   - component: {fileID: 7782555014825939096}
   - component: {fileID: 7782555014825939099}
-  - component: {fileID: 7782555014825939109}
+  - component: {fileID: 6475258136985952370}
   - component: {fileID: 4124875763751703991}
   - component: {fileID: -6951197201113354102}
   m_Layer: 0
-  m_Name: BlackHole
+  m_Name: BlueBlackHole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7782555014825939109
+--- !u!114 &6475258136985952370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,16 +88,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7782555014825939098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77dbbff321cc2419fa333f9e00b5c9e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c356c9040c5d8f86ae6f663c31eb215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blueBlackHoleMaterial: {fileID: 2100000, guid: 4d287d2043fc591f1abb0a4181c084f1,
-    type: 2}
-  redBlackHoleMaterial: {fileID: 2100000, guid: c007ce30205e4bf9e8cbf751c48a6bf6,
-    type: 2}
-  neutralBlackHoleMaterial: {fileID: 2100000, guid: 1929c30059c6431e6ad5a142bad93b25,
-    type: 2}
-  playerTag: 
+  blackHoleMaterial: {fileID: 2100000, guid: 4d287d2043fc591f1abb0a4181c084f1, type: 2}
   timeAfterBounce: 2
   riseInY: 1.6
   riseSpeed: 0.05

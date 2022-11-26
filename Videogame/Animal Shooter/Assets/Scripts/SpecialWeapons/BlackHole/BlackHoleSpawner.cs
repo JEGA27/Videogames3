@@ -7,7 +7,9 @@ public class BlackHoleSpawner : MonoBehaviour
 {
 
     [SerializeField]
-    private GameObject blackHole;
+    private GameObject redBlackHole;
+    [SerializeField]
+    private GameObject blueBlackHole;
     public string playerTag;
 
     public PhotonView PV;
@@ -29,8 +31,15 @@ public class BlackHoleSpawner : MonoBehaviour
         if (PV.IsMine)
         {
             Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
-            var bH = PhotonNetwork.Instantiate(blackHole.name, spawnPosition, transform.rotation);
-            bH.GetComponent<BlackHole>().playerTag = playerTag;
+            if(playerTag == "RedPlayer")
+            {
+                PhotonNetwork.Instantiate(redBlackHole.name, spawnPosition, Quaternion.identity);
+            }
+            else if(playerTag == "BluePlayer")
+            {
+                PhotonNetwork.Instantiate(blueBlackHole.name, spawnPosition, Quaternion.identity);
+            }
+
             Destroy(gameObject);
         }
     }
