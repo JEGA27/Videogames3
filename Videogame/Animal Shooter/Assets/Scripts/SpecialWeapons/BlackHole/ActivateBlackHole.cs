@@ -20,16 +20,18 @@ public class ActivateBlackHole : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = GameObject.Find("PlayerFollowCamera").transform;
-        attackPoint = GameObject.Find("ThrowingPoint").transform;
-
         PV = GetComponent<PhotonView>();
-        sSW = GetComponent<ScoreSW>();
+        if (PV.IsMine)
+        {
+            cam = GameObject.Find("PlayerFollowCamera").transform;
+            attackPoint = GameObject.Find("ThrowingPoint").transform;
+            sSW = GetComponent<ScoreSW>();
+        }
     }
-    
+
     void Update()
     {
-        if(PV.IsMine)
+        if (PV.IsMine)
         {
             if (Input.GetKeyDown(KeyCode.Q) && sSW.specialWeaponReady)
             {
@@ -50,6 +52,8 @@ public class ActivateBlackHole : MonoBehaviour
         GameObject projectile = PhotonNetwork.Instantiate(objectToThrow.name, attackPoint.position, cam.rotation);
         // Set shooter tag
         projectile.GetComponent<BlackHoleSpawner>().playerTag = gameObject.tag;
+        // Set shooter PhotonView
+        projectile.GetComponent<BlackHoleSpawner>().PV = PV;
 
         // get projectiles rigidbody 
         Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
