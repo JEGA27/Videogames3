@@ -11,6 +11,8 @@ public class TimeManager : MonoBehaviour
     double timerIncrementValue1;
     double startTime;
 
+    bool error = true;
+
     ExitGames.Client.Photon.Hashtable CustomeValue;
 
     public double decTimer;
@@ -71,8 +73,6 @@ public class TimeManager : MonoBehaviour
         timerIncrementValue = PhotonNetwork.Time - (double)PhotonNetwork.CurrentRoom.CustomProperties["StartTime"];
         timerIncrementValue1 = PhotonNetwork.Time - startTime;
 
-        Debug.Log("t1: "+ (int)timerIncrementValue);
-        Debug.Log("t2: " + (int)timerIncrementValue1);
         decTimer = roundTime - timerIncrementValue;
 
         if ((int)decTimer <= 0 && !scenechanged)
