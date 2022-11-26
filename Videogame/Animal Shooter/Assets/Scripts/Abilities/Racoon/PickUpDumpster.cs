@@ -68,8 +68,6 @@ public class PickUpDumpster : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (this.PV.IsMine)
-        {
             if (other.gameObject.CompareTag("Dumpster"))
             {
                 canPickUp = true;
@@ -77,17 +75,13 @@ public class PickUpDumpster : MonoBehaviour
                 UI_Dumpster = Dumpster.transform.GetChild(0).gameObject;
                 UI_Dumpster.SetActive(true);
             }
-        }
     }
     void OnTriggerExit(Collider other)
     {
-        if (this.PV.IsMine)
-        {
             if (other.gameObject.CompareTag("Dumpster"))
             {
                 canPickUp = false;
                 UI_Dumpster.SetActive(false);
             }
-        }
     }
 }
