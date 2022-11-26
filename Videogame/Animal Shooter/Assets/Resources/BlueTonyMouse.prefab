@@ -449,7 +449,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 96f794d50cb7a4f49a127ebb624aa044, type: 2}
+  - {fileID: 2100000, guid: f26a46f8c359aa79aba9aeadd4a7d6aa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1064,7 +1064,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8edb90ae9520c2c46ae0abfa5f6a915d, type: 2}
+  - {fileID: 2100000, guid: b232946cbcd408f6e9c1730b3aaa8868, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1177,7 +1177,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 08aa412cd6693db4e958e5f00ba5664f, type: 2}
+  - {fileID: 2100000, guid: edd6457cc9c98cf7fb0eb1744ab5762d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1244,7 +1244,7 @@ GameObject:
   - component: {fileID: -4639995365473250122}
   - component: {fileID: 1897910012982734893}
   m_Layer: 3
-  m_Name: TonyMouse
+  m_Name: BlueTonyMouse
   m_TagString: BluePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1911,7 +1911,7 @@ GameObject:
   - component: {fileID: 3920892536524677478}
   m_Layer: 0
   m_Name: Tony
-  m_TagString: Untagged
+  m_TagString: BluePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2083,7 +2083,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b3b8ac9a50fb3e546bc31d8596f47da1, type: 2}
+  - {fileID: 2100000, guid: 629fa1d8766f3d10093f790e6addaabd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
