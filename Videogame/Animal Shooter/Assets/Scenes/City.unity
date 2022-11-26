@@ -43793,7 +43793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decTimer: 0
-  roundTime: 20
+  roundTime: 300
   nextScene: ResultScreen
 --- !u!82 &1110947882
 AudioSource:

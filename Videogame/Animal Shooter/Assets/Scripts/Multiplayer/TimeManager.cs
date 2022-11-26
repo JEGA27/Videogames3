@@ -8,6 +8,7 @@ public class TimeManager : MonoBehaviour
 {
     bool startTimer = false;
     double timerIncrementValue;
+    double timerIncrementValue1;
     double startTime;
 
     ExitGames.Client.Photon.Hashtable CustomeValue;
@@ -35,9 +36,8 @@ public class TimeManager : MonoBehaviour
 
             if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("StartTime"))
             {
-
+                Debug.Log("changed");
                 var hash = PhotonNetwork.CurrentRoom.CustomProperties;
-                startTime = PhotonNetwork.Time;
                 hash["StartTime"] = startTime;
                 PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
 
@@ -46,8 +46,9 @@ public class TimeManager : MonoBehaviour
             else
             {
 
-                CustomeValue.Add("StartTime", startTime);
-                PhotonNetwork.CurrentRoom.SetCustomProperties(CustomeValue);
+                var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+                hash.Add("StartTime", startTime);
+                PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
 
             }
         }
@@ -68,9 +69,10 @@ public class TimeManager : MonoBehaviour
 
         if (!startTimer) return;
         timerIncrementValue = PhotonNetwork.Time - (double)PhotonNetwork.CurrentRoom.CustomProperties["StartTime"];
+        timerIncrementValue1 = PhotonNetwork.Time - startTime;
 
-        
-
+        Debug.Log("t1: "+ (int)timerIncrementValue);
+        Debug.Log("t2: " + (int)timerIncrementValue1);
         decTimer = roundTime - timerIncrementValue;
 
         if ((int)decTimer <= 0 && !scenechanged)
