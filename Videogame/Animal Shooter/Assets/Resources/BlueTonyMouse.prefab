@@ -1379,6 +1379,7 @@ GameObject:
   - component: {fileID: 5913618469349619511}
   - component: {fileID: 6508968586994941621}
   - component: {fileID: 9194476479511943726}
+  - component: {fileID: 3500637912015627585}
   m_Layer: 3
   m_Name: BlueTonyMouse
   m_TagString: BluePlayer
@@ -1459,7 +1460,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 974a0d137206b4b618e252c9da3e27cd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f32b219998a004ae0baa717b72ee4ec9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1940,6 +1941,35 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &3500637912015627585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4114049545986137720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db7a1ebdbc604578aeeeebf5bb4de27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 5360cb0c61f624f3b824cfe0641325aa, type: 3}
+  - {fileID: 8300000, guid: f07af1887c4b04122b0fe9162131f80c, type: 3}
+  - {fileID: 8300000, guid: 81724a97d33a94a97913c820fbd55daa, type: 3}
+  - {fileID: 8300000, guid: 3929b75db639a456eb68fece279dbbfd, type: 3}
+  - {fileID: 8300000, guid: f748bbed141684d94a74818f08648bce, type: 3}
+  - {fileID: 8300000, guid: 753542b0fee8949f78745ae1ca135121, type: 3}
+  - {fileID: 8300000, guid: 8efdb0ffba6554a528f9fbbec7ce0abc, type: 3}
+  - {fileID: 8300000, guid: 9986309fdd7a044daa0d1ae7f84c2441, type: 3}
+  - {fileID: 8300000, guid: 9b597552801cf404b9141439d6c449c8, type: 3}
+  - {fileID: 8300000, guid: 6bbd57a0bb40447dc8578c55b3a323f8, type: 3}
+  - {fileID: 8300000, guid: 6f054b4efe5eb403c91dc89266f54c77, type: 3}
+  - {fileID: 8300000, guid: 08651602817c9471a826d83180f331e7, type: 3}
+  - {fileID: 8300000, guid: ea31ce8744ee7449baf4598ece5a19f4, type: 3}
+  - {fileID: 8300000, guid: ea7b21b6fb779418aafe162c28b701a9, type: 3}
+  - {fileID: 8300000, guid: 7338273886d3f421dbedbdce66bec8b2, type: 3}
+  - {fileID: 8300000, guid: d90a9fcb949724be3a40d4179b1321e3, type: 3}
 --- !u!1 &4141448542524221963
 GameObject:
   m_ObjectHideFlags: 0

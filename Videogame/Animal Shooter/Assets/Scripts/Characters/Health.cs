@@ -125,6 +125,8 @@ public class Health : MonoBehaviour
         PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
 
         PhotonNetwork.Destroy(this.gameObject);
+        PlaySounds dead = GetComponent<PlaySounds>();
+        dead.PlaySound(6);
         sp.Spawn();
     }
 

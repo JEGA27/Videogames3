@@ -163,7 +163,8 @@ public class CharacterManager : MonoBehaviour
         ratFbx.SetActive(false);
         catFbx.SetActive(false);
         squirrelFbx.SetActive(false);
-
+        PlaySounds selectraccoon = GetComponent<PlaySounds>();
+        selectraccoon.PlaySound(16);
     }
 
     public void Ardilla()
@@ -194,6 +195,8 @@ public class CharacterManager : MonoBehaviour
         ratFbx.SetActive(true);
         catFbx.SetActive(false);
         squirrelFbx.SetActive(false);
+        PlaySounds selectrat = GetComponent<PlaySounds>();
+        selectrat.PlaySound(16);
     }
 
     public void Gato()
