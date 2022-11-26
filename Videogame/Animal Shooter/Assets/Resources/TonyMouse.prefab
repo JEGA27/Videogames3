@@ -1567,6 +1567,7 @@ MonoBehaviour:
   hpFallDamage: 15
   timeToRecover: 7
   deaths: 0
+  lastShooterId: 
 --- !u!114 &5770957406556556744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1604,8 +1605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2973e2704f0baf86a6a39d54e08267f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marker: {fileID: 0}
   timer: 10
-  active: 0
 --- !u!114 &-942956701495253761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1697,6 +1698,7 @@ MonoBehaviour:
   specialWeaponCost: 0
   specialWeaponProgress: 0
   specialWeaponReady: 0
+  idProgress: 
 --- !u!114 &-2084622687987835756
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -71,7 +71,6 @@ public class TimeManager : MonoBehaviour
 
         if (!startTimer) return;
         timerIncrementValue = PhotonNetwork.Time - (double)PhotonNetwork.CurrentRoom.CustomProperties["StartTime"];
-        timerIncrementValue1 = PhotonNetwork.Time - startTime;
 
         decTimer = roundTime - timerIncrementValue;
 

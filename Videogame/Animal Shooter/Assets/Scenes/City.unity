@@ -75947,9 +75947,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e42c2a5fa7441f5a86c800b817fa40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raccoonPrefab: {fileID: 5664499059249402867, guid: de5fb88215c694182ac4b5355a03e4bc,
+  raccoonPrefab: {fileID: 657850576334949913, guid: e2c52140b0cb4354a90383f196eac539,
     type: 3}
-  ratPrefab: {fileID: 5664499059249402867, guid: de5fb88215c694182ac4b5355a03e4bc,
+  ratPrefab: {fileID: 6690069754161149051, guid: 5743df9ca1c86db4ead9eff9046972e6,
     type: 3}
   catPrefab: {fileID: 5664499059249402867, guid: de5fb88215c694182ac4b5355a03e4bc,
     type: 3}
