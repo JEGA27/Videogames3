@@ -65,6 +65,8 @@ public class PauseController : MonoBehaviour
                     PauseCanvas.SetActive(true);
                     HUDCanvas.SetActive(false);
                     currentCanvasTab = 0;
+                    PlaySounds menupause = GetComponent<PlaySounds>();
+                    menupause.PlaySound(1);
                 }
                 else
                 {

@@ -29,6 +29,8 @@ public class ResultManager : MonoBehaviour
 
                 victory.gameObject.SetActive(false);
                 defeat.gameObject.SetActive(true);
+                PlaySounds loser = GetComponent<PlaySounds>();
+                loser.PlaySound(11);
 
             }
 
@@ -48,6 +50,8 @@ public class ResultManager : MonoBehaviour
 
                 victory.gameObject.SetActive(false);
                 defeat.gameObject.SetActive(true);
+                PlaySounds winner = GetComponent<PlaySounds>();
+                winner.PlaySound(10);
 
             }
 
