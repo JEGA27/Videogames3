@@ -52,7 +52,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6370702500f3271499fbfc138c4d363c, type: 2}
+  - {fileID: 2100000, guid: 86c63e7aee4cec4c08939f4bae49eec0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,7 +141,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2e060f33fcb3a7449b9e95a61b0bc316, type: 2}
+  - {fileID: 2100000, guid: f2c8de122089492d4a235571a8d3206d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -293,7 +293,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5f052acdc3e5b664c98416c0e6d79b2c, type: 2}
+  - {fileID: 2100000, guid: a77e71123b785b2ca93aa956d9bb4f78, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -514,7 +514,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c28d1ade673cc5942b5ce81997e773b5, type: 2}
+  - {fileID: 2100000, guid: 326ebf4eb8a26211a904587001d60b77, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -891,7 +891,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bb4a42f15e9c0a946af5946ad3a2f1d7, type: 2}
+  - {fileID: 2100000, guid: 7b0ed2d061d7be000a2e446b16e4141d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1036,7 +1036,6 @@ GameObject:
   - component: {fileID: 6519265353123500321}
   - component: {fileID: 6519265353123500323}
   - component: {fileID: 6519265353123500324}
-  - component: {fileID: 6519265353123500327}
   - component: {fileID: 6519265353123500326}
   - component: {fileID: 6519265353123500329}
   - component: {fileID: 6519265353123500328}
@@ -1050,7 +1049,7 @@ GameObject:
   - component: {fileID: 6519265353123500371}
   - component: {fileID: 6519265353123500370}
   m_Layer: 3
-  m_Name: JohnnyRaccoon
+  m_Name: BlueJohnnyRaccoon
   m_TagString: BluePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1075,7 +1074,6 @@ Transform:
   - {fileID: 6519265353346414118}
   - {fileID: 9184939794861432546}
   - {fileID: 6838576787377850576}
-  - {fileID: 6519265353273450052}
   - {fileID: 6519265352355195605}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1324,6 +1322,7 @@ MonoBehaviour:
   swapWeaponTime: 1
   bulletsLeft: 0
   magazine: 0
+  hasExplosive: 0
 --- !u!114 &6519265353123500323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1382,20 +1381,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6ccfca181257344b086f89994b52bdcb, type: 3}
   - {fileID: 8300000, guid: bf37d654a432e4d49a6e5d79865e414a, type: 3}
   - {fileID: 8300000, guid: ea7b21b6fb779418aafe162c28b701a9, type: 3}
---- !u!114 &6519265353123500327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6248881500575009087}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2973e2704f0baf86a6a39d54e08267f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  marker: {fileID: 4634440096377742227, guid: 8c4ed8cebe1bb2e458a7f9b428ec6d34, type: 3}
-  timer: 10
 --- !u!114 &6519265353123500326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1857,7 +1842,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6769943993468375941}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6519265352355195602
 MonoBehaviour:
@@ -1969,37 +1954,6 @@ Transform:
   m_Father: {fileID: 6769943993468375941}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6519265353273450053
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6519265353273450052}
-  m_Layer: 0
-  m_Name: ScoreboardController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6519265353273450052
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6519265353273450053}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 838.7336, y: 541.85944, z: -182.7084}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6769943993468375941}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6519265353346414119
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,7 +2060,7 @@ GameObject:
   - component: {fileID: 2713208499463867736}
   m_Layer: 0
   m_Name: Raccoon
-  m_TagString: Untagged
+  m_TagString: BluePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3573,7 +3527,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.70000005
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -4089,7 +4043,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.70000005
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -4273,7 +4227,7 @@ PrefabInstance:
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.70000005
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f,
         type: 3}

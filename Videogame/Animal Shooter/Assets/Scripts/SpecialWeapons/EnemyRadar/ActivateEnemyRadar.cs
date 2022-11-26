@@ -5,7 +5,6 @@ using Photon.Pun;
 
 public class ActivateEnemyRadar : MonoBehaviour
 {
-    public GameObject marker;
     public int timer;
     GameObject[] enemies;
 
@@ -55,11 +54,6 @@ public class ActivateEnemyRadar : MonoBehaviour
         {
             int layer = gameObject.tag == "RedPlayer" ? 13 : 12;
 
-            // var enemyMarker = Instantiate(marker, enemy.transform.position, Quaternion.identity, enemy.transform);
-            // enemyMarker.layer = layer;
-            // enemyMarker.transform.LookAt(transform);
-            // enemyMarker.tag = "EnemyMarker";
-
             enemy.layer = layer;
             foreach (Transform t in enemy.transform)
             {
@@ -72,11 +66,7 @@ public class ActivateEnemyRadar : MonoBehaviour
     IEnumerator EndMark()
     {
         yield return new WaitForSeconds(timer);
-    //     GameObject[] markers = GameObject.FindGameObjectsWithTag("EnemyMarker");
-    //     foreach (GameObject marker in markers)
-    //     {
-    //         Destroy(marker);
-    //     }
+        
         foreach (GameObject enemy in enemies)
         {
             enemy.layer = 0;

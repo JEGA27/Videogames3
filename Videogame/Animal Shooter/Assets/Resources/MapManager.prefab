@@ -93,7 +93,12 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0, w: 0}
   - {x: 0, y: 0, z: 0, w: 0}
   - {x: 0, y: 0, z: 0, w: 0}
-  reset: 0
+  redTruck: {fileID: 2752823076462964605, guid: 08e77e3618366bebea50cd5e132235ea,
+    type: 3}
+  orangeTruck: {fileID: 2465122548272429784, guid: d70c7a7ddd05c6dfa828102d2bcba78b,
+    type: 3}
+  car: {fileID: 123221678560704629, guid: 2c840cdf3b4215af5a8884c454a96026, type: 3}
+  statue: {fileID: 4654520147232780065, guid: 4907b959baaf9f846ba042516564f70b, type: 3}
 --- !u!114 &1850226151959149393
 MonoBehaviour:
   m_ObjectHideFlags: 0

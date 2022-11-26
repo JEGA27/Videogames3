@@ -55,7 +55,7 @@ public class DummyHealth : MonoBehaviour
           {
               if(ActiveTrashDrop) {
                 for(int i = 0; i < objectsToSpawn; i++) {
-                    Instantiate(objectsPrefabs[Random.Range(0, objectsPrefabs.Count)], transform.position, Random.rotation);
+                    PhotonNetwork.Instantiate(objectsPrefabs[Random.Range(0, objectsPrefabs.Count)].name, transform.position, Random.rotation);
                 }
               }
               Eliminate();
@@ -92,7 +92,7 @@ public class DummyHealth : MonoBehaviour
     {
         PhotonNetwork.Destroy(this.gameObject);
         // Update shooter's kills
-        PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
+        // PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
     }
 
     float CalculateHealth()
