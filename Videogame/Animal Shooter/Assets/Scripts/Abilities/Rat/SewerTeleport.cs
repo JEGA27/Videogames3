@@ -22,6 +22,8 @@ public class SewerTeleport : MonoBehaviour
     ThirdPersonShooterController tpsc;
     bool isOnSewer = false;
 
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,9 +61,10 @@ public class SewerTeleport : MonoBehaviour
     {
         if(other.gameObject.tag == "Sewer")
         {
-
             other.gameObject.transform.GetChild(0).gameObject.SetActive(true);
             isOnSewer = true;
+            anim = other.gameObject.GetComponent<Animator>();
+            anim.SetTrigger("characterIsClose");
         }
     }
 
@@ -69,12 +72,13 @@ public class SewerTeleport : MonoBehaviour
     {
       if(other.gameObject.tag == "Sewer")
       {
-
-          other.gameObject.transform.GetChild(0).gameObject.SetActive(false);
-          sewersCanvas.SetActive(false);
-          isOnSewer = false;
-          tpsc.enabled = true;
-          Cursor.lockState = CursorLockMode.Locked;
+            other.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            sewersCanvas.SetActive(false);
+            isOnSewer = false;
+            anim = other.gameObject.GetComponent<Animator>();
+            anim.SetTrigger("characterIsFar");
+            tpsc.enabled = true;
+            Cursor.lockState = CursorLockMode.Locked;
 
       }
     }
