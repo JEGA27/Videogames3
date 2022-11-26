@@ -6,7 +6,10 @@ using UnityEngine;
 public class SewerTeleport : MonoBehaviour
 {
     [SerializeField]
-    List<GameObject> sewers;
+    List<string> names;
+
+    //[SerializeField]
+    public List<GameObject> sewers;
 
     [SerializeField]
     List<GameObject> buttons;
@@ -19,12 +22,15 @@ public class SewerTeleport : MonoBehaviour
     ThirdPersonShooterController tpsc;
     bool isOnSewer = false;
 
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < sewers.Count; i++)
+        for(int i = 0; i < names.Count; i++)
         {
-            buttons[i].GetComponent<SewerButton>().sewerCoordinates = sewers[i].transform.position;
+            sewers.Add(GameObject.Find(names[i]));
+            buttons[i].GetComponent<SewerButton>().sewerCoordinates = new Vector3(sewers[i].transform.position.x, transform.position.y, sewers[i].transform.position.z);
         }
         sewersCanvas.SetActive(false);
         abilityMessage.SetActive(false);
@@ -57,9 +63,10 @@ public class SewerTeleport : MonoBehaviour
     {
         if(other.gameObject.tag == "Sewer")
         {
-
             other.gameObject.transform.GetChild(0).gameObject.SetActive(true);
             isOnSewer = true;
+            anim = other.gameObject.GetComponent<Animator>();
+            anim.SetTrigger("characterIsClose");
         }
     }
 
@@ -67,12 +74,13 @@ public class SewerTeleport : MonoBehaviour
     {
       if(other.gameObject.tag == "Sewer")
       {
-
-          other.gameObject.transform.GetChild(0).gameObject.SetActive(false);
-          sewersCanvas.SetActive(false);
-          isOnSewer = false;
-          tpsc.enabled = true;
-          Cursor.lockState = CursorLockMode.Locked;
+            other.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            sewersCanvas.SetActive(false);
+            isOnSewer = false;
+            anim = other.gameObject.GetComponent<Animator>();
+            anim.SetTrigger("characterIsFar");
+            tpsc.enabled = true;
+            Cursor.lockState = CursorLockMode.Locked;
 
       }
     }

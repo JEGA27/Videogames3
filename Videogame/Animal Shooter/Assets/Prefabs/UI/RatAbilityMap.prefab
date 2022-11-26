@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 44261039155958678}
   - component: {fileID: 2353874682274253906}
   - component: {fileID: 3725370125602951911}
+  - component: {fileID: 6563101699676305627}
   m_Layer: 5
   m_Name: SewerBtn
   m_TagString: Untagged
@@ -304,6 +305,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6563101699676305627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523861868460577329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f534a02405c79e74f8755499e5c3d568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rat: {fileID: 0}
+  sewerCoordinates: {x: 0, y: 0, z: 0}
 --- !u!1 &2138070282079431431
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +538,7 @@ GameObject:
   - component: {fileID: 3664868782995878680}
   - component: {fileID: 3531660440648702255}
   - component: {fileID: 4859542626052079808}
+  - component: {fileID: 1506515513329465732}
   m_Layer: 5
   m_Name: SewerBtn (2)
   m_TagString: Untagged
@@ -633,6 +649,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1506515513329465732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5014011855036572874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f534a02405c79e74f8755499e5c3d568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rat: {fileID: 0}
+  sewerCoordinates: {x: 0, y: 0, z: 0}
 --- !u!1 &5604244446717505966
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,6 +937,7 @@ GameObject:
   - component: {fileID: 2712401303042982795}
   - component: {fileID: 3570204494290661814}
   - component: {fileID: 7423207169018028967}
+  - component: {fileID: 6081947793407593111}
   m_Layer: 5
   m_Name: SewerBtn (3)
   m_TagString: Untagged
@@ -1017,6 +1048,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6081947793407593111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881066703938412373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f534a02405c79e74f8755499e5c3d568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rat: {fileID: 0}
+  sewerCoordinates: {x: 0, y: 0, z: 0}
 --- !u!1 &8999470612890297304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,6 +1074,7 @@ GameObject:
   - component: {fileID: 7579079516403193908}
   - component: {fileID: 5506746975991306682}
   - component: {fileID: 4664415786883961386}
+  - component: {fileID: 5735618540909167790}
   m_Layer: 5
   m_Name: SewerBtn (1)
   m_TagString: Untagged
@@ -1139,6 +1185,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5735618540909167790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8999470612890297304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f534a02405c79e74f8755499e5c3d568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rat: {fileID: 0}
+  sewerCoordinates: {x: 0, y: 0, z: 0}
 --- !u!1 &9088396899920484452
 GameObject:
   m_ObjectHideFlags: 0

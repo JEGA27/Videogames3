@@ -43,6 +43,10 @@ public class DummyHealth : MonoBehaviour
       if (hp < maxHp)
       {
           //healthUI.SetActive(true);
+          if(this.gameObject.GetComponent<Animator>() != null)
+          {
+            this.gameObject.GetComponent<Animator>().SetTrigger("setStagger");
+          }
           if (hp > 0)
           {
               Recover();
