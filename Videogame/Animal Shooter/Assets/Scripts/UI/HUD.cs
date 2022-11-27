@@ -44,6 +44,8 @@ public class HUD : MonoBehaviour
     public Sprite swBlueCircle;
     public Sprite swRedCircle;
 
+    public GameObject alivePanel;
+    public GameObject eliminatedPanel;
     private ThirdPersonShooterController tpsc;
 
     private string character;
@@ -121,6 +123,12 @@ public class HUD : MonoBehaviour
             {
                 weaponIcon.sprite = w2RatIcon;
             }
+        }
+
+        if (hpBar.value <= 0)
+        {
+            alivePanel.SetActive(false);   
+            eliminatedPanel.SetActive(true);
         }
     }
 

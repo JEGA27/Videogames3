@@ -12,10 +12,13 @@ public class Mine : MonoBehaviour
     private float up_force;
 
     private bool hasExploded;
+
+    private bool hitGround;
     // Start is called before the first frame update
     void Start()
     {
         hasExploded = false;
+        hitGround = false;
     }
 
     // Update is called once per frame
@@ -47,9 +50,14 @@ public class Mine : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Health>() != null)
+        if (other.GetComponent<Health>() != null && hitGround)
         {
             Explode();
         }
+    }
+
+    private void OnCollisionEnter(Collision other) 
+    {
+        hitGround = true;
     }
 }

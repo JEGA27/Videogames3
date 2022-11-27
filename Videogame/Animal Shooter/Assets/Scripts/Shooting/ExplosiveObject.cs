@@ -23,7 +23,8 @@ public class ExplosiveObject : MonoBehaviour
     private int originalThrows;
 
     //private GameObject projectile;
-    private PhotonView PV;
+    [SerializeField]
+    PhotonView PV;
     private bool readyToThrow;
     GameObject projectile;
 
@@ -38,7 +39,7 @@ public class ExplosiveObject : MonoBehaviour
 
     void Update()
     {
-       
+
     }
 
     public void Throw()

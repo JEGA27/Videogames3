@@ -146,11 +146,7 @@ public class Health : MonoBehaviour
     void Eliminate()
     {
         ToggleRagdoll(true);
-        charController.enabled = false;
-        foreach(Rigidbody rb in ragBones)
-        {
-            rb.AddExplosionForce(ragExplosionForce, transform.position, ragExplosionRadius, ragUpForce, ForceMode.Impulse);
-        }
+        StartCoroutine(TimeToSpawn());
         // Update deaths
         var hash = PhotonNetwork.CurrentRoom.CustomProperties;
         hash[idDeaths] = deaths + 1;
@@ -164,10 +160,52 @@ public class Health : MonoBehaviour
         }
 
         PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
-        StartCoroutine(TimeToSpawn());
+
+        
+        
     }
 
     void ToggleRagdoll(bool toggle)
+    {
+        if (!PV.IsMine) return;
+        /*
+        anim.enabled = !toggle;
+
+        foreach(Rigidbody rb in ragBones)
+        {
+            rb.isKinematic = !toggle;
+        }
+
+        foreach(Collider col in ragColliders)
+        {
+            col.enabled = toggle;
+        }
+
+
+        if (toggle)
+        {
+            charController.enabled = false;
+            foreach(Rigidbody rb in ragBones)
+            {
+                rb.AddExplosionForce(ragExplosionForce, transform.position, ragExplosionRadius, ragUpForce, ForceMode.Impulse);
+            }
+        }
+        */
+
+        PV.RPC("ToggleRagdoll_RPC", RpcTarget.All, toggle);
+    }
+
+    IEnumerator TimeToSpawn()
+    {
+        yield return new WaitForSeconds(timeToSpawn);
+        PhotonNetwork.Destroy(this.gameObject);
+        PlaySounds dead = GetComponent<PlaySounds>();
+        dead.PlaySound(6);
+        sp.Spawn();
+    }
+
+    [PunRPC]
+    public void ToggleRagdoll_RPC(bool toggle)
     {
         anim.enabled = !toggle;
 
@@ -180,15 +218,16 @@ public class Health : MonoBehaviour
         {
             col.enabled = toggle;
         }
-    }
 
-    IEnumerator TimeToSpawn()
-    {
-        yield return new WaitForSeconds(timeToSpawn);
-        PhotonNetwork.Destroy(this.gameObject);
-        PlaySounds dead = GetComponent<PlaySounds>();
-        dead.PlaySound(6);
-        sp.Spawn();
+
+        if (toggle)
+        {
+            charController.enabled = false;
+            foreach(Rigidbody rb in ragBones)
+            {
+                rb.AddExplosionForce(ragExplosionForce, transform.position, ragExplosionRadius, ragUpForce, ForceMode.Impulse);
+            }
+        }
     }
 
 }
