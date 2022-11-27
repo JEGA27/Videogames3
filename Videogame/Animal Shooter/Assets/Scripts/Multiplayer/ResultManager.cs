@@ -24,6 +24,8 @@ public class ResultManager : MonoBehaviour
 
                 victory.gameObject.SetActive(true);
                 defeat.gameObject.SetActive(false);
+                PlaySounds loser = GetComponent<PlaySounds>();
+                loser.PlaySound(11);
             }
             else {
 
@@ -44,6 +46,8 @@ public class ResultManager : MonoBehaviour
 
                 victory.gameObject.SetActive(true);
                 defeat.gameObject.SetActive(false);
+                PlaySounds winner = GetComponent<PlaySounds>();
+                winner.PlaySound(10);
             }
             else
             {
@@ -69,6 +73,8 @@ public class ResultManager : MonoBehaviour
             var hash = PhotonNetwork.CurrentRoom.CustomProperties;
             hash.Add("BlueScore", 0);
             PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+            PlaySounds winner = GetComponent<PlaySounds>();
+            winner.PlaySound(10);
             //Debug.Log(PhotonNetwork.CurrentRoom.CustomProperties["BlueScore"]);
         }
 
@@ -77,6 +83,8 @@ public class ResultManager : MonoBehaviour
             var hash = PhotonNetwork.CurrentRoom.CustomProperties;
             hash.Add("RedScore", 0);
             PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+            PlaySounds loser = GetComponent<PlaySounds>();
+            loser.PlaySound(11);
             //Debug.Log(PhotonNetwork.CurrentRoom.CustomProperties["BlueScore"]);
         }
     }
