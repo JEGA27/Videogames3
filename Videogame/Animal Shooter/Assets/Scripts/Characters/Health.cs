@@ -30,7 +30,7 @@ public class Health : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         //rb = GetComponent<Rigidbody>();
         thirdPersonController = gameObject.GetComponent<ThirdPersonController>();
         maxHp = hp;
@@ -44,6 +44,7 @@ public class Health : MonoBehaviour
         // Store deaths
         idDeaths = PhotonNetwork.LocalPlayer.UserId + "Deaths";
         deaths = (int)PhotonNetwork.CurrentRoom.CustomProperties[idDeaths];
+        lastShooterId = "none";
     }
 
     // Update is called once per frame
@@ -79,6 +80,11 @@ public class Health : MonoBehaviour
         PV.RPC("TakeDamageRPC", RpcTarget.All, damage);
     }
 
+    public void SetShooterId(string shooterId)
+    {
+        PV.RPC("SetShooterIdRPC", RpcTarget.All, shooterId);
+    }
+
     [PunRPC]
     public void TakeDamageRPC(float damage)
     {
@@ -86,6 +92,14 @@ public class Health : MonoBehaviour
         
         hp -= damage;
         timer = 0f;
+    }
+
+    [PunRPC]
+    public void SetShooterIdRPC(string shooterId)
+    {
+        if(!PV.IsMine) return;
+        
+        lastShooterId = shooterId;
     }
 
     void Recover()
@@ -116,7 +130,7 @@ public class Health : MonoBehaviour
         // PhotonNetwork.CurrentRoom.CustomProperties[idDeaths] = deaths + 1;
 
         // Update shooter's kills
-        if (lastShooterId != PhotonNetwork.LocalPlayer.UserId)
+        if (lastShooterId != PhotonNetwork.LocalPlayer.UserId && lastShooterId != "none")
         {
             // PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
             hash[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;

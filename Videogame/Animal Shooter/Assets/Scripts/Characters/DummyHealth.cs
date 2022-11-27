@@ -21,9 +21,12 @@ public class DummyHealth : MonoBehaviour
 
     public string lastShooterId;
 
+    PhotonView PV;
+
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        PV = GetComponent<PhotonView>();
         maxHp = hp;
         //slider.value = CalculateHealth();
     }
@@ -63,8 +66,16 @@ public class DummyHealth : MonoBehaviour
       }
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamageD(float damage)
     {
+        PV.RPC("TakeDamageDRPC", RpcTarget.All, damage);
+    }
+
+    [PunRPC]
+    public void TakeDamageRPC(float damage)
+    {
+        if(!PV.IsMine) return;
+        
         hp -= damage;
         timer = 0f;
     }

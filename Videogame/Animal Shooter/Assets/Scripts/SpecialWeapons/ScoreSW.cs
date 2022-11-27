@@ -39,11 +39,13 @@ public class ScoreSW : MonoBehaviour
     string idTrash;
     string idKills;
 
-
+    PhotonView PV;
 
     // Start is called before the first frame update
     void Start()
     {
+        PV = GetComponent<PhotonView>();
+
         // IDs
         idProgress = PhotonNetwork.LocalPlayer.UserId + "SWProgress";
         idScore = PhotonNetwork.LocalPlayer.UserId + "Score";
@@ -148,7 +150,9 @@ public class ScoreSW : MonoBehaviour
 
     bool Change()
     {
-        if(trashPicked != 0 || trashDelivered != 0 || trashRobbed != 0 || eliminations != (int)PhotonNetwork.CurrentRoom.CustomProperties[idKills] || globalTrash != (int)PhotonNetwork.CurrentRoom.CustomProperties[idTrash])
+        if(!PV.IsMine)
+            return false;
+        else if(trashPicked != 0 || trashDelivered != 0 || trashRobbed != 0 || eliminations != (int)PhotonNetwork.CurrentRoom.CustomProperties[idKills] || globalTrash != (int)PhotonNetwork.CurrentRoom.CustomProperties[idTrash])
             return true;
         else
             return false;

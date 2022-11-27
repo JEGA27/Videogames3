@@ -58,14 +58,14 @@ public class BulletProjectile : MonoBehaviour
             if(other.GetComponent<DummyHealth>() != null && other.tag != this.tag)
             {
                 dummyHealth = other.GetComponent<DummyHealth>();
-                dummyHealth.TakeDamage(bulletDamage);
+                dummyHealth.TakeDamageD(bulletDamage);
                 dummyHealth.lastShooterId = ShooterId;
             }
             else if (other.tag != this.tag)
             {
                 healthSystem = other.GetComponent<Health>();
                 healthSystem.TakeDamage(bulletDamage);
-                healthSystem.lastShooterId = ShooterId;
+                healthSystem.SetShooterId(ShooterId);
             }
 
         }

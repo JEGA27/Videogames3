@@ -179,7 +179,7 @@ public class ThirdPersonShooterController : MonoBehaviour
       if (bullet.GetComponent<Explosive>())
       {
         bullet.GetComponent<Explosive>().ShooterId = PhotonNetwork.LocalPlayer.UserId;
-      }      
+      }
 
       starterAssetsInputs.shoot = false;
       readyToShoot = false;
