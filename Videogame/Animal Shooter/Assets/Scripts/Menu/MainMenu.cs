@@ -40,6 +40,10 @@ public class MainMenu : MonoBehaviourPunCallbacks
     public VideoPlayer videoPlayer;
 
     [Space]
+    public GameObject aboutUSPanel;
+    public GameObject aboutUSImage;
+
+    [Space]
     public GameObject StageCanvas_Loading;
 
     private int currentCanvasTab;
@@ -174,6 +178,14 @@ public class MainMenu : MonoBehaviourPunCallbacks
         menu.PlaySound(13);
     }
 
+    public void ShowAboutTW() {
+        stageCam = 3;
+        videoPanel.SetActive(true);
+        aboutUSPanel.SetActive(false);
+        PlaySounds menu = GetComponent<PlaySounds>();
+        menu.PlaySound(13);
+    }
+
     public void PlayVideoRaccon()
     {
         videoPanel.SetActive(true);
@@ -192,6 +204,13 @@ public class MainMenu : MonoBehaviourPunCallbacks
         videoPlayer.clip = ratMov;
         videoPlayer.Prepare();
         videoPlayer.Play();
+    }
+
+    public void ShowAboutUS() {
+        aboutUSPanel.SetActive(true);
+        videoPanel.SetActive(false);
+        PlaySounds menu = GetComponent<PlaySounds>();
+        menu.PlaySound(13);
     }
 
     public void ShowJoinPanel()
