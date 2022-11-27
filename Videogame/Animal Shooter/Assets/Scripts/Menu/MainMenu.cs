@@ -26,6 +26,8 @@ public class MainMenu : MonoBehaviourPunCallbacks
     [Space]
     public GameObject StageCanvas_Options;
     public GameObject optionsPanel;
+    public Slider sensitivitySlider;
+    public Text sensitivityTxt;
     public GameObject controlsPanel;
 
     [Space]
@@ -70,6 +72,8 @@ public class MainMenu : MonoBehaviourPunCallbacks
                 StageCanvas_0.SetActive(false);
 
                 StageCanvas_Options.SetActive(true);
+                GameManager.sensitivity = sensitivitySlider.value;
+                sensitivityTxt.text = sensitivitySlider.value.ToString();
                 StageCanvas_Play.SetActive(false);
                 StageCanvas_Extras.SetActive(false);
                 break;

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static int blueTeamTrash;
     public static int redTeamTrash;
     public static float maxRaccoonHealth;
+    public static float sensitivity = 1f;
 
     void Awake()
     {

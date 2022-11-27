@@ -153,6 +153,8 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+
+            Sensitivity *= GameManager.sensitivity;
         }
 
         private void Update()
