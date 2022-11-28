@@ -87,6 +87,11 @@ public class ResultManager : MonoBehaviour
             loser.PlaySound(11);
             //Debug.Log(PhotonNetwork.CurrentRoom.CustomProperties["BlueScore"]);
         }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Leave();
+        }
     }
 
     public void Leave()

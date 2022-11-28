@@ -2019,7 +2019,7 @@ MonoBehaviour:
   hp: 150
   hpIncrease: 7
   maxFallVel: 10
-  hpFallDamage: 15
+  hpFallDamage: 0
   timeToRecover: 7
   deaths: 0
   lastShooterId: 
