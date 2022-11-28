@@ -156,12 +156,16 @@ public class MainMenu : MonoBehaviourPunCallbacks
     {
         controlsPanel.SetActive(true);
         optionsPanel.SetActive(false);
+        PlaySounds menu = GetComponent<PlaySounds>();
+        menu.PlaySound(1);
     }
 
     public void ShowOptionsPanel()
     {
         controlsPanel.SetActive(false);
         optionsPanel.SetActive(true);
+        PlaySounds menu = GetComponent<PlaySounds>();
+        menu.PlaySound(1);
     }
 
     public void ShowPlay()

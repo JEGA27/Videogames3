@@ -62,8 +62,6 @@ public class DummyHealth : MonoBehaviour
                 }
               }
               Eliminate();
-              PlaySounds dead = GetComponent<PlaySounds>();
-              dead.PlaySound(16);
           }
       }
     }
@@ -104,8 +102,6 @@ public class DummyHealth : MonoBehaviour
     void Eliminate()
     {
         PhotonNetwork.Destroy(this.gameObject);
-        //PlaySounds dead = GetComponent<PlaySounds>();
-        //dead.PlaySound(16);
         // Update shooter's kills
         // PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
     }
