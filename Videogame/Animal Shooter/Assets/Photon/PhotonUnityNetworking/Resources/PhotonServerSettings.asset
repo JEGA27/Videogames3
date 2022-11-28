@@ -42,6 +42,7 @@ MonoBehaviour:
   - TakeDamageRPC
   - SetShooterIdRPC
   - ToggleRagdoll_RPC
+  - TakeDamageDRPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

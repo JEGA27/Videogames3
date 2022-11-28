@@ -2053,7 +2053,6 @@ MonoBehaviour:
   HUDCanvas: {fileID: 9184939794861432551}
   OptionsPanel: {fileID: 1096144640535877114}
   OptionsBtnsPanel: {fileID: 5950594583784506358}
-  OptionsSettsPanel: {fileID: 0}
   ScoreboardPanel: {fileID: 2963345885815237650}
   MapPanel: {fileID: 5175452754332734591}
 --- !u!114 &6519265353123500335
