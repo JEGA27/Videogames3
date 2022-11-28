@@ -16,7 +16,7 @@ public class PickUpTrash : MonoBehaviour
     void Start()
     {
         PV = GetComponent<PhotonView>();
-        scoreSW = GetComponent<ScoreSW>();    
+        if (gameObject.tag != "Dummy") scoreSW = GetComponent<ScoreSW>();    
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class PickUpTrash : MonoBehaviour
         {
             currentTrash++;
             // Update trash collected
-            scoreSW.trashPicked++;
+            if (gameObject.tag != "Dummy") scoreSW.trashPicked++;
             other.gameObject.GetComponent<Trash>().EraseTrash();
             // PhotonNetwork.Destroy(other.gameObject);
             PlaySounds collect = GetComponent<PlaySounds>();

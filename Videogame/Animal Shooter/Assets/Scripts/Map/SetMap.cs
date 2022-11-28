@@ -134,12 +134,12 @@ public class SetMap : MonoBehaviour
         dumpsterRotations.Add(Quaternion.Euler(0, -90, 0));
         dumpsterRotations.Add(Quaternion.Euler(0, 90, 0));
         // Dummies
-        dummyPositions.Add(new Vector3(12.36f, 0.021f, 32.52f));
-        dummyPositions.Add(new Vector3(8.37f, 0.021f, 33.13f));
-        dummyPositions.Add(new Vector3(11.98f, 0.021f, 35.81f));
-        dummyPositions.Add(new Vector3(8.69f, 0.021f, 35.90f));
-        dummyPositions.Add(new Vector3(11.76f, -0.16f, 38.85f));
-        dummyPositions.Add(new Vector3(9.22f, -0.16f, 38.94f));
+        dummyPositions.Add(new Vector3(13.08f, 0.021f, 30.99f));
+        dummyPositions.Add(new Vector3(9.92f, 0.021f, 34.79f));
+        dummyPositions.Add(new Vector3(6.68f, 0.021f, 31.19f));
+        dummyPositions.Add(new Vector3(11.16f, 0.021f, 3.24f));
+        dummyPositions.Add(new Vector3(8.47f, -0.16f, 8.89f));
+        dummyPositions.Add(new Vector3(13.47f, -0.16f, 14.2f));
         dummyRotations.Add(Quaternion.Euler(0, 0, 0));
         dummyRotations.Add(Quaternion.Euler(0, 0, 0));
         dummyRotations.Add(Quaternion.Euler(0, 0, 0));

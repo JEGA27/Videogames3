@@ -35,10 +35,12 @@ public class DummyMovement : MonoBehaviour
     NavMeshPath path;
     bool validPath;
     float speed;
+    Animator _animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        _animator = GetComponent<Animator>();
         curPlayers = PhotonNetwork.PlayerList.Length;
         players = new List<GameObject>();
         GetCurrentPlayers();
@@ -70,7 +72,7 @@ public class DummyMovement : MonoBehaviour
 
     void UpdateIdle() 
     {
-
+        _animator.SetBool("Running",false);
         if (distance <= AttackRadius)
         {
             currentState = FSMStates.Evade;
@@ -88,7 +90,7 @@ public class DummyMovement : MonoBehaviour
     void UpdateEvade()
     {
 
-
+        _animator.SetBool("Running", true);
         if (distance <= AttackRadius)
         {
 
