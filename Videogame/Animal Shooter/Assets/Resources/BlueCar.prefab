@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7600526038996408961}
   - component: {fileID: 6484489253615396034}
   - component: {fileID: 9050189981967865564}
+  - component: {fileID: -5053918575865933879}
   m_Layer: 0
   m_Name: BlueCar
   m_TagString: CityObject
@@ -195,10 +196,11 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: 9050189981967865564}
+  - {fileID: -5053918575865933879}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -235,3 +237,24 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &-5053918575865933879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123221678560704629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 9
+    SynchronizeType: 0
+    Name: setStagger
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0

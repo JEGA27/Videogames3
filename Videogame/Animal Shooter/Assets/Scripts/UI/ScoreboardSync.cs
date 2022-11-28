@@ -65,7 +65,7 @@ public class ScoreboardSync : MonoBehaviourPunCallbacks
 
 
         localPlayer.SetActive(true);
-        localPlayer.transform.Find("Player").GetComponent<Text>().text = PhotonNetwork.LocalPlayer.CustomProperties["Character"] + " (Me)";
+        localPlayer.transform.Find("Player").GetComponent<Text>().text = PhotonNetwork.LocalPlayer.CustomProperties["Character"].ToString();
         localPlayer.transform.Find("Score").GetComponent<Text>().text = localScore.globalPoints.ToString(); //PhotonNetwork.CurrentRoom.CustomProperties[localPlayerId + "Score"].ToString();
         localPlayer.transform.Find("Trash").GetComponent<Text>().text = localScore.globalTrash.ToString();//PhotonNetwork.CurrentRoom.CustomProperties[localPlayerId + "Trash"].ToString();
         localPlayer.transform.Find("Eliminations").GetComponent<Text>().text = localScore.eliminations.ToString();//PhotonNetwork.CurrentRoom.CustomProperties[localPlayerId + "Kills"].ToString();

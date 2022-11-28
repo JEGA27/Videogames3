@@ -50,11 +50,9 @@ public class BulletProjectile : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
+    {   
         if(other.GetComponent<BulletTarget>() != null)
         {
-
-
             if(other.GetComponent<DummyHealth>() != null && other.tag != this.tag)
             {
                 dummyHealth = other.GetComponent<DummyHealth>();
@@ -69,7 +67,21 @@ public class BulletProjectile : MonoBehaviour
             }
 
         }
-
+        else if(other.GetComponentInParent<BulletTarget>() != null)
+        {
+            if(other.GetComponentInParent<DummyHealth>() != null && other.transform.parent.tag != this.tag)
+            {
+                dummyHealth = other.GetComponentInParent<DummyHealth>();
+                dummyHealth.TakeDamageD(bulletDamage);
+                dummyHealth.lastShooterId = ShooterId;
+            }
+            else if (other.transform.parent.tag != this.tag)
+            {
+                healthSystem = other.GetComponentInParent<Health>();
+                healthSystem.TakeDamage(bulletDamage);
+                healthSystem.SetShooterId(ShooterId);
+            }
+        }
             
         if(other.gameObject.tag != this.tag)
         {

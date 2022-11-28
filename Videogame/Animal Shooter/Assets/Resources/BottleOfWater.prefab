@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6562726142573660313}
   - component: {fileID: 4652118019738735881}
   - component: {fileID: -5054476989202303568}
+  - component: {fileID: 5280581067895185993}
   m_Layer: 0
   m_Name: BottleOfWater
   m_TagString: Trash
@@ -168,7 +169,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: -5054476989202303568}
@@ -208,3 +209,15 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &5280581067895185993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6192380661802840555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c6422923acde6c99cf0d9486825a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

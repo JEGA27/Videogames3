@@ -1898,7 +1898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c287974aee4c4850be0252d01cc3d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToThrow: {fileID: 2366091793111397289, guid: d5aa4ebf2a06e54448925ad440742c8a,
+  objectToThrow: {fileID: 1753346102264670270, guid: 3c72a6b685b3e5344ba877da37136a42,
     type: 3}
   throwForce: 15
   throwUpwardForce: 3
@@ -2053,7 +2053,6 @@ MonoBehaviour:
   HUDCanvas: {fileID: 9184939794861432551}
   OptionsPanel: {fileID: 1096144640535877114}
   OptionsBtnsPanel: {fileID: 5950594583784506358}
-  OptionsSettsPanel: {fileID: 0}
   ScoreboardPanel: {fileID: 2963345885815237650}
   MapPanel: {fileID: 5175452754332734591}
 --- !u!114 &6519265353123500335
@@ -2499,7 +2498,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6519265352543639552}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.93076545, y: 0.2000002, z: -0.67539406}
+  m_LocalPosition: {x: 0, y: 0.1, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
