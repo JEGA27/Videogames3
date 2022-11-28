@@ -123,6 +123,33 @@ public class Health : MonoBehaviour
         lastShooterId = shooterId;
     }
 
+    public void Eliminate()
+    {
+        PV.RPC("EliminateRPC", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void EliminateRPC()
+    {
+        if(!PV.IsMine) return;
+
+        ToggleRagdoll(true);
+        StartCoroutine(TimeToSpawn());
+        // Update deaths
+        var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+        hash[idDeaths] = deaths + 1;
+        // PhotonNetwork.CurrentRoom.CustomProperties[idDeaths] = deaths + 1;
+
+        // Update shooter's kills
+        if (lastShooterId != PhotonNetwork.LocalPlayer.UserId && lastShooterId != "none")
+        {
+            // PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
+            hash[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
+        }
+        PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+        
+    }
+
     void Recover()
     {
         timer += Time.deltaTime;
@@ -143,28 +170,7 @@ public class Health : MonoBehaviour
 
     }
 
-    void Eliminate()
-    {
-        ToggleRagdoll(true);
-        StartCoroutine(TimeToSpawn());
-        // Update deaths
-        var hash = PhotonNetwork.CurrentRoom.CustomProperties;
-        hash[idDeaths] = deaths + 1;
-        // PhotonNetwork.CurrentRoom.CustomProperties[idDeaths] = deaths + 1;
-
-        // Update shooter's kills
-        if (lastShooterId != PhotonNetwork.LocalPlayer.UserId && lastShooterId != "none")
-        {
-            Debug.Log("Contando kill a " + lastShooterId);
-            // PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
-            hash[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
-        }
-
-        PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
-
-        
-        
-    }
+    
 
     void ToggleRagdoll(bool toggle)
     {
