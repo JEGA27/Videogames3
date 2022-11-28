@@ -134,11 +134,11 @@ public class CharacterManager : MonoBehaviour
             }
         }
 
-        if (blueReady + redReady >= (int)PhotonNetwork.CurrentRoom.MaxPlayers && !scenechanged) {
+        /*if (blueReady + redReady >= (int)PhotonNetwork.CurrentRoom.MaxPlayers && !scenechanged) {
 
             PhotonNetwork.LoadLevel(nextScene);
             scenechanged = true;
-        }
+        }*/
 
         /*if (PhotonNetwork.PlayerList.Length < (int)PhotonNetwork.CurrentRoom.MaxPlayers && !scenechanged)
         {

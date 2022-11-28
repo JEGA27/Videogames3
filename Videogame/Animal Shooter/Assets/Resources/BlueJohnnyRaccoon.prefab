@@ -2051,10 +2051,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseCanvas: {fileID: 930039751827796326}
   HUDCanvas: {fileID: 9184939794861432551}
-  OptionsPanel: {fileID: 1096144640535877114}
-  OptionsBtnsPanel: {fileID: 5950594583784506358}
-  ScoreboardPanel: {fileID: 2963345885815237650}
-  MapPanel: {fileID: 5175452754332734591}
 --- !u!114 &6519265353123500335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4249,30 +4245,6 @@ PrefabInstance:
 --- !u!1 &930039751827796326 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6237836734978592286, guid: f5cf84ab8f03e4b4582f5c64589d7701,
-    type: 3}
-  m_PrefabInstance: {fileID: 6519265351924465528}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1096144640535877114 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6147234211782650498, guid: f5cf84ab8f03e4b4582f5c64589d7701,
-    type: 3}
-  m_PrefabInstance: {fileID: 6519265351924465528}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2963345885815237650 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8315613235497259882, guid: f5cf84ab8f03e4b4582f5c64589d7701,
-    type: 3}
-  m_PrefabInstance: {fileID: 6519265351924465528}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5175452754332734591 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2138070282079431431, guid: f5cf84ab8f03e4b4582f5c64589d7701,
-    type: 3}
-  m_PrefabInstance: {fileID: 6519265351924465528}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5950594583784506358 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 643407211127569550, guid: f5cf84ab8f03e4b4582f5c64589d7701,
     type: 3}
   m_PrefabInstance: {fileID: 6519265351924465528}
   m_PrefabAsset: {fileID: 0}
