@@ -1551,7 +1551,7 @@ GameObject:
   - component: {fileID: 6519265353123500368}
   - component: {fileID: 6519265353123500371}
   - component: {fileID: 6519265353123500370}
-  m_Layer: 3
+  m_Layer: 14
   m_Name: BlueJohnnyRaccoon
   m_TagString: BluePlayer
   m_Icon: {fileID: 0}

@@ -1546,6 +1546,7 @@ GameObject:
   - component: {fileID: 8815103928190833599}
   - component: {fileID: 8815103928190833593}
   - component: {fileID: 8815103928190833597}
+  - component: {fileID: 8602626118278717809}
   - component: {fileID: -7448667593251182734}
   - component: {fileID: 2481518675797140824}
   m_Layer: 8
@@ -1636,6 +1637,26 @@ MonoBehaviour:
   objectsPrefabs: []
   ActiveTrashDrop: 0
   lastShooterId: 
+--- !u!114 &8602626118278717809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5123293793326213023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6ce3b177833ed47b52ec35e6b391ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escapePoint: {x: 0, y: 0, z: 0}
+  players: []
+  curPlayers: 0
+  curSpeed: 1
+  rotSpeed: 10
+  AttackRadius: 5
+  distance: 0
+  curPlayer: {fileID: 0}
 --- !u!114 &-7448667593251182734
 MonoBehaviour:
   m_ObjectHideFlags: 0

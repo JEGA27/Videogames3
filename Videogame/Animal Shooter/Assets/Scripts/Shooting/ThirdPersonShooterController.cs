@@ -174,8 +174,9 @@ public class ThirdPersonShooterController : MonoBehaviour
       var bullet = PhotonNetwork.Instantiate(weaponStats.bulletProjectilePrefab.name, weaponStats.spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
       // Assign the bullets tag
       bullet.tag = gameObject.tag;
+      bullet.layer = gameObject.layer;
       // Assign the bullets shooter name
-      bullet.GetComponent<BulletProjectile>().ShooterId = PhotonNetwork.LocalPlayer.UserId;
+        bullet.GetComponent<BulletProjectile>().ShooterId = PhotonNetwork.LocalPlayer.UserId;
       if (bullet.GetComponent<Explosive>())
       {
         bullet.GetComponent<Explosive>().ShooterId = PhotonNetwork.LocalPlayer.UserId;
