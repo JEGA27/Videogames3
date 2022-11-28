@@ -44,6 +44,13 @@ public class Explosive : MonoBehaviour
             {
                 nearbyObject.GetComponent<Health>().TakeDamage(force / 8f + up_force / 2f);
                 nearbyObject.GetComponent<Health>().lastShooterId = ShooterId;
+                Debug.Log("Hit " + nearbyObject.name);
+            }
+            else if(nearbyObject.GetComponent<DummyHealth>() != null)
+            {
+                nearbyObject.GetComponent<DummyHealth>().TakeDamageD(force / 8f + up_force / 2f);
+                nearbyObject.GetComponent<DummyHealth>().lastShooterId = ShooterId;
+                Debug.Log("Hit " + nearbyObject.name);
             }
         }
 

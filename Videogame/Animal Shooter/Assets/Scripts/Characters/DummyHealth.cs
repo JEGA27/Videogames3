@@ -17,7 +17,7 @@ public class DummyHealth : MonoBehaviour
     //Vehicle Variables
     public int objectsToSpawn;
     public List<GameObject> objectsPrefabs = new List<GameObject>();
-    public bool ActiveTrashDrop = false;
+    public bool ActiveTrashDrop;
 
     public string lastShooterId;
 
@@ -28,6 +28,7 @@ public class DummyHealth : MonoBehaviour
     {   
         PV = GetComponent<PhotonView>();
         maxHp = hp;
+        ActiveTrashDrop = true;
         //slider.value = CalculateHealth();
     }
 

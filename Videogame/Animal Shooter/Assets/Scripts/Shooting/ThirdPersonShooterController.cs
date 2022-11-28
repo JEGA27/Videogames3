@@ -151,7 +151,6 @@ public class ThirdPersonShooterController : MonoBehaviour
             starterAssetsInputs.reload = false;
         }
         
-
         //Shoot
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0){
             bulletsShot = weaponStats.bulletsPerTap;
