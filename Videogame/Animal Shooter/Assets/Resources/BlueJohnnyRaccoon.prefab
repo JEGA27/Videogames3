@@ -1898,7 +1898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c287974aee4c4850be0252d01cc3d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToThrow: {fileID: 1753346102264670270, guid: 3c72a6b685b3e5344ba877da37136a42,
+  objectToThrow: {fileID: 2366091793111397289, guid: d5aa4ebf2a06e54448925ad440742c8a,
     type: 3}
   throwForce: 15
   throwUpwardForce: 3
