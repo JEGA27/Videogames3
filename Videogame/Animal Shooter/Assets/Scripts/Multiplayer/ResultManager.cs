@@ -97,6 +97,6 @@ public class ResultManager : MonoBehaviour
     public void Leave()
     {
         PhotonNetwork.LeaveRoom();
-        PhotonNetwork.LoadLevel("MainMenu");
+        PhotonNetwork.LoadLevel("Main Menu");
     }
 }
