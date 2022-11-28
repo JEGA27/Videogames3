@@ -44,6 +44,7 @@ MonoBehaviour:
   - ToggleRagdoll_RPC
   - TakeDamageDRPC
   - EraseTrashRPC
+  - EliminateRPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
