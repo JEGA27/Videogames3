@@ -1696,7 +1696,7 @@ GameObject:
   - component: {fileID: 6508968586994941621}
   - component: {fileID: 9194476479511943726}
   - component: {fileID: 687391399932697996}
-  m_Layer: 3
+  m_Layer: 14
   m_Name: RedTonyMouse
   m_TagString: RedPlayer
   m_Icon: {fileID: 0}
