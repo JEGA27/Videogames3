@@ -1653,9 +1653,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df815b291ec4d144e837a6a1513b2f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 50
   limitTrash: 0
-  hpIncrease: 100
+  hpIncrease: 0
   timeToRecover: 3
   objectsToSpawn: 0
   objectsPrefabs: []
