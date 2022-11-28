@@ -27,12 +27,13 @@ public class PickUpTrash : MonoBehaviour
 
     void OnTriggerEnter(Collider other) 
     {
-        if (other.gameObject.CompareTag("Trash") && this.PV.IsMine)
+        if (other.gameObject.CompareTag("Trash"))
         {
             currentTrash++;
             // Update trash collected
             scoreSW.trashPicked++;
-            PhotonNetwork.Destroy(other.gameObject);
+            other.gameObject.GetComponent<Trash>().EraseTrash();
+            // PhotonNetwork.Destroy(other.gameObject);
             PlaySounds collect = GetComponent<PlaySounds>();
             collect.PlaySound(0);
         }

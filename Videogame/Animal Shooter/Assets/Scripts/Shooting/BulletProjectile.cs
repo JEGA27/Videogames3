@@ -51,11 +51,8 @@ public class BulletProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {   
-        Debug.Log("Bullet hit " + other.name);
         if(other.GetComponent<BulletTarget>() != null)
         {
-            Debug.Log("Hit on" + other.name);
-            Debug.Log("Tag" + other.tag);
             if(other.GetComponent<DummyHealth>() != null && other.tag != this.tag)
             {
                 dummyHealth = other.GetComponent<DummyHealth>();
