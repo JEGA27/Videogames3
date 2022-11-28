@@ -29,6 +29,34 @@ public class TrashSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("IdPlayer"))
+        {
+            byte id = 1;
+            if ((byte)PhotonNetwork.LocalPlayer.CustomProperties["IdPlayer"] == id) 
+            {
+                SetTrash();
+            }
+        }                
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        time += Time.deltaTime;
+        GameObject[] trashLimit;
+        trashLimit = GameObject.FindGameObjectsWithTag("Trash");
+
+        if (time > timeToSpawn && trashLimit.Length <= limitTrash)
+        {
+            StartCoroutine(TimedSpawner());
+            trashLimit = null;
+            time = 0.0f;
+        }
+
+    }
+
+    void SetTrash()
+    {
         time = 0;
 
         centerOfSpawn = this.GetComponent< Renderer>().bounds.center;
@@ -74,23 +102,6 @@ public class TrashSpawner : MonoBehaviour
             Vector3 pos = new Vector3(posX, centerOfSpawn.y, posZ);
             PhotonNetwork.Instantiate(trashPrefabs[Random.Range(0, trashPrefabs.Count)].name, pos, Random.rotation);
         }
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        time += Time.deltaTime;
-        GameObject[] trashLimit;
-        trashLimit = GameObject.FindGameObjectsWithTag("Trash");
-
-        if (time > timeToSpawn && trashLimit.Length <= limitTrash)
-        {
-            StartCoroutine(TimedSpawner());
-            trashLimit = null;
-            time = 0.0f;
-        }
-
     }
 
     IEnumerator TimedSpawner()
