@@ -164,7 +164,7 @@ public class CharacterManager : MonoBehaviour
         catFbx.SetActive(false);
         squirrelFbx.SetActive(false);
         PlaySounds selectraccoon = GetComponent<PlaySounds>();
-        selectraccoon.PlaySound(16);
+        selectraccoon.PlaySound(0);
     }
 
     public void Ardilla()
@@ -196,7 +196,7 @@ public class CharacterManager : MonoBehaviour
         catFbx.SetActive(false);
         squirrelFbx.SetActive(false);
         PlaySounds selectrat = GetComponent<PlaySounds>();
-        selectrat.PlaySound(16);
+        selectrat.PlaySound(1);
     }
 
     public void Gato()
