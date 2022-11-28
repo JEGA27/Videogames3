@@ -169,8 +169,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   victory: {fileID: 6535938978575484264}
   defeat: {fileID: 6535938978575484263}
-  resultTeam: {fileID: 0}
-  resultEnemy: {fileID: 0}
+  resultTeam: {fileID: 6535938978575484268}
+  resultEnemy: {fileID: 6535938978575484267}
 --- !u!1 &1735392164
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,3 +645,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bf34d9c4851f3428a767a63ba146b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6535938978575484267 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9084778647998149121, guid: c4e3b7acdf5cf4bdd810f7b1115295a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 6535938978575484262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6535938978575484268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4388964915257713666, guid: c4e3b7acdf5cf4bdd810f7b1115295a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 6535938978575484262}
+  m_PrefabAsset: {fileID: 0}
