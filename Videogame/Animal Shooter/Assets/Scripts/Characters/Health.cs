@@ -155,6 +155,7 @@ public class Health : MonoBehaviour
         // Update shooter's kills
         if (lastShooterId != PhotonNetwork.LocalPlayer.UserId && lastShooterId != "none")
         {
+            Debug.Log("Contando kill a " + lastShooterId);
             // PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
             hash[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
         }
