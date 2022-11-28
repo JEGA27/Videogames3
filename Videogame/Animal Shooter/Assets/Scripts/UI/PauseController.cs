@@ -13,12 +13,6 @@ public class PauseController : MonoBehaviour
 
     public GameObject PauseCanvas;
     public GameObject HUDCanvas;
-    
-    [Space]
-    public GameObject OptionsPanel;
-    public GameObject OptionsBtnsPanel;
-    public GameObject ScoreboardPanel;
-    public GameObject MapPanel;
 
     private int currentCanvasTab;
 
@@ -39,15 +33,6 @@ public class PauseController : MonoBehaviour
         {
             PauseCanvas.SetActive(false);
             HUDCanvas.SetActive(true);
-
-            currentCanvasTab = 0;
-
-            OptionsPanel.SetActive(false);
-            ScoreboardPanel.SetActive(false);
-            MapPanel.SetActive(false);
-
-            OptionsBtnsPanel.SetActive(true);
-            // OptionsSettsPanel.SetActive(false);
         }
     }
 
@@ -56,7 +41,6 @@ public class PauseController : MonoBehaviour
     {
         if(PV.IsMine)
         {
-
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (HUDCanvas.active)
@@ -77,60 +61,12 @@ public class PauseController : MonoBehaviour
 
             if (PauseCanvas.active)
             {
-                if (Input.GetKeyDown("right"))
+                if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    if (currentCanvasTab == 2)
-                    {
-                        currentCanvasTab = 0;
-                    }
-                    else
-                    {
-                        currentCanvasTab += 1;
-                    }
-                }
-
-                if (Input.GetKeyDown("left"))
-                {
-                    if (currentCanvasTab == 0)
-                    {
-                        currentCanvasTab = 2;
-                    }
-                    else
-                    {
-                        currentCanvasTab -= 1;
-                    }
+                    LeaveGame();
                 }
             }
 
-            switch(currentCanvasTab)
-            {
-                case 0:
-                    OptionsPanel.SetActive(true);
-                    ScoreboardPanel.SetActive(false);
-                    MapPanel.SetActive(false);
-                    break;
-                case 1:
-                    OptionsPanel.SetActive(false);
-                    ScoreboardPanel.SetActive(true);
-                    MapPanel.SetActive(false);
-
-                    OptionsBtnsPanel.SetActive(true);
-                    // OptionsSettsPanel.SetActive(false);
-                    break;
-                case 2:
-                    OptionsPanel.SetActive(false);
-                    ScoreboardPanel.SetActive(false);
-                    MapPanel.SetActive(true);
-
-                    OptionsBtnsPanel.SetActive(true);
-                    // OptionsSettsPanel.SetActive(false);
-                    break;
-                default:
-                    OptionsPanel.SetActive(true);
-                    ScoreboardPanel.SetActive(false);
-                    MapPanel.SetActive(false);
-                    break;
-            }
         }
     }
 
@@ -143,7 +79,7 @@ public class PauseController : MonoBehaviour
 
     public void ShowSettingsOptions()
     {
-        OptionsBtnsPanel.SetActive(false);
+        //OptionsBtnsPanel.SetActive(false);
         // OptionsSettsPanel.SetActive(true);
         PlaySounds pause = GetComponent<PlaySounds>();
         pause.PlaySound(13);
