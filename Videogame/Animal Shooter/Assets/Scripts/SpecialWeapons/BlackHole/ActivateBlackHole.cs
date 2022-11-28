@@ -53,6 +53,7 @@ public class ActivateBlackHole : MonoBehaviour
         // Set shooter tag
         projectile.GetComponent<BlackHoleSpawner>().playerTag = gameObject.tag;
         // Set shooter PhotonView
+        Debug.Log("PhotonView: " + PV);
         projectile.GetComponent<BlackHoleSpawner>().PV = PV;
 
         // get projectiles rigidbody 

@@ -10,9 +10,12 @@ public class PickUpTrash : MonoBehaviour
     // Script to handle the picking up of trash
     ScoreSW scoreSW;
 
+    PhotonView PV;
+
     // Start is called before the first frame update
     void Start()
     {
+        PV = GetComponent<PhotonView>();
         scoreSW = GetComponent<ScoreSW>();    
     }
 
@@ -24,7 +27,7 @@ public class PickUpTrash : MonoBehaviour
 
     void OnTriggerEnter(Collider other) 
     {
-        if (other.gameObject.CompareTag("Trash"))
+        if (other.gameObject.CompareTag("Trash") && this.PV.IsMine)
         {
             currentTrash++;
             // Update trash collected
