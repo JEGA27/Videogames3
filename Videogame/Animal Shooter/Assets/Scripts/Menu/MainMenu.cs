@@ -149,7 +149,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
     {
         stageCam = 1;
         PlaySounds menu = GetComponent<PlaySounds>();
-        menu.PlaySound(13);
+        menu.PlaySound(1);
     }
 
     public void ShowControls()
@@ -168,14 +168,14 @@ public class MainMenu : MonoBehaviourPunCallbacks
     {
         stageCam = 2;
         PlaySounds menu = GetComponent<PlaySounds>();
-        menu.PlaySound(13);
+        menu.PlaySound(1);
     }
 
     public void ShowExtras()
     {
         stageCam = 3;
         PlaySounds menu = GetComponent<PlaySounds>();
-        menu.PlaySound(13);
+        menu.PlaySound(1);
     }
 
     public void ShowAboutTW() {
@@ -183,7 +183,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
         videoPanel.SetActive(true);
         aboutUSPanel.SetActive(false);
         PlaySounds menu = GetComponent<PlaySounds>();
-        menu.PlaySound(13);
+        menu.PlaySound(1);
     }
 
     public void PlayVideoRaccon()
@@ -194,6 +194,8 @@ public class MainMenu : MonoBehaviourPunCallbacks
         videoPlayer.clip = raccoonMov;
         videoPlayer.Prepare();
         videoPlayer.Play();
+        PlaySounds menu = GetComponent<PlaySounds>();
+        menu.PlaySound(1);
     }
 
     public void PlayVideoRat()
@@ -204,13 +206,15 @@ public class MainMenu : MonoBehaviourPunCallbacks
         videoPlayer.clip = ratMov;
         videoPlayer.Prepare();
         videoPlayer.Play();
+        PlaySounds menu = GetComponent<PlaySounds>();
+        menu.PlaySound(1);
     }
 
     public void ShowAboutUS() {
         aboutUSPanel.SetActive(true);
         videoPanel.SetActive(false);
         PlaySounds menu = GetComponent<PlaySounds>();
-        menu.PlaySound(13);
+        menu.PlaySound(1);
     }
 
     public void ShowJoinPanel()
@@ -218,7 +222,7 @@ public class MainMenu : MonoBehaviourPunCallbacks
        Panel_PlayJoin.SetActive(true);
        Panel_PlayCreate.SetActive(false);
        PlaySounds menu = GetComponent<PlaySounds>();
-       menu.PlaySound(13);
+       menu.PlaySound(1);
     }
 
     public void ShowCreatePanel()
@@ -226,13 +230,13 @@ public class MainMenu : MonoBehaviourPunCallbacks
        Panel_PlayJoin.SetActive(false);
        Panel_PlayCreate.SetActive(true);
        PlaySounds menu = GetComponent<PlaySounds>();
-       menu.PlaySound(13);
+       menu.PlaySound(1);
     }
 
     public void Play() {
         SceneManager.LoadScene(1);
         PlaySounds menu = GetComponent<PlaySounds>();
-        menu.PlaySound(13);
+        menu.PlaySound(1);
     }
 
     public void Quit() {

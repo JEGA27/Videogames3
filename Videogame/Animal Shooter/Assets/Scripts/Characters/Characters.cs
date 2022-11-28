@@ -20,7 +20,7 @@ namespace Characters
         public static string ability = "Can teleport between sewers across the map";
         public static string main = "Shotgun";
         public static string sub = "Mine";
-        public static string special = "Radar thats shows enemies in the map";
+        public static string special = "Radar that shows enemies in the map";
     }
 
     public class Squirrel

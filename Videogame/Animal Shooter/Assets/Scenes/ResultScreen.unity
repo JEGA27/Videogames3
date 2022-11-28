@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028386, g: 0.22571427, b: 0.3069231, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -169,6 +169,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   victory: {fileID: 6535938978575484264}
   defeat: {fileID: 6535938978575484263}
+  resultTeam: {fileID: 0}
+  resultEnemy: {fileID: 0}
 --- !u!1 &1735392164
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +541,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 365614192649429994, guid: c4e3b7acdf5cf4bdd810f7b1115295a0,
+        type: 3}
+      propertyPath: m_Name
+      value: Deaths
+      objectReference: {fileID: 0}
+    - target: {fileID: 820327804337888345, guid: c4e3b7acdf5cf4bdd810f7b1115295a0,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 820327804337888345, guid: c4e3b7acdf5cf4bdd810f7b1115295a0,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 820327804337888345, guid: c4e3b7acdf5cf4bdd810f7b1115295a0,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5563069830987494277, guid: c4e3b7acdf5cf4bdd810f7b1115295a0,
         type: 3}
       propertyPath: m_IsActive
@@ -548,6 +570,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VictoryDefeatScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 6432366992863600846, guid: c4e3b7acdf5cf4bdd810f7b1115295a0,
+        type: 3}
+      propertyPath: m_Name
+      value: Deaths
+      objectReference: {fileID: 0}
+    - target: {fileID: 6833384826068573272, guid: c4e3b7acdf5cf4bdd810f7b1115295a0,
+        type: 3}
+      propertyPath: m_Name
+      value: Deaths
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921692097675097309, guid: c4e3b7acdf5cf4bdd810f7b1115295a0,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921692097675097309, guid: c4e3b7acdf5cf4bdd810f7b1115295a0,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921692097675097309, guid: c4e3b7acdf5cf4bdd810f7b1115295a0,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068953276383355281, guid: c4e3b7acdf5cf4bdd810f7b1115295a0,
+        type: 3}
+      propertyPath: m_Name
+      value: Deaths
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4e3b7acdf5cf4bdd810f7b1115295a0, type: 3}
@@ -573,5 +625,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &6535938978575484265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2647247915503651614, guid: c4e3b7acdf5cf4bdd810f7b1115295a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 6535938978575484262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6535938978575484266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6535938978575484265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bf34d9c4851f3428a767a63ba146b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

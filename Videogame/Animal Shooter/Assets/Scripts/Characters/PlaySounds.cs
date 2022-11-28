@@ -14,7 +14,7 @@ public class PlaySounds : MonoBehaviour
     }
 
     public void PlaySound(int index) {
-        audioSource.clip = audioClips[index];
-        audioSource.Play();
+        //audioSource.clip = audioClips[index];
+        audioSource.PlayOneShot(audioClips[index]);
     }
 }

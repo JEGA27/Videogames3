@@ -100,7 +100,7 @@ public class HUD : MonoBehaviour
         ownTeamTxt.text = ((int)PhotonNetwork.CurrentRoom.CustomProperties[ownTeamScore]).ToString();
         enemyTeamTxt.text = ((int)PhotonNetwork.CurrentRoom.CustomProperties[enemyTeamScore]).ToString();
 
-        ammo.text = tpsc.bulletsLeft.ToString() + "/" + tpsc.magazine.ToString();
+        ammo.text =  (tpsc.bulletsLeft > 0 ? tpsc.bulletsLeft.ToString() : "0") + "/" + tpsc.magazine.ToString();
 
         if (character == Characters.Raccoon.name)
         {
