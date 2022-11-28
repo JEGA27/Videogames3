@@ -72,7 +72,7 @@ public class DummyHealth : MonoBehaviour
     }
 
     [PunRPC]
-    public void TakeDamageRPC(float damage)
+    public void TakeDamageDRPC(float damage)
     {
         if(!PV.IsMine) return;
         

@@ -17,7 +17,6 @@ public class PauseController : MonoBehaviour
     [Space]
     public GameObject OptionsPanel;
     public GameObject OptionsBtnsPanel;
-    public GameObject OptionsSettsPanel;
     public GameObject ScoreboardPanel;
     public GameObject MapPanel;
 
@@ -48,7 +47,7 @@ public class PauseController : MonoBehaviour
             MapPanel.SetActive(false);
 
             OptionsBtnsPanel.SetActive(true);
-            OptionsSettsPanel.SetActive(false);
+            // OptionsSettsPanel.SetActive(false);
         }
     }
 
@@ -116,7 +115,7 @@ public class PauseController : MonoBehaviour
                     MapPanel.SetActive(false);
 
                     OptionsBtnsPanel.SetActive(true);
-                    OptionsSettsPanel.SetActive(false);
+                    // OptionsSettsPanel.SetActive(false);
                     break;
                 case 2:
                     OptionsPanel.SetActive(false);
@@ -124,7 +123,7 @@ public class PauseController : MonoBehaviour
                     MapPanel.SetActive(true);
 
                     OptionsBtnsPanel.SetActive(true);
-                    OptionsSettsPanel.SetActive(false);
+                    // OptionsSettsPanel.SetActive(false);
                     break;
                 default:
                     OptionsPanel.SetActive(true);
@@ -145,7 +144,7 @@ public class PauseController : MonoBehaviour
     public void ShowSettingsOptions()
     {
         OptionsBtnsPanel.SetActive(false);
-        OptionsSettsPanel.SetActive(true);
+        // OptionsSettsPanel.SetActive(true);
         PlaySounds pause = GetComponent<PlaySounds>();
         pause.PlaySound(13);
     }

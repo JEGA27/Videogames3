@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 7349990445791795443}
   - component: {fileID: 2063068103985361712}
   - component: {fileID: 772379741814680785}
+  - component: {fileID: -2024488230091455006}
+  - component: {fileID: -3741184521598363787}
   m_Layer: 0
   m_Name: AgentTrash
   m_TagString: Agent
@@ -158,6 +160,45 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &-2024488230091455006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7349990445791795342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df815b291ec4d144e837a6a1513b2f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 500
+  limitTrash: 25
+  hpIncrease: 0
+  timeToRecover: 1000
+  objectsToSpawn: 50
+  objectsPrefabs:
+  - {fileID: 5293823120083327890, guid: da6b50dd8e0179dbebdb503906dc949b, type: 3}
+  - {fileID: 6886207176778085362, guid: 730bdf3c9d8853d1a997068eb6778109, type: 3}
+  - {fileID: 1013872574159855006, guid: bdfdbe615ee20fd1bb7c483a5e1fe113, type: 3}
+  - {fileID: 331231042634521839, guid: aaf72027acc6d236ea23ab5f82bc60ad, type: 3}
+  - {fileID: 6192380661802840555, guid: c7feb95662b304ea686b253e2aa7870f, type: 3}
+  - {fileID: 7457804360396237169, guid: 7116ab006c4995091ba612082d7bc8af, type: 3}
+  - {fileID: 1607843205709577949, guid: 239348cffb17c8216a48c6547bfd8469, type: 3}
+  ActiveTrashDrop: 1
+  lastShooterId: 
+--- !u!114 &-3741184521598363787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7349990445791795342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4544cf0d8c0974393c105785d01b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7349990445322694728
 PrefabInstance:
   m_ObjectHideFlags: 0

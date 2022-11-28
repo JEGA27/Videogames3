@@ -155,11 +155,11 @@ public class ThirdPersonShooterController : MonoBehaviour
         //Shoot
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0){
             bulletsShot = weaponStats.bulletsPerTap;
-            if(hasExplosive && !weapon1.activeSelf)
+            if(hasExplosive && !weapon1.activeSelf && PV.IsMine)
             {
                 explosive.Throw();
             }
-            else
+            else if(PV.IsMine)
             {
                 Shoot();
             }

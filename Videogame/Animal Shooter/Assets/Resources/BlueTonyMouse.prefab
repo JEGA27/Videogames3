@@ -2123,7 +2123,6 @@ MonoBehaviour:
   HUDCanvas: {fileID: 4875422855436182572}
   OptionsPanel: {fileID: 4497661894213752549}
   OptionsBtnsPanel: {fileID: 7190115727996338409}
-  OptionsSettsPanel: {fileID: 2196183826423946038}
   ScoreboardPanel: {fileID: 1748317453514764045}
   MapPanel: {fileID: 8542845584316094304}
 --- !u!114 &6573334553962949998
@@ -5456,12 +5455,6 @@ PrefabInstance:
 --- !u!1 &1748317453514764045 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8315613235497259882, guid: f5cf84ab8f03e4b4582f5c64589d7701,
-    type: 3}
-  m_PrefabInstance: {fileID: 7720783139941203047}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2196183826423946038 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8457710442317358929, guid: f5cf84ab8f03e4b4582f5c64589d7701,
     type: 3}
   m_PrefabInstance: {fileID: 7720783139941203047}
   m_PrefabAsset: {fileID: 0}
