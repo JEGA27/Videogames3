@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -9113734854287305908}
   - component: {fileID: -7471838080530619833}
   - component: {fileID: -2372626420603202050}
+  - component: {fileID: -4383326916334423844}
   m_Layer: 0
   m_Name: Bottle4
   m_TagString: Trash
@@ -208,3 +209,15 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &-4383326916334423844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331231042634521839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c6422923acde6c99cf0d9486825a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
