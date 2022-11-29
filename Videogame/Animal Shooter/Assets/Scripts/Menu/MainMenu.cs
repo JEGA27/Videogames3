@@ -53,6 +53,8 @@ public class MainMenu : MonoBehaviourPunCallbacks
 
     void Start() 
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         stageCam = 0;
         StageCanvas_0.SetActive(true);
 
