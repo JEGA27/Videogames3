@@ -2218,10 +2218,19 @@ MonoBehaviour:
   - Type: 1
     SynchronizeType: 2
     Name: MotionSpeed
+  - Type: 4
+    SynchronizeType: 0
+    Name: Shooting
+  - Type: 4
+    SynchronizeType: 0
+    Name: Reloading
+  - Type: 4
+    SynchronizeType: 0
+    Name: Throwing
   m_SynchronizeLayers:
-  - SynchronizeType: 0
+  - SynchronizeType: 1
     LayerIndex: 0
-  - SynchronizeType: 0
+  - SynchronizeType: 1
     LayerIndex: 1
 --- !u!114 &9194476479511943726
 MonoBehaviour:

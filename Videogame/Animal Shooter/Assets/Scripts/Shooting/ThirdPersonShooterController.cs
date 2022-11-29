@@ -25,7 +25,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     public GameObject weapon2;
     [SerializeField]
     private float swapWeaponTime;
-
+    
 
     private ThirdPersonController thirdPersonController;
     private StarterAssetsInputs starterAssetsInputs;
@@ -81,6 +81,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             hasExplosive = true;
             explosive = weapon2.GetComponent<ExplosiveObject>();
         }
+
     }
 
     // Update is called once per frame
@@ -136,6 +137,21 @@ public class ThirdPersonShooterController : MonoBehaviour
             swap = true;
         }
 
+        
+        if(hasExplosive && !weapon1.activeSelf)
+        {
+            animator.SetBool("Throwing", shooting);
+
+        }
+        else
+        {
+            animator.SetBool("Shooting", shooting);
+        }
+        
+        animator.SetBool("Reloading", reloading);
+        
+        
+
         StartCoroutine(SwapWeapon());
         MyInput();
 
@@ -156,8 +172,10 @@ public class ThirdPersonShooterController : MonoBehaviour
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0){
             bulletsShot = weaponStats.bulletsPerTap;
             if(hasExplosive && !weapon1.activeSelf && PV.IsMine)
-            {
+            {   
+                
                 explosive.Throw();
+            
             }
             else if(PV.IsMine)
             {
@@ -201,7 +219,6 @@ public class ThirdPersonShooterController : MonoBehaviour
       AimCinemachineShake.Instance.ShakeCamera(2f, 0.1f);
 
       weaponStats.muzzleFlash.Emit(1);
-
 
     }
 
@@ -252,4 +269,5 @@ public class ThirdPersonShooterController : MonoBehaviour
           }
       }
     }
+  
 }
