@@ -14,6 +14,8 @@ public class ActivateBlackHole : MonoBehaviour
     [SerializeField]
     private float throwUpwardForce;
 
+    private Animator animator;
+
     private PhotonView PV;
     ScoreSW sSW;
 
@@ -26,6 +28,7 @@ public class ActivateBlackHole : MonoBehaviour
             cam = GameObject.Find("PlayerFollowCamera").transform;
             attackPoint = GameObject.Find("ThrowingPoint").transform;
             sSW = GetComponent<ScoreSW>();
+            animator = gameObject.GetComponent<Animator>();
         }
     }
 
@@ -43,6 +46,7 @@ public class ActivateBlackHole : MonoBehaviour
                 PlaySounds blackhole = GetComponent<PlaySounds>();
                 blackhole.PlaySound(12);
             }
+            animator.SetBool("Throwing", Input.GetKeyDown(KeyCode.Q));
         }
     }
 
