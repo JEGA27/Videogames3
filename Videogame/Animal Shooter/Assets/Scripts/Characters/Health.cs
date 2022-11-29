@@ -140,11 +140,13 @@ public class Health : MonoBehaviour
         hash[idDeaths] = deaths + 1;
         // PhotonNetwork.CurrentRoom.CustomProperties[idDeaths] = deaths + 1;
 
+        Debug.Log("KillsBefore" + PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"]);
         // Update shooter's kills
         if (lastShooterId != PhotonNetwork.LocalPlayer.UserId && lastShooterId != "none")
         {
             // PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
             hash[lastShooterId + "Kills"] = (int)PhotonNetwork.CurrentRoom.CustomProperties[lastShooterId + "Kills"] + 1;
+            Debug.Log("KillsAfter" + hash[lastShooterId + "Kills"]);
         }
         PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
         

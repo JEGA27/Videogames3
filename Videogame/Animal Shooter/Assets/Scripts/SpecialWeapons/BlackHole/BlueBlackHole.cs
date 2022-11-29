@@ -27,6 +27,7 @@ public class BlueBlackHole : MonoBehaviour
 
     private Rigidbody rb;
 
+    public int numberOfTrash;
 
 
     struct Shape
@@ -119,6 +120,7 @@ public class BlueBlackHole : MonoBehaviour
         riseCount = 0;
         canSuck = false;
         CreateSphere();
+        numberOfTrash = 0;
     }
 
     // Update is called once per frame
@@ -146,6 +148,13 @@ public class BlueBlackHole : MonoBehaviour
             }
             else
             {
+                Debug.Log("BlueScoreBefore: " + PhotonNetwork.CurrentRoom.CustomProperties["BlueScore"]);
+
+                var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+                hash["BlueScore"] = (int)hash["BlueScore"] + numberOfTrash;
+                Debug.Log("BlueScore: " + hash["BlueScore"]);
+                PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+
                 PhotonNetwork.Destroy(this.gameObject);
             }
         }
@@ -166,8 +175,8 @@ public class BlueBlackHole : MonoBehaviour
                 Rigidbody r = other.gameObject.GetComponent<Rigidbody>();
                 rbsInBlackHole.Remove(r);
                 PhotonNetwork.Destroy(other.gameObject);
-                // Checar
-                GameManager.blueTeamTrash++;
+
+                numberOfTrash++;
             }
         }
     }
@@ -231,6 +240,8 @@ public class BlueBlackHole : MonoBehaviour
                                          3, 5, 0
                                 };
 
+        Tessellate(i);
+        Tessellate(i);
         Tessellate(i);
         Tessellate(i);
         Tessellate(i);

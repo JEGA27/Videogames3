@@ -95,10 +95,11 @@ MonoBehaviour:
   timeAfterBounce: 2
   riseInY: 1.6
   riseSpeed: 0.05
-  blackHoleForce: 55
+  blackHoleForce: 70
   forceIncrease: 1.3
   blackHoleIncrease: {x: 0.05, y: 0.05, z: 0.05}
   timeToDestroy: 5
+  numberOfTrash: 0
 --- !u!114 &4124875763751703991
 MonoBehaviour:
   m_ObjectHideFlags: 0

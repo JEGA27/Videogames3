@@ -5,8 +5,8 @@ using Photon.Pun;
 
 public class ActivateBlackHole : MonoBehaviour
 {
-    private Transform cam;
-    private Transform attackPoint;
+    public Transform cam;
+    public Transform attackPoint;
     [SerializeField]
     private GameObject objectToThrow;
     [SerializeField]
@@ -23,8 +23,10 @@ public class ActivateBlackHole : MonoBehaviour
         PV = GetComponent<PhotonView>();
         if (PV.IsMine)
         {
-            cam = GameObject.Find("PlayerFollowCamera").transform;
-            attackPoint = GameObject.Find("ThrowingPoint").transform;
+            cam = gameObject.transform.Find("Cameras").transform.Find("PlayerFollowCamera");
+            Debug.Log("cam: " + cam);
+            attackPoint = gameObject.transform.Find("ThrowingPoint");
+            Debug.Log("attackPoint: " + attackPoint);
             sSW = GetComponent<ScoreSW>();
         }
     }
@@ -35,6 +37,7 @@ public class ActivateBlackHole : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q) && sSW.specialWeaponReady)
             {
+                Debug.Log("Throwing Black Hole");
                 sSW.specialWeaponReady = false;
                 PhotonNetwork.CurrentRoom.CustomProperties[sSW.idProgress] = 0;
                 sSW.specialWeaponPoints = 0;
@@ -48,6 +51,7 @@ public class ActivateBlackHole : MonoBehaviour
 
     void Throw()
     {
+        Debug.Log("Throwing Black Hole2");
         // instantiate projectile
         GameObject projectile = PhotonNetwork.Instantiate(objectToThrow.name, attackPoint.position, cam.rotation);
         // Set shooter tag

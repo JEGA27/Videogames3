@@ -157,7 +157,7 @@ public class DummyMovement : MonoBehaviour
         yield return new WaitForSeconds(timerForNewPath);
         GetNewPath();
         validPath = navMeshAgent.CalculatePath(target, path);
-        if (!validPath) Debug.Log("Found an invalid path");
+        // if (!validPath) Debug.Log("Found an invalid path");
         while (!validPath)
         {
             yield return new WaitForSeconds(0.01f);

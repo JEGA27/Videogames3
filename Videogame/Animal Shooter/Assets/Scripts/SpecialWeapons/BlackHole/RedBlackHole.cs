@@ -27,7 +27,8 @@ public class RedBlackHole : MonoBehaviour
 
     private Rigidbody rb;
     
-    
+    public int numberOfTrash;
+
 
     struct Shape{
 		// {0,0,0}, {6,0,0}, {3, 3, 0}, {9,3,0}
@@ -118,6 +119,7 @@ public class RedBlackHole : MonoBehaviour
         riseCount = 0;
         canSuck = false;
         CreateSphere();
+        numberOfTrash = 0;
     }
 
     // Update is called once per frame
@@ -141,6 +143,14 @@ public class RedBlackHole : MonoBehaviour
             }
             else
             {
+                Debug.Log("RedScoreBefore: " + PhotonNetwork.CurrentRoom.CustomProperties["RedScore"]);
+                
+                var hash = PhotonNetwork.CurrentRoom.CustomProperties;
+                hash["RedScore"] = (int)hash["RedScore"] + numberOfTrash;
+                Debug.Log("RedScore: " + hash["RedScore"]);
+                PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
+
+
                 PhotonNetwork.Destroy(this.gameObject);
             }
         }
@@ -160,8 +170,8 @@ public class RedBlackHole : MonoBehaviour
                 Rigidbody r = other.gameObject.GetComponent<Rigidbody>();
                 rbsInBlackHole.Remove(r);
                 PhotonNetwork.Destroy(other.gameObject);
-                // Checar
-                GameManager.blueTeamTrash++;
+                
+                numberOfTrash++;
             }
         }
     }
@@ -226,6 +236,9 @@ public class RedBlackHole : MonoBehaviour
 
         Tessellate(i);
 		Tessellate(i);
+        Tessellate(i);
+        Tessellate(i);
+        Tessellate(i);
 
         myMesh.vertices = i.geometry.ToArray();
 		myMesh.triangles = i.topology.ToArray();

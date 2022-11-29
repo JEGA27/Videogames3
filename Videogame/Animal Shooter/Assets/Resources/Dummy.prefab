@@ -1657,7 +1657,7 @@ MonoBehaviour:
   limitTrash: 0
   hpIncrease: 0
   timeToRecover: 10
-  objectsToSpawn: 0
+  objectsToSpawn: 14
   objectsPrefabs:
   - {fileID: 5293823120083327890, guid: da6b50dd8e0179dbebdb503906dc949b, type: 3}
   - {fileID: 6886207176778085362, guid: 730bdf3c9d8853d1a997068eb6778109, type: 3}
@@ -1941,7 +1941,7 @@ GameObject:
   - component: {fileID: 1538061758132976119}
   m_Layer: 0
   m_Name: Geometry
-  m_TagString: RedPlayer
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
